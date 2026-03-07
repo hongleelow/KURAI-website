@@ -46,12 +46,12 @@ const trialSlots = [
 ];
 
 const whatToExpect = [
-  'A 60-minute hands-on introductory lesson',
+  'A 60-minute guided, hands-on lesson',
   'Age-appropriate activities in AI or Robotics',
-  'Small group setting (max 8 students)',
-  'Meet our instructors and see our facilities',
-  'Post-class summary for parents',
-  'No commitment or pressure to enrol',
+  'Small group setting — max 8 students',
+  'Meet our instructors and see our learning space',
+  'A post-class summary so you know what your child learned',
+  'No commitment, no pressure — just come and see',
 ];
 
 const parentTestimonials = [
@@ -106,8 +106,8 @@ export default function FreeTrial() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft">
-            Let your child experience KURAI first-hand. One class is all it takes to see
-            the spark of curiosity in action. No payment, no obligation — just learning.
+            Let your child experience a real KURAI lesson — guided, hands-on, and designed
+            for how young minds learn. No payment, no obligation.
           </p>
           <a
             href="#booking-form"
@@ -130,8 +130,8 @@ export default function FreeTrial() {
               Your Child&apos;s First KURAI Experience
             </h2>
             <p className="mt-4 font-body leading-relaxed text-kurai-dark-60">
-              Our trial class gives your child a genuine taste of what learning at KURAI is
-              like — engaging, structured, and genuinely fun.
+              Our trial class is a real lesson — not a sales pitch. Your child will experience
+              KURAI exactly as it is: structured, hands-on, and thoughtfully guided.
             </p>
             <ul className="mt-8 space-y-4">
               {whatToExpect.map((item) => (
@@ -158,7 +158,7 @@ export default function FreeTrial() {
             <div className="rounded-2xl bg-kurai-ice p-8 text-center">
               <Shield className="mx-auto h-8 w-8 text-kurai-royal" />
               <p className="mt-3 font-heading text-2xl font-bold text-kurai-dark">100%</p>
-              <p className="mt-1 font-body text-xs text-kurai-dark-60">Free, No Strings</p>
+              <p className="mt-1 font-body text-xs text-kurai-dark-60">Free, No Obligation</p>
             </div>
             <div className="rounded-2xl bg-kurai-ice p-8 text-center">
               <Star className="mx-auto h-8 w-8 text-kurai-royal" />
@@ -180,7 +180,7 @@ export default function FreeTrial() {
               Upcoming Trial Sessions
             </h2>
             <p className="mx-auto mt-4 max-w-lg font-body text-kurai-dark-60">
-              Choose a session that works for your family. Spots are limited to keep classes small.
+              Pick a session that suits your family. Spots are limited so every child gets real attention.
             </p>
           </div>
 
@@ -232,7 +232,7 @@ export default function FreeTrial() {
               Book Your Free Trial
             </h2>
             <p className="mx-auto mt-4 max-w-lg font-body text-kurai-dark-60">
-              Fill out the form and we&apos;ll confirm your booking within 24 hours.
+              Tell us a little about your child and we&apos;ll confirm your booking within 24 hours.
             </p>
           </div>
 
@@ -389,10 +389,10 @@ export default function FreeTrial() {
         <div className="mx-auto max-w-5xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-light">
-              Parents Love It
+              From Other Parents
             </p>
             <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
-              What Happened After the Trial
+              What Parents Said After the Trial
             </h2>
           </div>
 
@@ -429,7 +429,7 @@ export default function FreeTrial() {
             Have questions before booking?
           </h2>
           <p className="mx-auto mt-3 max-w-xl font-body text-white/80">
-            Reach out to our team — we&apos;re happy to help you find the right class for your child.
+            We&apos;re happy to help you find the right programme and schedule for your child.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link

@@ -19,42 +19,42 @@ const faqs = [
   {
     question: 'What age group is KURAI designed for?',
     answer:
-      'Our core programmes are designed for children aged 5 to 11. We have age-appropriate tiers: Little Explorers (5–7), Young Innovators (8–9), and Tech Pioneers (10–11). Adult workshops are launching soon.',
+      'Our programmes are designed for children aged 5 to 11, with age-appropriate tiers so every child is learning at the right level. We also have adult workshops launching soon.',
   },
   {
-    question: 'Does my child need any prior coding experience?',
+    question: 'Does my child need any prior experience?',
     answer:
-      'Not at all! Our curriculum starts from the fundamentals. We use visual programming tools and hands-on activities that require zero prior experience. Every child starts their journey at their own pace.',
+      'No prior experience is needed. Our curriculum starts from the fundamentals using visual programming tools and hands-on activities. Every child begins at their own pace.',
   },
   {
     question: 'How big are the classes?',
     answer:
-      'We cap every class at 8 students maximum. This ensures each child receives personalised attention, meaningful feedback, and a comfortable learning environment.',
+      'Every class is capped at 8 students. This means your child gets real attention, meaningful feedback, and a comfortable environment to learn in.',
   },
   {
     question: 'What will my child actually learn?',
     answer:
-      'Students learn the foundations of AI, machine learning, data thinking, and robotics through project-based lessons. Beyond technical skills, they develop critical thinking, problem-solving, collaboration, and digital confidence.',
+      'Children learn the foundations of AI, machine learning, and robotics through structured, project-based lessons. They also develop critical thinking, problem-solving, and the confidence to engage with technology independently.',
   },
   {
     question: 'How is KURAI different from regular coding classes?',
     answer:
-      'Most coding classes teach syntax. KURAI teaches thinking. We focus on AI literacy — understanding how intelligent systems work, why they matter, and how to engage with them responsibly. Our structured curriculum goes far beyond basic coding.',
+      'Most coding classes focus on syntax. KURAI focuses on understanding — how AI systems work, why they matter, and how to think about technology critically. Our structured curriculum goes well beyond basic coding.',
   },
   {
-    question: 'Can I try a class before enrolling?',
+    question: 'Can I try a class before committing?',
     answer:
-      'Absolutely! We offer free trial classes so your child can experience KURAI before committing. Book a trial through our Free Trial page or contact us directly.',
+      'Yes — we offer free trial classes with no obligation. Your child can experience a real KURAI lesson before you decide. You can book a trial on our Free Trial page or contact us directly.',
   },
   {
     question: 'What are the fees and payment options?',
     answer:
-      'We offer term-based and monthly payment plans. Please contact us for the latest pricing details — we\'re happy to walk you through the options and find what works best for your family.',
+      'We offer term-based and monthly payment plans. Contact us for the latest pricing — we\'re happy to walk you through the options and find what works for your family.',
   },
   {
     question: 'Where is KURAI located?',
     answer:
-      'KURAI is located in Johor Bahru, Malaysia. We\'re easily accessible with parking available nearby. Contact us for detailed directions to our centre.',
+      'We\'re based in Johor Bahru, Malaysia, with easy access and nearby parking. Get in touch and we\'ll share detailed directions to our centre.',
   },
 ];
 
@@ -98,14 +98,14 @@ export default function Contact() {
             Contact Us
           </p>
           <h1 className="mt-6 font-heading text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">
-            Let&apos;s{' '}
+            We&apos;re Here to{' '}
             <span className="bg-gradient-to-r from-kurai-light to-kurai-royal-light bg-clip-text text-transparent">
-              Start a Conversation
+              Help
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft">
-            Have questions about our programmes? Ready to enroll? We&apos;d love to hear
-            from you. Reach out through any channel below.
+            Whether you have questions about our programmes, want to book a trial, or just
+            want to learn more — we&apos;d love to hear from you.
           </p>
         </div>
       </section>
@@ -162,7 +162,7 @@ export default function Contact() {
             <div className="rounded-2xl border border-kurai-ice bg-white p-8 md:p-10">
               <h2 className="font-heading text-2xl font-bold text-kurai-dark">Send a Message</h2>
               <p className="mt-2 font-body text-sm text-kurai-dark-60">
-                Fill out the form below and we&apos;ll get back to you within 24 hours.
+                Tell us a little about what you&apos;re looking for — we&apos;ll get back to you within 24 hours.
               </p>
 
               {/* Success message */}
@@ -246,9 +246,9 @@ export default function Contact() {
                     name="subject"
                     className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
                   >
-                    <option>General Inquiry</option>
-                    <option>Enrollment</option>
-                    <option>Book a Free Trial</option>
+                    <option>General Enquiry</option>
+                    <option>Programme Information</option>
+                    <option>Booking a Free Trial</option>
                     <option>School Partnership</option>
                     <option>Adult Workshops</option>
                     <option>Events &amp; Open Days</option>
@@ -261,7 +261,7 @@ export default function Contact() {
                     rows={4}
                     required
                     className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
-                    placeholder="Tell us how we can help..."
+                    placeholder="Tell us what you'd like to know..."
                   />
                 </div>
                 <button
@@ -365,7 +365,7 @@ export default function Contact() {
               Our Location
             </h2>
             <p className="mx-auto mt-3 max-w-lg font-body text-kurai-dark-60">
-              Conveniently located in Johor Bahru with easy access and nearby parking.
+              Based in Johor Bahru with easy access and nearby parking. Contact us for directions.
             </p>
           </div>
           {/* Facility photo */}
@@ -398,7 +398,7 @@ export default function Contact() {
               Frequently Asked Questions
             </h2>
             <p className="mx-auto mt-4 max-w-lg font-body text-kurai-dark-60">
-              Everything you need to know about KURAI, our programmes, and enrollment.
+              Answers to the questions parents ask most about KURAI.
             </p>
           </div>
 
@@ -461,10 +461,10 @@ export default function Contact() {
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-2xl font-bold md:text-3xl">
-            See what structured AI learning looks like.
+            See what structured AI education looks like.
           </h2>
           <p className="mx-auto mt-3 max-w-xl font-body text-white/80">
-            Book a free trial class — no commitment, no pressure. Just a genuine experience of KURAI.
+            Book a free trial class and let your child experience KURAI first-hand. No commitment, no pressure.
           </p>
           <Link
             to="/free-trial"
