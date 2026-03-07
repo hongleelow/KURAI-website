@@ -54,14 +54,14 @@ const faqs = [
   {
     question: 'Where is KURAI located?',
     answer:
-      'We\'re based in Johor Bahru, Malaysia, with easy access and nearby parking. Get in touch and we\'ll share detailed directions to our centre.',
+      'We\'re located at 26A, Jalan Horizon Perdana 5, Horizon Hills, 79100 Iskandar Puteri, Johor. Easy access with nearby parking.',
   },
 ];
 
 const businessHours = [
-  { day: 'Monday – Friday', hours: '9:00 AM – 6:00 PM' },
-  { day: 'Saturday', hours: '9:00 AM – 1:00 PM' },
-  { day: 'Sunday', hours: 'Closed' },
+  { day: 'Wednesday – Sunday', hours: '10:00 AM – 9:00 PM' },
+  { day: 'Monday', hours: 'Closed' },
+  { day: 'Tuesday', hours: 'Closed' },
 ];
 
 export default function Contact() {
@@ -126,7 +126,7 @@ export default function Contact() {
             </div>
           </Link>
           <a
-            href="https://wa.me/60170000000"
+            href="https://wa.me/60122169871"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 rounded-xl border border-kurai-ice bg-white p-5 transition-shadow hover:shadow-lg"
@@ -287,9 +287,11 @@ export default function Contact() {
                   <div>
                     <p className="font-body text-sm font-medium text-kurai-dark">Location</p>
                     <p className="mt-1 font-body text-sm text-kurai-dark-60">
-                      Johor Bahru, Johor
+                      26A, Jalan Horizon Perdana 5,
                       <br />
-                      Malaysia
+                      Horizon Hills, 79100 Iskandar Puteri,
+                      <br />
+                      Johor Darul Ta&apos;zim
                     </p>
                   </div>
                 </li>
@@ -304,7 +306,7 @@ export default function Contact() {
                   <Phone className="mt-0.5 h-5 w-5 shrink-0 text-kurai-royal" />
                   <div>
                     <p className="font-body text-sm font-medium text-kurai-dark">Phone</p>
-                    <p className="mt-1 font-body text-sm text-kurai-dark-60">+60 7-XXX XXXX</p>
+                    <p className="mt-1 font-body text-sm text-kurai-dark-60">+6012-216 9871</p>
                   </div>
                 </li>
               </ul>
@@ -334,7 +336,7 @@ export default function Contact() {
 
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/60170000000"
+              href="https://wa.me/60122169871"
               target="_blank"
               rel="noopener noreferrer"
               className="block rounded-2xl bg-green-600 p-6 text-white transition-colors hover:bg-green-700"
@@ -365,7 +367,7 @@ export default function Contact() {
               Our Location
             </h2>
             <p className="mx-auto mt-3 max-w-lg font-body text-kurai-dark-60">
-              Based in Johor Bahru with easy access and nearby parking. Contact us for directions.
+              Located at Horizon Hills, Iskandar Puteri — easy access with nearby parking.
             </p>
           </div>
           {/* Facility photo */}
@@ -379,7 +381,7 @@ export default function Contact() {
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-kurai-dark/70 to-transparent px-6 pb-5 pt-12">
                 <div className="flex items-center gap-2 text-white">
                   <MapPin className="h-5 w-5" />
-                  <span className="font-body text-sm font-medium">Johor Bahru, Johor, Malaysia</span>
+                  <span className="font-body text-sm font-medium">Horizon Hills, Iskandar Puteri, Johor</span>
                 </div>
               </div>
             </div>
@@ -436,7 +438,7 @@ export default function Contact() {
             <p className="font-body text-sm text-kurai-dark-60">
               Still have questions?{' '}
               <a
-                href="https://wa.me/60170000000"
+                href="https://wa.me/60122169871"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-kurai-royal hover:text-kurai-dark"

@@ -57,15 +57,15 @@ const whatToExpect = [
 const parentTestimonials = [
   {
     quote:
-      'The trial class was all it took. My daughter was hooked after 10 minutes. Now she looks forward to every Saturday at KURAI.',
-    name: 'Farah H.',
-    detail: 'Parent of a 6-year-old',
+      'Brought my son for the trial class and so happy because he seems to have really enjoyed himself! He mentioned that he had a very fun time while learning how to use AI. Will sign up for AI courses soon, looks interesting.',
+    name: 'Tan',
+    detail: 'Google Review · 5 stars',
   },
   {
     quote:
-      'I was sceptical about AI classes for children, but the trial completely changed my mind. The instructors were patient, and my son built something real.',
-    name: 'David C.',
-    detail: 'Parent of a 10-year-old',
+      'Its really a good place to learn Robotic and AI, my kids love it so much.',
+    name: 'Kangting',
+    detail: 'Google Review · 5 stars',
   },
 ];
 

@@ -128,7 +128,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-kurai-light" />
                 <span className="font-body text-sm text-kurai-light-soft">
-                  Johor Bahru, Malaysia
+                  Horizon Hills, Iskandar Puteri, Johor
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -140,7 +140,7 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-kurai-light" />
                 <span className="font-body text-sm text-kurai-light-soft">
-                  +60 7-XXX XXXX
+                  +6012-216 9871
                 </span>
               </li>
             </ul>

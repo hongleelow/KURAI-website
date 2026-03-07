@@ -97,19 +97,19 @@ const events = [
 
 const testimonials = [
   {
-    quote: 'My son used to just play games on the tablet. After a few weeks at KURAI, he started asking how things work. That shift meant everything to us.',
-    name: 'Sarah L.',
-    detail: 'Parent of a 9-year-old',
+    quote: 'Wow this place is amazing. My kid enjoy it so much. From robotic to AI and he\'s giving more information than I would imagined. I would strongly recommend to just drop by and see for yourself.',
+    name: 'Deddy M.',
+    detail: 'Google Review · 5 stars',
   },
   {
-    quote: 'What I appreciate most is the structure. My daughter isn\'t just playing — she\'s learning real concepts, and I can see her confidence growing each week.',
-    name: 'Ahmad R.',
-    detail: 'Parent of a 7-year-old',
+    quote: 'Fun & interactive place to learn AI/robotic. The teachers are fun, kind, attentive, have a lot of knowledge in the AI subjects. My kids love to join their classes.',
+    name: 'Amy M.',
+    detail: 'Google Review · 5 stars',
   },
   {
-    quote: 'Small classes, patient instructors, and projects my son is genuinely proud of. This is the kind of learning I was looking for.',
-    name: 'Mei Ling T.',
-    detail: 'Parent of an 11-year-old',
+    quote: 'My child really enjoys attending KURAI classes. The lessons are fun, interactive, and not boring. The teacher Ms. Joanne is very kind and helpful. Very happy with this centre.',
+    name: 'Kangting',
+    detail: 'Google Review · 5 stars',
   },
 ];
 
