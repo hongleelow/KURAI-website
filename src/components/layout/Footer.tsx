@@ -43,7 +43,7 @@ export default function Footer() {
           {/* Brand + Newsletter */}
           <div className="lg:col-span-2">
             <Link to="/">
-              <img src="/images/logo.png" alt="KURAI" className="h-8 brightness-0 invert" />
+              <img src="/images/logo-white.png" alt="KURAI" className="h-8" />
             </Link>
             <p className="mt-4 font-body text-sm leading-relaxed text-kurai-light-soft">
               Structured AI and Robotics education for children aged 5–11
