@@ -11,9 +11,9 @@
  */
 
 export const FORMSPREE_IDS = {
-  contact: 'YOUR_CONTACT_FORM_ID',      // e.g. 'xpzvqkla'
-  freeTrial: 'YOUR_FREE_TRIAL_FORM_ID', // e.g. 'mwpvqklb'
-  newsletter: 'YOUR_NEWSLETTER_FORM_ID', // e.g. 'xkgnqklc'
+  contact: 'xgoneqoe',      // e.g. 'xpzvqkla'
+  freeTrial: 'xpqyznqw', // e.g. 'mwpvqklb'
+  newsletter: 'xkoqneoo', // e.g. 'xkgnqklc'
 };
 
 /**
