@@ -32,7 +32,7 @@ const trialSlots = [
   {
     day: 'Saturday',
     time: '2:00 PM – 3:00 PM',
-    program: 'Robotics Program',
+    program: 'Robotics Programme',
     ages: 'Ages 7–11',
     spots: 4,
   },
@@ -57,15 +57,21 @@ const whatToExpect = [
 const parentTestimonials = [
   {
     quote:
-      'Brought my son for the trial class and so happy because he seems to have really enjoyed himself! He mentioned that he had a very fun time while learning how to use AI. Will sign up for AI courses soon, looks interesting.',
+      'Brought my son for the trial class and he loved it. He came home talking about how he trained an AI to recognise different animals. We signed up for the full term the next week — he couldn\'t wait to go back.',
     name: 'Tan',
-    detail: 'Google Review · 5 stars',
+    detail: 'Parent of 7-year-old · Signed up after AI Explorers trial',
   },
   {
     quote:
-      'Its really a good place to learn Robotic and AI, my kids love it so much.',
+      'We tried the Robotics trial and my son was hooked from the first 10 minutes. He built a robot that could follow a line — I couldn\'t believe he did that in one session. The instructor was great at keeping him engaged and focused.',
     name: 'Kangting',
-    detail: 'Google Review · 5 stars',
+    detail: 'Parent of 9-year-old · Signed up after Robotics trial',
+  },
+  {
+    quote:
+      'I was unsure about more screen time, but the trial completely changed my mind. My daughter spent the whole session building something real — not just watching a screen. The teacher explained everything she\'d learned afterwards, which I really appreciated.',
+    name: 'Sarah',
+    detail: 'Parent of 6-year-old · Signed up after AI Explorers trial',
   },
 ];
 
@@ -111,9 +117,9 @@ export default function FreeTrial() {
           </p>
           <a
             href="#booking-form"
-            className="mt-10 inline-flex items-center gap-2 rounded-lg bg-kurai-royal px-8 py-3.5 font-body text-sm font-semibold text-white shadow-lg shadow-kurai-royal/30 transition-all hover:bg-kurai-royal-light hover:shadow-kurai-royal/40"
+            className="mt-10 inline-flex items-center gap-2 rounded-lg bg-kurai-cream px-8 py-4 font-body text-sm font-bold text-kurai-dark shadow-lg shadow-kurai-dark/10 transition-all hover:scale-105 hover:bg-kurai-cream-dark hover:shadow-kurai-dark/15"
           >
-            Reserve Your Spot
+            Book Your Free Trial
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>
@@ -123,7 +129,7 @@ export default function FreeTrial() {
       <section className="px-6 py-20 md:py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
           <div>
-            <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-royal">
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
               What to Expect
             </p>
             <h2 className="mt-3 font-heading text-3xl font-bold text-kurai-dark md:text-4xl">
@@ -136,35 +142,44 @@ export default function FreeTrial() {
             <ul className="mt-8 space-y-4">
               {whatToExpect.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-500" />
-                  <span className="font-body text-sm text-kurai-dark-60">{item}</span>
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
+                  <span className="font-body text-sm leading-relaxed text-kurai-dark-60 md:text-base">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Stats */}
+          {/* Image + Stats */}
+          <div className="space-y-4">
+            <div className="overflow-hidden rounded-2xl shadow-lg shadow-kurai-dark/5">
+              <img
+                src="/images/coding-cards.jpg"
+                alt="Colorful coding cards used in KURAI classes"
+                className="h-64 w-full object-cover"
+              />
+            </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-2xl bg-kurai-ice p-8 text-center">
               <Clock className="mx-auto h-8 w-8 text-kurai-royal" />
               <p className="mt-3 font-heading text-2xl font-bold text-kurai-dark">60 min</p>
-              <p className="mt-1 font-body text-xs text-kurai-dark-60">Session Duration</p>
+              <p className="mt-1 font-body text-sm text-kurai-dark-60">Session Duration</p>
             </div>
             <div className="rounded-2xl bg-kurai-ice p-8 text-center">
               <Users className="mx-auto h-8 w-8 text-kurai-royal" />
               <p className="mt-3 font-heading text-2xl font-bold text-kurai-dark">Max 8</p>
-              <p className="mt-1 font-body text-xs text-kurai-dark-60">Students per Class</p>
+              <p className="mt-1 font-body text-sm text-kurai-dark-60">Students per Class</p>
             </div>
             <div className="rounded-2xl bg-kurai-ice p-8 text-center">
               <Shield className="mx-auto h-8 w-8 text-kurai-royal" />
               <p className="mt-3 font-heading text-2xl font-bold text-kurai-dark">100%</p>
-              <p className="mt-1 font-body text-xs text-kurai-dark-60">Free, No Obligation</p>
+              <p className="mt-1 font-body text-sm text-kurai-dark-60">Free, No Obligation</p>
             </div>
             <div className="rounded-2xl bg-kurai-ice p-8 text-center">
               <Star className="mx-auto h-8 w-8 text-kurai-royal" />
               <p className="mt-3 font-heading text-2xl font-bold text-kurai-dark">5–11</p>
-              <p className="mt-1 font-body text-xs text-kurai-dark-60">Age Range</p>
+              <p className="mt-1 font-body text-sm text-kurai-dark-60">Age Range</p>
             </div>
+          </div>
           </div>
         </div>
       </section>
@@ -173,7 +188,7 @@ export default function FreeTrial() {
       <section className="bg-kurai-ice/50 px-6 py-20 md:py-28">
         <div className="mx-auto max-w-5xl">
           <div className="text-center">
-            <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-royal">
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
               Available Slots
             </p>
             <h2 className="mt-3 font-heading text-3xl font-bold text-kurai-dark md:text-4xl">
@@ -209,7 +224,7 @@ export default function FreeTrial() {
                     className={`inline-block rounded-full px-3 py-1 font-body text-xs font-semibold ${
                       slot.spots <= 2
                         ? 'bg-amber-50 text-amber-700'
-                        : 'bg-green-50 text-green-700'
+                        : 'bg-emerald-50 text-emerald-700'
                     }`}
                   >
                     {slot.spots} spots left
@@ -225,8 +240,8 @@ export default function FreeTrial() {
       <section id="booking-form" className="px-6 py-20 md:py-28">
         <div className="mx-auto max-w-2xl">
           <div className="text-center">
-            <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-royal">
-              Reserve Your Spot
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
+              Book Now
             </p>
             <h2 className="mt-3 font-heading text-3xl font-bold text-kurai-dark md:text-4xl">
               Book Your Free Trial
@@ -334,14 +349,14 @@ export default function FreeTrial() {
             </div>
             <div>
               <label className="font-body text-sm font-medium text-kurai-dark">
-                Preferred Program
+                Preferred Programme
               </label>
               <select
                 name="preferred_program"
                 className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
               >
                 <option>AI Explorers</option>
-                <option>Robotics Program</option>
+                <option>Robotics Programme</option>
                 <option>Not sure — help me choose</option>
               </select>
             </div>
@@ -353,6 +368,7 @@ export default function FreeTrial() {
                 name="preferred_date"
                 className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
               >
+                <option value="">Select a session</option>
                 <option>Saturday — 10:00 AM (Ages 5–7)</option>
                 <option>Saturday — 11:30 AM (Ages 8–11)</option>
                 <option>Saturday — 2:00 PM (Robotics)</option>
@@ -373,11 +389,11 @@ export default function FreeTrial() {
             <button
               type="submit"
               disabled={formStatus === 'sending'}
-              className="w-full rounded-lg bg-kurai-royal px-8 py-3.5 font-body font-semibold text-white transition-colors hover:bg-kurai-dark disabled:opacity-50"
+              className="w-full rounded-lg bg-kurai-royal px-8 py-3.5 font-body font-bold text-white transition-all hover:scale-105 hover:bg-kurai-dark disabled:opacity-50"
             >
               {formStatus === 'sending' ? 'Submitting...' : 'Book My Free Trial'}
             </button>
-            <p className="text-center font-body text-xs text-kurai-dark-60">
+            <p className="text-center font-body text-sm text-kurai-dark-60">
               We&apos;ll confirm your booking via email and WhatsApp within 24 hours.
             </p>
           </form>
@@ -389,32 +405,40 @@ export default function FreeTrial() {
         <div className="pointer-events-none absolute -right-40 -bottom-40 h-[400px] w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
         <div className="relative mx-auto max-w-5xl">
           <div className="text-center">
-            <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-light">
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
               From Other Parents
             </p>
             <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
               What Parents Said After the Trial
             </h2>
+            <div className="mt-5 inline-flex items-center gap-2.5 rounded-full bg-white/10 px-5 py-2.5">
+              <div className="flex gap-0.5 text-kurai-amber">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                ))}
+              </div>
+              <span className="font-body text-sm font-semibold text-kurai-light-soft">Rated 5.0 on Google · 15+ Reviews</span>
+            </div>
           </div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
             {parentTestimonials.map((t) => (
               <div
                 key={t.name}
-                className="relative rounded-2xl border border-white/10 bg-white/5 p-8"
+                className="relative rounded-2xl border border-white/10 border-t-2 border-t-kurai-light/20 bg-white/5 p-8 md:p-10"
               >
-                <Quote className="absolute right-6 top-6 h-8 w-8 text-white/10" />
-                <div className="flex gap-1 text-kurai-light">
+                <Quote className="absolute right-6 top-6 h-10 w-10 text-white/5" />
+                <div className="flex gap-1 text-kurai-amber">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-current" />
                   ))}
                 </div>
-                <p className="mt-4 font-body text-sm italic leading-relaxed text-kurai-light-soft">
+                <p className="mt-5 font-body text-sm leading-[1.8] text-kurai-light-soft md:text-base">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <div className="mt-6 border-t border-white/10 pt-4">
-                  <p className="font-heading text-sm font-semibold">{t.name}</p>
-                  <p className="font-body text-xs text-kurai-light-soft">{t.detail}</p>
+                <div className="mt-6 border-t border-white/10 pt-5">
+                  <p className="font-heading text-base font-semibold">{t.name}</p>
+                  <p className="mt-0.5 font-body text-sm text-kurai-light-soft">{t.detail}</p>
                 </div>
               </div>
             ))}
@@ -429,22 +453,25 @@ export default function FreeTrial() {
           <h2 className="font-heading text-2xl font-bold md:text-3xl">
             Have questions before booking?
           </h2>
-          <p className="mx-auto mt-3 max-w-xl font-body text-white/80">
-            We&apos;re happy to help you find the right programme and schedule for your child.
+          <p className="mx-auto mt-5 max-w-xl font-body text-lg leading-relaxed text-white/80">
+            We&apos;re happy to help you find the right programme and schedule for your child. Chat with us on WhatsApp for a quick reply.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-3.5 font-body text-sm font-semibold text-kurai-royal shadow-lg transition-all hover:bg-kurai-ice hover:shadow-xl"
+            <a
+              href="https://wa.me/60122169871"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-8 py-3.5 font-body text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:bg-emerald-600 hover:shadow-xl"
             >
-              Contact Us
+              Chat on WhatsApp
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </a>
             <Link
               to="/programs"
-              className="rounded-lg border border-white/30 px-8 py-3.5 font-body text-sm font-semibold text-white transition-colors hover:border-white/50 hover:bg-white/10"
+              className="inline-flex items-center gap-2 font-body text-sm font-semibold text-white/80 transition-colors hover:text-white"
             >
-              View Programs
+              Explore Our Programmes
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

@@ -77,12 +77,12 @@ export default function ProgramsSchools() {
       <section className="bg-kurai-royal px-6 py-20 text-white md:py-28">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-heading text-2xl font-bold">Partner with KURAI</h2>
-          <p className="mt-3 font-body text-kurai-ice">
+          <p className="mt-5 font-body text-lg leading-relaxed text-white/80">
             Bring structured AI and Robotics learning to your school.
           </p>
           <Link
             to="/contact"
-            className="mt-6 inline-block rounded-lg bg-white px-8 py-3 font-body font-semibold text-kurai-royal hover:bg-kurai-ice"
+            className="mt-6 inline-block rounded-lg bg-white px-8 py-3 font-body font-semibold text-kurai-royal transition-all hover:scale-105 hover:bg-kurai-ice"
           >
             Contact Us
           </Link>

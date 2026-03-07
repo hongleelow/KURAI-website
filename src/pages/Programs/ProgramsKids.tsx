@@ -54,7 +54,7 @@ export default function ProgramsKids() {
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
         <div className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
         <div className="relative mx-auto max-w-4xl text-center">
-          <span className="font-body text-sm font-medium uppercase tracking-wider text-kurai-light">
+          <span className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
             Ages 5–11
           </span>
           <h1 className="mt-2 font-heading text-4xl font-bold md:text-5xl">
@@ -115,13 +115,13 @@ export default function ProgramsKids() {
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <Link
               to="/free-trial"
-              className="rounded-lg bg-white px-8 py-3 font-body font-semibold text-kurai-royal hover:bg-kurai-ice"
+              className="rounded-lg bg-white px-8 py-3 font-body font-semibold text-kurai-royal transition-all hover:scale-105 hover:bg-kurai-ice"
             >
               Book a Free Trial
             </Link>
             <Link
               to="/contact"
-              className="rounded-lg border border-white/30 px-8 py-3 font-body font-semibold text-white hover:bg-white/10"
+              className="rounded-lg border border-white/30 px-8 py-3 font-body font-semibold text-white transition-all hover:scale-105 hover:bg-white/10"
             >
               Contact Us
             </Link>

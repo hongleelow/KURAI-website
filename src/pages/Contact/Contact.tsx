@@ -9,7 +9,6 @@ import {
   ChevronDown,
   ArrowRight,
   Send,
-  ExternalLink,
   CheckCircle2,
   AlertCircle,
 } from 'lucide-react';
@@ -94,7 +93,7 @@ export default function Contact() {
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-28 text-white md:py-32">
         <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
         <div className="relative mx-auto max-w-4xl text-center">
-          <p className="font-body text-sm font-medium uppercase tracking-[0.2em] text-kurai-light">
+          <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
             Contact Us
           </p>
           <h1 className="mt-6 font-heading text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">
@@ -111,44 +110,44 @@ export default function Contact() {
       </section>
 
       {/* ─── QUICK ACTIONS ─── */}
-      <section className="px-6 py-14">
+      <section className="px-6 py-16 md:py-20">
         <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-3">
           <Link
             to="/free-trial"
-            className="flex items-center gap-3 rounded-xl border border-kurai-ice bg-white p-5 transition-shadow hover:shadow-lg"
+            className="flex items-center gap-3 rounded-xl border border-kurai-ice bg-white p-5 transition-all hover:scale-[1.02] hover:shadow-lg"
           >
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-kurai-royal/10 text-kurai-royal">
               <ArrowRight className="h-5 w-5" />
             </div>
             <div>
               <p className="font-heading text-sm font-semibold text-kurai-dark">Book a Free Trial</p>
-              <p className="font-body text-xs text-kurai-dark-60">Try a class, no commitment</p>
+              <p className="font-body text-sm text-kurai-dark-60">Try a class, no commitment</p>
             </div>
           </Link>
           <a
             href="https://wa.me/60122169871"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 rounded-xl border border-kurai-ice bg-white p-5 transition-shadow hover:shadow-lg"
+            className="flex items-center gap-3 rounded-xl border border-kurai-ice bg-white p-5 transition-all hover:scale-[1.02] hover:shadow-lg"
           >
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-green-50 text-green-600">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
               <MessageCircle className="h-5 w-5" />
             </div>
             <div>
               <p className="font-heading text-sm font-semibold text-kurai-dark">WhatsApp Us</p>
-              <p className="font-body text-xs text-kurai-dark-60">Quick reply within minutes</p>
+              <p className="font-body text-sm text-kurai-dark-60">Quick reply within minutes</p>
             </div>
           </a>
           <a
             href="mailto:hong@thekurai.com"
-            className="flex items-center gap-3 rounded-xl border border-kurai-ice bg-white p-5 transition-shadow hover:shadow-lg"
+            className="flex items-center gap-3 rounded-xl border border-kurai-ice bg-white p-5 transition-all hover:scale-[1.02] hover:shadow-lg"
           >
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-kurai-royal/10 text-kurai-royal">
               <Mail className="h-5 w-5" />
             </div>
             <div>
               <p className="font-heading text-sm font-semibold text-kurai-dark">Email Us</p>
-              <p className="font-body text-xs text-kurai-dark-60">hong@thekurai.com</p>
+              <p className="font-body text-sm text-kurai-dark-60">hong@thekurai.com</p>
             </div>
           </a>
         </div>
@@ -161,7 +160,7 @@ export default function Contact() {
           <div className="lg:col-span-3">
             <div className="rounded-2xl border border-kurai-ice bg-white p-8 md:p-10">
               <h2 className="font-heading text-2xl font-bold text-kurai-dark">Send a Message</h2>
-              <p className="mt-2 font-body text-sm text-kurai-dark-60">
+              <p className="mt-2 font-body text-sm text-kurai-dark-60 md:text-base">
                 Tell us a little about what you&apos;re looking for — we&apos;ll get back to you within 24 hours.
               </p>
 
@@ -267,7 +266,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={formStatus === 'sending'}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-kurai-royal px-8 py-3.5 font-body font-semibold text-white transition-colors hover:bg-kurai-dark disabled:opacity-50 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-kurai-royal px-8 py-3.5 font-body font-semibold text-white transition-all hover:scale-105 hover:bg-kurai-dark disabled:opacity-50 sm:w-auto"
                 >
                   <Send className="h-4 w-4" />
                   {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
@@ -278,10 +277,18 @@ export default function Contact() {
 
           {/* Contact Info — takes 2 cols */}
           <div className="space-y-6 lg:col-span-2">
+            {/* Student image */}
+            <div className="overflow-hidden rounded-2xl shadow-lg shadow-kurai-dark/5">
+              <img
+                src="/images/student-attentive.jpg"
+                alt="Attentive student at KURAI education centre"
+                className="h-56 w-full object-cover md:h-64"
+              />
+            </div>
             {/* Location */}
-            <div className="rounded-2xl border border-kurai-ice bg-white p-8">
+            <div className="rounded-2xl border border-kurai-ice bg-white p-7 md:p-8">
               <h3 className="font-heading text-lg font-semibold text-kurai-dark">Visit Us</h3>
-              <ul className="mt-5 space-y-5">
+              <ul className="mt-5 space-y-4">
                 <li className="flex items-start gap-4">
                   <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-kurai-royal" />
                   <div>
@@ -313,7 +320,7 @@ export default function Contact() {
             </div>
 
             {/* Business Hours */}
-            <div className="rounded-2xl border border-kurai-ice bg-white p-8">
+            <div className="rounded-2xl border border-kurai-ice bg-white p-7 md:p-8">
               <h3 className="flex items-center gap-2 font-heading text-lg font-semibold text-kurai-dark">
                 <Clock className="h-5 w-5 text-kurai-royal" />
                 Business Hours
@@ -334,24 +341,6 @@ export default function Contact() {
               </ul>
             </div>
 
-            {/* WhatsApp CTA */}
-            <a
-              href="https://wa.me/60122169871"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block rounded-2xl bg-green-600 p-6 text-white transition-colors hover:bg-green-700"
-            >
-              <div className="flex items-center gap-3">
-                <MessageCircle className="h-8 w-8" />
-                <div>
-                  <p className="font-heading text-lg font-semibold">Chat on WhatsApp</p>
-                  <p className="mt-1 font-body text-sm text-green-100">
-                    Get a quick reply — tap to open WhatsApp
-                  </p>
-                </div>
-                <ExternalLink className="ml-auto h-5 w-5 text-green-200" />
-              </div>
-            </a>
           </div>
         </div>
       </section>
@@ -360,23 +349,23 @@ export default function Contact() {
       <section className="px-6 py-20">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-royal">
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
               Find Us
             </p>
             <h2 className="mt-3 font-heading text-3xl font-bold text-kurai-dark">
               Our Location
             </h2>
-            <p className="mx-auto mt-3 max-w-lg font-body text-kurai-dark-60">
+            <p className="mx-auto mt-3 max-w-lg font-body text-kurai-dark-60 leading-relaxed">
               Located at Horizon Hills, Iskandar Puteri — easy access with nearby parking.
             </p>
           </div>
           {/* Facility photo */}
-          <div className="mt-10 overflow-hidden rounded-2xl border border-kurai-ice">
+          <div className="mt-10 overflow-hidden rounded-2xl border border-kurai-ice shadow-lg shadow-kurai-dark/5">
             <div className="relative">
               <img
                 src="/images/facility.jpg"
-                alt="KURAI education center in Johor Bahru"
-                className="h-80 w-full object-cover"
+                alt="KURAI education centre in Johor Bahru"
+                className="h-72 w-full object-cover md:h-96"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-kurai-dark/70 to-transparent px-6 pb-5 pt-12">
                 <div className="flex items-center gap-2 text-white">
@@ -393,13 +382,13 @@ export default function Contact() {
       <section id="faq" className="bg-kurai-ice/50 px-6 py-20 md:py-28">
         <div className="mx-auto max-w-3xl">
           <div className="text-center">
-            <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-royal">
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
               For Parents
             </p>
             <h2 className="mt-3 font-heading text-3xl font-bold text-kurai-dark md:text-4xl">
               Frequently Asked Questions
             </h2>
-            <p className="mx-auto mt-4 max-w-lg font-body text-kurai-dark-60">
+            <p className="mx-auto mt-4 max-w-lg font-body text-kurai-dark-60 leading-relaxed">
               Answers to the questions parents ask most about KURAI.
             </p>
           </div>
@@ -414,7 +403,7 @@ export default function Contact() {
                   onClick={() => toggleFaq(index)}
                   className="flex w-full items-center justify-between px-6 py-5 text-left"
                 >
-                  <span className="pr-4 font-heading text-sm font-semibold text-kurai-dark md:text-base">
+                  <span className="pr-4 font-heading text-base font-semibold text-kurai-dark">
                     {faq.question}
                   </span>
                   <ChevronDown
@@ -425,7 +414,7 @@ export default function Contact() {
                 </button>
                 {openFaq === index && (
                   <div className="border-t border-kurai-ice px-6 pb-5 pt-4">
-                    <p className="font-body text-sm leading-relaxed text-kurai-dark-60">
+                    <p className="font-body text-sm leading-relaxed text-kurai-dark-60 md:text-base">
                       {faq.answer}
                     </p>
                   </div>
@@ -465,12 +454,12 @@ export default function Contact() {
           <h2 className="font-heading text-2xl font-bold md:text-3xl">
             See what structured AI education looks like.
           </h2>
-          <p className="mx-auto mt-3 max-w-xl font-body text-white/80">
+          <p className="mx-auto mt-5 max-w-xl font-body text-lg leading-relaxed text-white/80">
             Book a free trial class and let your child experience KURAI first-hand. No commitment, no pressure.
           </p>
           <Link
             to="/free-trial"
-            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-white px-8 py-3.5 font-body text-sm font-semibold text-kurai-royal shadow-lg transition-all hover:bg-kurai-ice hover:shadow-xl"
+            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-kurai-cream px-8 py-3.5 font-body text-sm font-bold text-kurai-dark shadow-lg shadow-kurai-dark/10 transition-all hover:scale-105 hover:bg-kurai-cream-dark hover:shadow-xl"
           >
             Book a Free Trial
             <ArrowRight className="h-4 w-4" />
