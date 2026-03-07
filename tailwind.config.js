@@ -14,6 +14,11 @@ export default {
           'light-soft': '#7DC0ED',
           ice: '#E8F4FC',
           white: '#FAFCFF',
+          amber: '#F59E0B',
+          'amber-dark': '#D97706',
+          'amber-light': '#FCD34D',
+          cream: '#F0EEEB',
+          'cream-dark': '#E4E1DC',
         },
       },
       fontFamily: {

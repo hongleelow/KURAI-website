@@ -35,7 +35,7 @@ export default function ProgramsAdults() {
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
         <div className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
         <div className="relative mx-auto max-w-4xl text-center">
-          <span className="inline-block rounded-full bg-kurai-royal px-4 py-1 font-body text-xs font-semibold uppercase tracking-wider">
+          <span className="inline-block rounded-full bg-kurai-royal px-4 py-1 font-body text-xs font-semibold uppercase tracking-[0.25em]">
             Coming Soon
           </span>
           <h1 className="mt-4 font-heading text-4xl font-bold md:text-5xl">Adult AI Workshops</h1>
@@ -76,7 +76,7 @@ export default function ProgramsAdults() {
               placeholder="Enter your email"
               className="flex-1 rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
             />
-            <button className="rounded-lg bg-kurai-royal px-6 py-3 font-body text-sm font-semibold text-white hover:bg-kurai-dark">
+            <button className="rounded-lg bg-kurai-royal px-6 py-3 font-body text-sm font-semibold text-white transition-all hover:scale-105 hover:bg-kurai-dark">
               Join the Waitlist
             </button>
           </div>

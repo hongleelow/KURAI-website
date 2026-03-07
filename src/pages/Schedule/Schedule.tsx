@@ -19,11 +19,11 @@ const schedule: ClassSlot[] = [
   { program: 'AI Explorers', ageGroup: 'Ages 5–7', day: 'Sunday', time: '9:00 AM – 10:30 AM', availability: 'Full' },
   { program: 'AI Explorers', ageGroup: 'Ages 8–9', day: 'Sunday', time: '11:00 AM – 12:30 PM', availability: 'Limited' },
   // Robotics
-  { program: 'Robotics Program', ageGroup: 'Ages 5–7', day: 'Saturday', time: '9:00 AM – 10:30 AM', availability: 'Open' },
-  { program: 'Robotics Program', ageGroup: 'Ages 8–9', day: 'Saturday', time: '11:00 AM – 12:30 PM', availability: 'Limited' },
-  { program: 'Robotics Program', ageGroup: 'Ages 10–11', day: 'Saturday', time: '2:00 PM – 3:30 PM', availability: 'Open' },
-  { program: 'Robotics Program', ageGroup: 'Ages 5–7', day: 'Sunday', time: '9:00 AM – 10:30 AM', availability: 'Open' },
-  { program: 'Robotics Program', ageGroup: 'Ages 10–11', day: 'Sunday', time: '11:00 AM – 12:30 PM', availability: 'Full' },
+  { program: 'Robotics Programme', ageGroup: 'Ages 5–7', day: 'Saturday', time: '9:00 AM – 10:30 AM', availability: 'Open' },
+  { program: 'Robotics Programme', ageGroup: 'Ages 8–9', day: 'Saturday', time: '11:00 AM – 12:30 PM', availability: 'Limited' },
+  { program: 'Robotics Programme', ageGroup: 'Ages 10–11', day: 'Saturday', time: '2:00 PM – 3:30 PM', availability: 'Open' },
+  { program: 'Robotics Programme', ageGroup: 'Ages 5–7', day: 'Sunday', time: '9:00 AM – 10:30 AM', availability: 'Open' },
+  { program: 'Robotics Programme', ageGroup: 'Ages 10–11', day: 'Sunday', time: '11:00 AM – 12:30 PM', availability: 'Full' },
 ];
 
 const availabilityStyles: Record<Availability, { bg: string; text: string; dot: string }> = {
@@ -41,7 +41,7 @@ export default function Schedule() {
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
         <div className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
         <div className="relative mx-auto max-w-4xl text-center">
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-light">
+          <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
             Plan Your Week
           </p>
           <h1 className="mt-4 font-heading text-4xl font-bold md:text-5xl">Class Schedule</h1>
@@ -78,7 +78,7 @@ export default function Schedule() {
             return (
               <div key={programName}>
                 <h2 className="font-heading text-2xl font-bold text-kurai-dark">{programName}</h2>
-                <p className="mt-1 font-body text-sm text-kurai-dark-60">
+                <p className="mt-2 font-body text-sm text-kurai-dark-60">
                   Ages 5–11 · 90-minute sessions · Max 8 students
                 </p>
 
@@ -129,10 +129,10 @@ export default function Schedule() {
                             </td>
                             <td className="px-6 py-4 text-right">
                               <Link
-                                to="/contact"
+                                to={slot.availability === 'Full' ? '/contact' : `/free-trial`}
                                 className="font-body text-sm font-semibold text-kurai-royal transition-colors hover:text-kurai-dark"
                               >
-                                {slot.availability === 'Full' ? 'Join the Waitlist' : 'Contact Us'}
+                                {slot.availability === 'Full' ? 'Join the Waitlist' : 'Try a Free Class'}
                               </Link>
                             </td>
                           </tr>
@@ -147,13 +147,13 @@ export default function Schedule() {
                   {slots.map((slot, i) => {
                     const style = availabilityStyles[slot.availability];
                     return (
-                      <div key={i} className="rounded-xl border border-kurai-ice bg-white p-5">
+                      <div key={i} className="rounded-xl border border-kurai-ice bg-white p-6">
                         <div className="flex items-center justify-between">
                           <span className="font-heading text-sm font-semibold text-kurai-dark">
                             {slot.ageGroup}
                           </span>
                           <span
-                            className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 font-body text-[10px] font-medium ${style.bg} ${style.text}`}
+                            className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 font-body text-xs font-medium ${style.bg} ${style.text}`}
                           >
                             <span className={`h-1.5 w-1.5 rounded-full ${style.dot}`} />
                             {slot.availability}
@@ -168,10 +168,10 @@ export default function Schedule() {
                           </span>
                         </div>
                         <Link
-                          to="/contact"
+                          to={slot.availability === 'Full' ? '/contact' : '/free-trial'}
                           className="mt-3 inline-flex items-center gap-1 font-body text-sm font-semibold text-kurai-royal"
                         >
-                          {slot.availability === 'Full' ? 'Join the Waitlist' : 'Contact Us'}
+                          {slot.availability === 'Full' ? 'Join the Waitlist' : 'Try a Free Class'}
                           <ArrowRight className="h-3.5 w-3.5" />
                         </Link>
                       </div>
@@ -185,21 +185,31 @@ export default function Schedule() {
       </section>
 
       {/* CTA */}
-      <section className="bg-kurai-ice px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-heading text-2xl font-bold text-kurai-dark">
+      <section className="relative overflow-hidden bg-kurai-royal px-6 py-20 text-white md:py-28">
+        <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <h2 className="font-heading text-2xl font-bold md:text-3xl">
             Can&apos;t find a suitable time?
           </h2>
-          <p className="mt-3 font-body text-kurai-dark-60">
+          <p className="mt-5 font-body text-lg leading-relaxed text-white/80">
             Contact us and we&apos;ll work with you to find the best option for your child.
           </p>
-          <Link
-            to="/contact"
-            className="mt-6 inline-flex items-center gap-2 rounded-lg bg-kurai-royal px-8 py-3.5 font-body text-sm font-semibold text-white transition-all hover:bg-kurai-dark"
-          >
-            Contact Us
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-lg bg-kurai-cream px-8 py-3.5 font-body text-sm font-bold text-kurai-dark shadow-lg shadow-kurai-dark/10 transition-all hover:scale-105 hover:bg-kurai-cream-dark hover:shadow-xl"
+            >
+              Contact Us
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/free-trial"
+              className="inline-flex items-center gap-2 font-body text-sm font-semibold text-white/80 transition-colors hover:text-white"
+            >
+              Book a Free Trial
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
     </div>

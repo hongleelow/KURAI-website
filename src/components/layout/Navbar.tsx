@@ -5,13 +5,13 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 const navLinks = [
   { label: 'Home', path: '/' },
   {
-    label: 'Programs',
+    label: 'Programmes',
     path: '/programs',
     children: [
-      { label: 'AI Explorers', path: '/programs#ai-explorers' },
-      { label: 'Robotics Program', path: '/programs#robotics' },
-      { label: 'Adult Workshops', path: '/programs/adults' },
-      { label: 'School Partnerships', path: '/programs/schools' },
+      { label: 'AI Explorers', path: '/programs#ai-explorers', desc: 'Ages 5–11 · AI fundamentals' },
+      { label: 'Robotics Programme', path: '/programs#robotics', desc: 'Ages 5–11 · Build real robots' },
+      { label: 'Adult Workshops', path: '/programs/adults', desc: 'Coming soon · For parents & pros' },
+      { label: 'School Partnerships', path: '/programs/schools', desc: 'Bring KURAI to your school' },
     ],
   },
   { label: 'Schedule', path: '/schedule' },
@@ -64,14 +64,17 @@ export default function Navbar() {
                             <NavLink
                               to={child.path}
                               className={({ isActive }) =>
-                                `block rounded-md px-4 py-2.5 text-sm transition-colors ${
+                                `block rounded-md px-4 py-2.5 transition-colors ${
                                   isActive
                                     ? 'bg-kurai-ice text-kurai-royal'
                                     : 'text-kurai-dark hover:bg-kurai-ice hover:text-kurai-royal'
                                 }`
                               }
                             >
-                              {child.label}
+                              <span className="text-sm font-medium">{child.label}</span>
+                              {'desc' in child && (
+                                <span className="block text-[11px] text-kurai-dark-60">{(child as { desc: string }).desc}</span>
+                              )}
                             </NavLink>
                           </li>
                         ))}
@@ -98,7 +101,7 @@ export default function Navbar() {
         {/* CTA Button */}
         <Link
           to="/free-trial"
-          className="hidden rounded-lg bg-kurai-royal px-5 py-2.5 font-body text-sm font-semibold text-white transition-colors hover:bg-kurai-dark lg:inline-block"
+          className="hidden rounded-lg bg-kurai-royal px-5 py-2.5 font-body text-sm font-semibold text-white transition-all hover:scale-105 hover:bg-kurai-dark lg:inline-block"
         >
           Book a Free Trial
         </Link>

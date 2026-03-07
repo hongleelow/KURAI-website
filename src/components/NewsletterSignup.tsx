@@ -74,7 +74,7 @@ export default function NewsletterSignup({ variant = 'light', compact = false }:
         </button>
       </form>
       <p
-        className={`mt-3 font-body text-xs ${
+        className={`mt-3 font-body text-sm ${
           isDark ? 'text-kurai-dark-60' : 'text-kurai-dark-60/60'
         }`}
       >
