@@ -303,7 +303,7 @@ export default function Events() {
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-bold">Want to stay updated?</h2>
           <p className="mt-4 font-body text-lg text-white/80">
-            Get notified about upcoming events, new programs, and exclusive early-bird offers.
+            Get notified about upcoming events, new programmes, and early access to registration.
           </p>
           {nlStatus === 'success' ? (
             <div className="mx-auto mt-8 flex items-center justify-center gap-2 text-green-300">

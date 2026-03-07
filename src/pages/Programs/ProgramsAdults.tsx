@@ -24,7 +24,7 @@
 
 const workshopPreviews = [
   { title: 'AI Fundamentals', description: 'Understand the core concepts behind artificial intelligence and machine learning.' },
-  { title: 'AI for Business', description: 'Learn how to leverage AI tools to enhance productivity and decision-making.' },
+  { title: 'AI for Business', description: 'Learn how to apply AI tools to improve productivity and decision-making.' },
   { title: 'Hands-on AI Tools', description: 'Practical workshops on using modern AI platforms and applications.' },
 ];
 
@@ -39,7 +39,7 @@ export default function ProgramsAdults() {
           </span>
           <h1 className="mt-4 font-heading text-4xl font-bold md:text-5xl">Adult AI Workshops</h1>
           <p className="mt-4 font-body text-lg text-kurai-light-soft">
-            Practical AI skills for professionals and lifelong learners.
+            Practical, jargon-free AI skills for parents, professionals, and curious adults.
           </p>
         </div>
       </section>
@@ -76,7 +76,7 @@ export default function ProgramsAdults() {
               className="flex-1 rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
             />
             <button className="rounded-lg bg-kurai-royal px-6 py-3 font-body text-sm font-semibold text-white hover:bg-kurai-dark">
-              Notify Me
+              Join the Waitlist
             </button>
           </div>
         </div>

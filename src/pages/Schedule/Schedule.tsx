@@ -131,7 +131,7 @@ export default function Schedule() {
                                 to="/contact"
                                 className="font-body text-sm font-semibold text-kurai-royal transition-colors hover:text-kurai-dark"
                               >
-                                {slot.availability === 'Full' ? 'Join Waitlist' : 'Inquire'}
+                                {slot.availability === 'Full' ? 'Join the Waitlist' : 'Contact Us'}
                               </Link>
                             </td>
                           </tr>
@@ -170,7 +170,7 @@ export default function Schedule() {
                           to="/contact"
                           className="mt-3 inline-flex items-center gap-1 font-body text-sm font-semibold text-kurai-royal"
                         >
-                          {slot.availability === 'Full' ? 'Join Waitlist' : 'Inquire'}
+                          {slot.availability === 'Full' ? 'Join the Waitlist' : 'Contact Us'}
                           <ArrowRight className="h-3.5 w-3.5" />
                         </Link>
                       </div>

@@ -320,7 +320,7 @@ export default function Blog() {
           </h2>
           <p className="mx-auto mt-4 max-w-xl font-body text-kurai-light-soft">
             Subscribe to our newsletter for AI fun facts, parent tips, upcoming events,
-            and exclusive early-bird offers.
+            and early access to new programmes.
           </p>
           {nlStatus === 'success' ? (
             <div className="mx-auto mt-8 flex items-center justify-center gap-2 text-green-400">
@@ -361,7 +361,7 @@ export default function Blog() {
             Curious about KURAI? Experience it first-hand.
           </h2>
           <p className="mx-auto mt-3 max-w-xl font-body text-white/80">
-            Book a free trial class and see why parents trust us with their children&apos;s tech education.
+            Book a free trial class and see why parents trust us with their children&apos;s AI and Robotics education.
           </p>
           <Link
             to="/free-trial"

@@ -46,8 +46,8 @@ export default function Footer() {
               KURAI
             </Link>
             <p className="mt-4 font-body text-sm leading-relaxed text-kurai-light-soft">
-              Structured, hands-on AI and Robotics education for
-              children aged 5–11 in Johor Bahru, Malaysia.
+              Structured AI and Robotics education for children aged 5–11
+              in Johor Bahru, Malaysia.
             </p>
             {/* Newsletter Signup */}
             <div className="mt-6">
