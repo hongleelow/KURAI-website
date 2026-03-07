@@ -196,7 +196,7 @@ export default function Schedule() {
             to="/contact"
             className="mt-6 inline-flex items-center gap-2 rounded-lg bg-kurai-royal px-8 py-3.5 font-body text-sm font-semibold text-white transition-all hover:bg-kurai-dark"
           >
-            Get in Touch
+            Contact Us
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

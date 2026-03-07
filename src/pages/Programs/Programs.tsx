@@ -69,7 +69,7 @@ const programSections = [
     badge: 'Coming Soon',
     title: 'Adult AI Workshops',
     overview:
-      'Practical, jargon-free AI workshops built for professionals, educators, and curious adults. Understand what AI can actually do, learn to use modern AI tools effectively, and make informed decisions in an AI-driven world.',
+      'Practical, jargon-free AI workshops for professionals, educators, and curious adults. Gain hands-on confidence with modern AI tools and learn to make informed decisions about how to use them.',
     learns: [
       { icon: Presentation, text: 'Core AI concepts explained without technical jargon' },
       { icon: Sparkles, text: 'Hands-on practice with generative AI tools' },
@@ -101,7 +101,7 @@ export default function Programs() {
           </p>
           <h1 className="mt-4 font-heading text-4xl font-bold md:text-6xl">Our Programs</h1>
           <p className="mx-auto mt-5 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft">
-            Structured learning paths that take students from curiosity to competence. Every program is designed around real understanding — not just activities.
+            Each programme follows a structured, age-appropriate curriculum. Children build real understanding through guided, project-based learning.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {programSections.map((p) => (
@@ -267,16 +267,16 @@ export default function Programs() {
       {/* Bottom CTA */}
       <section className="bg-kurai-royal px-6 py-20 text-white">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-heading text-3xl font-bold">Not sure which program is right?</h2>
+          <h2 className="font-heading text-3xl font-bold">Not sure which programme is right?</h2>
           <p className="mt-4 font-body text-lg text-white/80">
-            Book a free consultation and we&apos;ll help you find the perfect fit for your child.
+            Try a class first — our free trial lets your child experience KURAI with no commitment.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              to="/contact"
+              to="/free-trial"
               className="rounded-lg bg-white px-8 py-3.5 font-body text-sm font-semibold text-kurai-royal transition-all hover:bg-kurai-ice"
             >
-              Book a Free Consultation
+              Book a Free Trial
             </Link>
             <Link
               to="/schedule"

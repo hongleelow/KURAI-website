@@ -24,7 +24,7 @@ const programs = [
     title: 'AI Explorers',
     ages: 'Ages 5–11',
     description:
-      'Discover the world of artificial intelligence through interactive lessons, visual coding, and guided experiments.',
+      'Guided lessons in how AI works — from pattern recognition to visual coding — designed for curious young learners.',
     path: '/programs#ai-explorers',
   },
   {
@@ -32,7 +32,7 @@ const programs = [
     title: 'Robotics Program',
     ages: 'Ages 5–11',
     description:
-      'Build, program, and test real robots. Learn engineering thinking and computational logic through hands-on projects.',
+      'Hands-on building, programming, and testing of real robots. Children learn how hardware and software work together.',
     path: '/programs#robotics',
   },
   {
@@ -40,7 +40,7 @@ const programs = [
     title: 'Adult AI Workshops',
     ages: 'Coming Soon',
     description:
-      'Practical, jargon-free AI workshops designed for professionals and lifelong learners ready to work smarter.',
+      'Practical, jargon-free AI workshops for professionals and lifelong learners. Gain real understanding, not just buzzwords.',
     path: '/programs/adults',
     comingSoon: true,
   },
@@ -91,7 +91,7 @@ const events = [
   {
     date: 'Apr 19, 2026',
     title: 'Parent Workshop: AI & Your Child',
-    description: 'Understand what AI literacy means and why it matters for your child\'s future.',
+    description: 'A thoughtful session on what AI literacy means and how it applies to your child\'s education.',
   },
 ];
 
@@ -107,7 +107,7 @@ const testimonials = [
     detail: 'Parent of a 7-year-old',
   },
   {
-    quote: 'Small classes, patient instructors, and real projects. This is what tech education should look like.',
+    quote: 'Small classes, patient instructors, and real projects. This is what thoughtful learning looks like.',
     name: 'Mei Ling T.',
     detail: 'Parent of an 11-year-old',
   },
@@ -134,7 +134,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft md:text-xl">
-            Building future-ready thinkers through structured AI &amp; Robotics education.
+            Structured AI &amp; Robotics education for children aged 5–11 in Johor Bahru.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
@@ -267,7 +267,7 @@ export default function Home() {
               Skills We Develop
             </h2>
             <p className="mx-auto mt-4 max-w-2xl font-body text-kurai-dark-60">
-              Technical knowledge is just the beginning. Our programs build the thinking skills that matter most.
+              More than technical knowledge — our programmes build the thinking habits children carry into every subject.
             </p>
           </div>
 
@@ -408,10 +408,10 @@ export default function Home() {
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-bold md:text-4xl">
-            Give your child the skills of tomorrow — today.
+            Your child deserves to understand the technology around them.
           </h2>
           <p className="mx-auto mt-4 max-w-xl font-body text-lg text-white/80">
-            Join KURAI and let your child explore AI and Robotics in a structured, safe, and inspiring environment.
+            At KURAI, children learn AI and Robotics through guided, project-based classes in a small-group setting.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link

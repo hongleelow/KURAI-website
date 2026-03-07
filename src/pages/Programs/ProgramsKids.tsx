@@ -57,10 +57,10 @@ export default function ProgramsKids() {
             Ages 5–11
           </span>
           <h1 className="mt-2 font-heading text-4xl font-bold md:text-5xl">
-            AI & Robotics for Kids
+            AI &amp; Robotics for Children
           </h1>
           <p className="mt-4 font-body text-lg text-kurai-light-soft">
-            Structured, hands-on AI education designed for young minds.
+            Structured, hands-on AI and Robotics education for ages 5–11.
           </p>
         </div>
       </section>
@@ -110,19 +110,19 @@ export default function ProgramsKids() {
       {/* CTA */}
       <section className="bg-kurai-royal px-6 py-16 text-white">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-heading text-2xl font-bold">Start Your Child&apos;s AI Journey</h2>
+          <h2 className="font-heading text-2xl font-bold">See KURAI in Action</h2>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <Link
-              to="/contact"
+              to="/free-trial"
               className="rounded-lg bg-white px-8 py-3 font-body font-semibold text-kurai-royal hover:bg-kurai-ice"
             >
-              Enroll Now
+              Book a Free Trial
             </Link>
             <Link
               to="/contact"
               className="rounded-lg border border-white/30 px-8 py-3 font-body font-semibold text-white hover:bg-white/10"
             >
-              Book a Trial
+              Contact Us
             </Link>
           </div>
         </div>

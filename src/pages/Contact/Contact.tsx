@@ -461,10 +461,10 @@ export default function Contact() {
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-2xl font-bold md:text-3xl">
-            Ready to give your child a head start in AI?
+            See what structured AI learning looks like.
           </h2>
           <p className="mx-auto mt-3 max-w-xl font-body text-white/80">
-            Book a free trial class — no commitment, no pressure. Just a great experience.
+            Book a free trial class — no commitment, no pressure. Just a genuine experience of KURAI.
           </p>
           <Link
             to="/free-trial"

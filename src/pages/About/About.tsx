@@ -20,7 +20,7 @@ const coreValues = [
     icon: Lightbulb,
     title: 'Curiosity First',
     description:
-      'We believe every great innovation starts with a question. We nurture the natural curiosity in every child and channel it into meaningful learning.',
+      'We nurture the natural curiosity in every child and channel it into meaningful, hands-on learning — asking questions is how real understanding begins.',
   },
   {
     icon: BookOpen,
@@ -61,9 +61,9 @@ export default function About() {
             About KURAI
           </p>
           <h1 className="mt-6 font-heading text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">
-            Shaping the Next Generation of{' '}
+            Giving Children a Real{' '}
             <span className="bg-gradient-to-r from-kurai-light to-kurai-royal-light bg-clip-text text-transparent">
-              AI-Literate Thinkers
+              Understanding of AI
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft">
@@ -96,8 +96,8 @@ export default function About() {
             <p className="mt-4 font-body leading-relaxed text-kurai-dark-60">
               Our name, KURAI, reflects our mission: illuminating the path between curiosity
               and capability. Through structured, hands-on programmes in AI and Robotics,
-              we equip young learners with the skills, confidence, and mindset to thrive in
-              an AI-powered future.
+              we give young learners the skills, confidence, and real understanding to
+              engage thoughtfully with the technology around them.
             </p>
           </div>
 
@@ -135,8 +135,8 @@ export default function About() {
               <h3 className="mt-6 font-heading text-2xl font-bold">Our Mission</h3>
               <p className="mt-4 font-body leading-relaxed text-kurai-light-soft">
                 To provide structured, engaging, and age-appropriate AI and Robotics education
-                that empowers children in Johor to become confident, creative, and critical
-                thinkers — ready for a technology-driven world.
+                that gives children in Johor the confidence, creativity, and critical
+                thinking to understand and engage with technology thoughtfully.
               </p>
             </div>
 
@@ -148,8 +148,8 @@ export default function About() {
               <h3 className="mt-6 font-heading text-2xl font-bold">Our Vision</h3>
               <p className="mt-4 font-body leading-relaxed text-kurai-light-soft">
                 A Malaysia where every child has the opportunity to understand AI — not just
-                as users, but as informed, capable thinkers who can shape the future of
-                technology with creativity, ethics, and confidence.
+                as users, but as informed, capable individuals who approach technology
+                with creativity, ethics, and confidence.
               </p>
             </div>
           </div>
@@ -280,11 +280,11 @@ export default function About() {
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-bold md:text-4xl">
-            Come See Where Curiosity Meets AI
+            See How KURAI Teaches Differently
           </h2>
           <p className="mx-auto mt-4 max-w-xl font-body text-lg text-white/80">
-            Visit our center in Johor Bahru, meet our team, and discover why parents
-            trust KURAI to prepare their children for the future.
+            Visit our centre in Johor Bahru, meet our instructors, and see our
+            structured, small-group approach in person.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link

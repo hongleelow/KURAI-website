@@ -20,7 +20,7 @@ const footerLinks = {
   quickLinks: [
     { label: 'Book a Free Trial', path: '/free-trial' },
     { label: 'FAQs', path: '/contact#faq' },
-    { label: 'Enroll Now', path: '/contact' },
+    { label: 'Contact Us', path: '/contact' },
   ],
 };
 
@@ -46,7 +46,7 @@ export default function Footer() {
               KURAI
             </Link>
             <p className="mt-4 font-body text-sm leading-relaxed text-kurai-light-soft">
-              Where Curiosity Meets AI. Premium AI and Robotics education for
+              Structured, hands-on AI and Robotics education for
               children aged 5–11 in Johor Bahru, Malaysia.
             </p>
             {/* Newsletter Signup */}

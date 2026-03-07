@@ -123,9 +123,9 @@ const categories: EventCategory[] = [
     dark: true,
     events: [
       {
-        title: 'Parent Talk: AI & Your Child\'s Future',
+        title: 'Parent Talk: AI & Your Child\'s Education',
         description:
-          'An informative session for parents on what AI literacy means, why it matters, and how KURAI\'s approach prepares children for the future.',
+          'A thoughtful session for parents on what AI literacy means, why it matters, and how KURAI\'s structured approach gives children real understanding.',
         date: 'Saturday, 19 April 2026',
         time: '10:00 AM – 11:30 AM',
         location: 'KURAI Center, Johor Bahru',

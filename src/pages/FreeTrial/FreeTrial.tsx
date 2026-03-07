@@ -63,7 +63,7 @@ const parentTestimonials = [
   },
   {
     quote:
-      'I was sceptical about AI classes for kids, but the trial completely changed my mind. The instructors were patient, and my son built something real.',
+      'I was sceptical about AI classes for children, but the trial completely changed my mind. The instructors were patient, and my son built something real.',
     name: 'David C.',
     detail: 'Parent of a 10-year-old',
   },

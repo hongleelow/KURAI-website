@@ -100,7 +100,7 @@ export default function Navbar() {
           to="/free-trial"
           className="hidden rounded-lg bg-kurai-royal px-5 py-2.5 font-body text-sm font-semibold text-white transition-colors hover:bg-kurai-dark lg:inline-block"
         >
-          Free Trial
+          Book a Free Trial
         </Link>
 
         {/* Mobile Menu Toggle */}
@@ -149,7 +149,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(false)}
             className="mt-4 block w-full rounded-lg bg-kurai-royal py-2.5 text-center font-body text-sm font-semibold text-white"
           >
-            Book Free Trial
+            Book a Free Trial
           </Link>
         </div>
       )}

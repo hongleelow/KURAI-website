@@ -27,7 +27,7 @@ const posts = [
   {
     id: 1,
     category: 'ai-fun-facts',
-    title: 'How Does a Robot "See"? A Fun Guide to Computer Vision for Kids',
+    title: 'How Does a Robot "See"? A Fun Guide to Computer Vision',
     excerpt:
       'Ever wondered how robots recognise faces or objects? Discover the basics of computer vision explained in a way children can understand and get excited about.',
     date: 'Mar 5, 2026',
@@ -72,7 +72,7 @@ const posts = [
     category: 'ai-fun-facts',
     title: 'What Is Machine Learning? Explained with Cookies',
     excerpt:
-      'We use a fun cookie-sorting analogy to explain how machine learning works — perfect for curious kids (and their parents).',
+      'We use a fun cookie-sorting analogy to explain how machine learning works — perfect for curious children (and their parents).',
     date: 'Feb 10, 2026',
     readTime: '3 min read',
     featured: false,
@@ -110,7 +110,7 @@ const posts = [
   {
     id: 9,
     category: 'ai-fun-facts',
-    title: 'Can AI Be Creative? What Kids Think About Art and Machines',
+    title: 'Can AI Be Creative? What Children Think About Art and Machines',
     excerpt:
       'We asked our students whether AI can make art. Their answers were surprising, thoughtful, and genuinely inspiring.',
     date: 'Jan 15, 2026',
