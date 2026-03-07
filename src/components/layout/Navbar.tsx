@@ -29,8 +29,8 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-kurai-ice bg-white/95 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link to="/" className="font-heading text-2xl font-bold tracking-tight text-kurai-dark">
-          KURAI
+        <Link to="/">
+          <img src="/images/logo.png" alt="KURAI" className="h-8" />
         </Link>
 
         {/* Desktop Navigation */}

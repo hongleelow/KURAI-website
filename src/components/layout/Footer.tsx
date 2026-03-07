@@ -42,8 +42,8 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand + Newsletter */}
           <div className="lg:col-span-2">
-            <Link to="/" className="font-heading text-2xl font-bold tracking-tight">
-              KURAI
+            <Link to="/">
+              <img src="/images/logo.png" alt="KURAI" className="h-8 brightness-0 invert" />
             </Link>
             <p className="mt-4 font-body text-sm leading-relaxed text-kurai-light-soft">
               Structured AI and Robotics education for children aged 5–11
