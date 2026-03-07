@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * KURAI Brand Theme
+ * =================
+ * Dark Blue:  #000B44
+ * Royal Blue: #3A54EC
+ * Light Blue: #4DA8E7
+ *
+ * Headings: Space Grotesk (geometric sans-serif, similar to Xanmono)
+ * Body:     Poppins
+ *
+ * Colors and fonts are configured in tailwind.config.js
+ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-body text-kurai-dark bg-kurai-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold;
+  }
+}

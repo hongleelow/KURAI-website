@@ -1,0 +1,419 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import {
+  MapPin,
+  Mail,
+  Phone,
+  Clock,
+  MessageCircle,
+  ChevronDown,
+  ArrowRight,
+  Send,
+  ExternalLink,
+} from 'lucide-react';
+
+const faqs = [
+  {
+    question: 'What age group is KURAI designed for?',
+    answer:
+      'Our core programmes are designed for children aged 5 to 11. We have age-appropriate tiers: Little Explorers (5–7), Young Innovators (8–9), and Tech Pioneers (10–11). Adult workshops are launching soon.',
+  },
+  {
+    question: 'Does my child need any prior coding experience?',
+    answer:
+      'Not at all! Our curriculum starts from the fundamentals. We use visual programming tools and hands-on activities that require zero prior experience. Every child starts their journey at their own pace.',
+  },
+  {
+    question: 'How big are the classes?',
+    answer:
+      'We cap every class at 8 students maximum. This ensures each child receives personalised attention, meaningful feedback, and a comfortable learning environment.',
+  },
+  {
+    question: 'What will my child actually learn?',
+    answer:
+      'Students learn the foundations of AI, machine learning, data thinking, and robotics through project-based lessons. Beyond technical skills, they develop critical thinking, problem-solving, collaboration, and digital confidence.',
+  },
+  {
+    question: 'How is KURAI different from regular coding classes?',
+    answer:
+      'Most coding classes teach syntax. KURAI teaches thinking. We focus on AI literacy — understanding how intelligent systems work, why they matter, and how to engage with them responsibly. Our structured curriculum goes far beyond basic coding.',
+  },
+  {
+    question: 'Can I try a class before enrolling?',
+    answer:
+      'Absolutely! We offer free trial classes so your child can experience KURAI before committing. Book a trial through our Free Trial page or contact us directly.',
+  },
+  {
+    question: 'What are the fees and payment options?',
+    answer:
+      'We offer term-based and monthly payment plans. Please contact us for the latest pricing details — we\'re happy to walk you through the options and find what works best for your family.',
+  },
+  {
+    question: 'Where is KURAI located?',
+    answer:
+      'KURAI is located in Johor Bahru, Malaysia. We\'re easily accessible with parking available nearby. Contact us for detailed directions to our centre.',
+  },
+];
+
+const businessHours = [
+  { day: 'Monday – Friday', hours: '9:00 AM – 6:00 PM' },
+  { day: 'Saturday', hours: '9:00 AM – 1:00 PM' },
+  { day: 'Sunday', hours: 'Closed' },
+];
+
+export default function Contact() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
+  return (
+    <div>
+      {/* ─── HERO ─── */}
+      <section className="relative overflow-hidden bg-kurai-dark px-6 py-28 text-white md:py-32">
+        <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
+        <div className="relative mx-auto max-w-4xl text-center">
+          <p className="font-body text-sm font-medium uppercase tracking-[0.2em] text-kurai-light">
+            Contact Us
+          </p>
+          <h1 className="mt-6 font-heading text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">
+            Let&apos;s{' '}
+            <span className="bg-gradient-to-r from-kurai-light to-kurai-royal-light bg-clip-text text-transparent">
+              Start a Conversation
+            </span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft">
+            Have questions about our programmes? Ready to enroll? We&apos;d love to hear
+            from you. Reach out through any channel below.
+          </p>
+        </div>
+      </section>
+
+      {/* ─── QUICK ACTIONS ─── */}
+      <section className="px-6 py-14">
+        <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-3">
+          <Link
+            to="/free-trial"
+            className="flex items-center gap-3 rounded-xl border border-kurai-ice bg-white p-5 transition-shadow hover:shadow-lg"
+          >
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-kurai-royal/10 text-kurai-royal">
+              <ArrowRight className="h-5 w-5" />
+            </div>
+            <div>
+              <p className="font-heading text-sm font-semibold text-kurai-dark">Book a Free Trial</p>
+              <p className="font-body text-xs text-kurai-dark-60">Try a class, no commitment</p>
+            </div>
+          </Link>
+          <a
+            href="https://wa.me/60170000000"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 rounded-xl border border-kurai-ice bg-white p-5 transition-shadow hover:shadow-lg"
+          >
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-green-50 text-green-600">
+              <MessageCircle className="h-5 w-5" />
+            </div>
+            <div>
+              <p className="font-heading text-sm font-semibold text-kurai-dark">WhatsApp Us</p>
+              <p className="font-body text-xs text-kurai-dark-60">Quick reply within minutes</p>
+            </div>
+          </a>
+          <a
+            href="mailto:hello@kurai.edu.my"
+            className="flex items-center gap-3 rounded-xl border border-kurai-ice bg-white p-5 transition-shadow hover:shadow-lg"
+          >
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-kurai-royal/10 text-kurai-royal">
+              <Mail className="h-5 w-5" />
+            </div>
+            <div>
+              <p className="font-heading text-sm font-semibold text-kurai-dark">Email Us</p>
+              <p className="font-body text-xs text-kurai-dark-60">hello@kurai.edu.my</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      {/* ─── CONTACT FORM + INFO ─── */}
+      <section className="bg-kurai-ice/50 px-6 py-20 md:py-28">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-5">
+          {/* Form — takes 3 cols */}
+          <div className="lg:col-span-3">
+            <div className="rounded-2xl border border-kurai-ice bg-white p-8 md:p-10">
+              <h2 className="font-heading text-2xl font-bold text-kurai-dark">Send a Message</h2>
+              <p className="mt-2 font-body text-sm text-kurai-dark-60">
+                Fill out the form below and we&apos;ll get back to you within 24 hours.
+              </p>
+              <form className="mt-8 space-y-5">
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label className="font-body text-sm font-medium text-kurai-dark">
+                      Parent / Guardian Name
+                    </label>
+                    <input
+                      type="text"
+                      className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
+                      placeholder="Your full name"
+                    />
+                  </div>
+                  <div>
+                    <label className="font-body text-sm font-medium text-kurai-dark">
+                      Child&apos;s Age
+                    </label>
+                    <input
+                      type="text"
+                      className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
+                      placeholder="e.g. 7"
+                    />
+                  </div>
+                </div>
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label className="font-body text-sm font-medium text-kurai-dark">Email</label>
+                    <input
+                      type="email"
+                      className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                  <div>
+                    <label className="font-body text-sm font-medium text-kurai-dark">Phone</label>
+                    <input
+                      type="tel"
+                      className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
+                      placeholder="+60 1X-XXX XXXX"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="font-body text-sm font-medium text-kurai-dark">
+                    I&apos;m interested in
+                  </label>
+                  <select className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none">
+                    <option>General Inquiry</option>
+                    <option>Enrollment</option>
+                    <option>Book a Free Trial</option>
+                    <option>School Partnership</option>
+                    <option>Adult Workshops</option>
+                    <option>Events &amp; Open Days</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="font-body text-sm font-medium text-kurai-dark">Message</label>
+                  <textarea
+                    rows={4}
+                    className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
+                    placeholder="Tell us how we can help..."
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-kurai-royal px-8 py-3.5 font-body font-semibold text-white transition-colors hover:bg-kurai-dark sm:w-auto"
+                >
+                  <Send className="h-4 w-4" />
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+
+          {/* Contact Info — takes 2 cols */}
+          <div className="space-y-6 lg:col-span-2">
+            {/* Location */}
+            <div className="rounded-2xl border border-kurai-ice bg-white p-8">
+              <h3 className="font-heading text-lg font-semibold text-kurai-dark">Visit Us</h3>
+              <ul className="mt-5 space-y-5">
+                <li className="flex items-start gap-4">
+                  <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-kurai-royal" />
+                  <div>
+                    <p className="font-body text-sm font-medium text-kurai-dark">Location</p>
+                    <p className="mt-1 font-body text-sm text-kurai-dark-60">
+                      Johor Bahru, Johor
+                      <br />
+                      Malaysia
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <Mail className="mt-0.5 h-5 w-5 shrink-0 text-kurai-royal" />
+                  <div>
+                    <p className="font-body text-sm font-medium text-kurai-dark">Email</p>
+                    <p className="mt-1 font-body text-sm text-kurai-dark-60">hello@kurai.edu.my</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <Phone className="mt-0.5 h-5 w-5 shrink-0 text-kurai-royal" />
+                  <div>
+                    <p className="font-body text-sm font-medium text-kurai-dark">Phone</p>
+                    <p className="mt-1 font-body text-sm text-kurai-dark-60">+60 7-XXX XXXX</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Business Hours */}
+            <div className="rounded-2xl border border-kurai-ice bg-white p-8">
+              <h3 className="flex items-center gap-2 font-heading text-lg font-semibold text-kurai-dark">
+                <Clock className="h-5 w-5 text-kurai-royal" />
+                Business Hours
+              </h3>
+              <ul className="mt-5 space-y-3">
+                {businessHours.map((item) => (
+                  <li key={item.day} className="flex items-center justify-between">
+                    <span className="font-body text-sm text-kurai-dark-60">{item.day}</span>
+                    <span
+                      className={`font-body text-sm font-medium ${
+                        item.hours === 'Closed' ? 'text-red-500' : 'text-kurai-dark'
+                      }`}
+                    >
+                      {item.hours}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* WhatsApp CTA */}
+            <a
+              href="https://wa.me/60170000000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-2xl bg-green-600 p-6 text-white transition-colors hover:bg-green-700"
+            >
+              <div className="flex items-center gap-3">
+                <MessageCircle className="h-8 w-8" />
+                <div>
+                  <p className="font-heading text-lg font-semibold">Chat on WhatsApp</p>
+                  <p className="mt-1 font-body text-sm text-green-100">
+                    Get a quick reply — tap to open WhatsApp
+                  </p>
+                </div>
+                <ExternalLink className="ml-auto h-5 w-5 text-green-200" />
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── LOCATION MAP ─── */}
+      <section className="px-6 py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center">
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-royal">
+              Find Us
+            </p>
+            <h2 className="mt-3 font-heading text-3xl font-bold text-kurai-dark">
+              Our Location
+            </h2>
+            <p className="mx-auto mt-3 max-w-lg font-body text-kurai-dark-60">
+              Conveniently located in Johor Bahru with easy access and nearby parking.
+            </p>
+          </div>
+          {/* Map placeholder */}
+          <div className="mt-10 overflow-hidden rounded-2xl border border-kurai-ice">
+            <div className="flex h-80 items-center justify-center bg-gradient-to-br from-kurai-ice to-kurai-light/10">
+              <div className="text-center">
+                <MapPin className="mx-auto h-12 w-12 text-kurai-royal/40" />
+                <p className="mt-3 font-body text-sm text-kurai-dark-60">
+                  Interactive map coming soon
+                </p>
+                <p className="mt-1 font-body text-xs text-kurai-dark-60/60">
+                  Johor Bahru, Johor, Malaysia
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FAQ ─── */}
+      <section className="bg-kurai-ice/50 px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-3xl">
+          <div className="text-center">
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-royal">
+              For Parents
+            </p>
+            <h2 className="mt-3 font-heading text-3xl font-bold text-kurai-dark md:text-4xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="mx-auto mt-4 max-w-lg font-body text-kurai-dark-60">
+              Everything you need to know about KURAI, our programmes, and enrollment.
+            </p>
+          </div>
+
+          <div className="mt-12 space-y-3">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="rounded-xl border border-kurai-ice bg-white transition-shadow hover:shadow-sm"
+              >
+                <button
+                  onClick={() => toggleFaq(index)}
+                  className="flex w-full items-center justify-between px-6 py-5 text-left"
+                >
+                  <span className="pr-4 font-heading text-sm font-semibold text-kurai-dark md:text-base">
+                    {faq.question}
+                  </span>
+                  <ChevronDown
+                    className={`h-5 w-5 shrink-0 text-kurai-royal transition-transform ${
+                      openFaq === index ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                {openFaq === index && (
+                  <div className="border-t border-kurai-ice px-6 pb-5 pt-4">
+                    <p className="font-body text-sm leading-relaxed text-kurai-dark-60">
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <p className="font-body text-sm text-kurai-dark-60">
+              Still have questions?{' '}
+              <a
+                href="https://wa.me/60170000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-kurai-royal hover:text-kurai-dark"
+              >
+                Chat with us on WhatsApp
+              </a>{' '}
+              or{' '}
+              <a
+                href="mailto:hello@kurai.edu.my"
+                className="font-semibold text-kurai-royal hover:text-kurai-dark"
+              >
+                send us an email
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CTA ─── */}
+      <section className="relative overflow-hidden bg-kurai-royal px-6 py-16 text-white">
+        <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <h2 className="font-heading text-2xl font-bold md:text-3xl">
+            Ready to give your child a head start in AI?
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl font-body text-white/80">
+            Book a free trial class — no commitment, no pressure. Just a great experience.
+          </p>
+          <Link
+            to="/free-trial"
+            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-white px-8 py-3.5 font-body text-sm font-semibold text-kurai-royal shadow-lg transition-all hover:bg-kurai-ice hover:shadow-xl"
+          >
+            Book a Free Trial
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
