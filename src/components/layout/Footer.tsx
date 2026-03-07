@@ -1,5 +1,7 @@
+import { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Mail, Phone, Send } from 'lucide-react';
+import { MapPin, Mail, Phone, Send, CheckCircle2 } from 'lucide-react';
+import { FORMSPREE_IDS, submitForm } from '@/config/formspree';
 
 const footerLinks = {
   programs: [
@@ -23,6 +25,17 @@ const footerLinks = {
 };
 
 export default function Footer() {
+  const [nlStatus, setNlStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  const handleNewsletter = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setNlStatus('sending');
+    const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>;
+    const result = await submitForm(FORMSPREE_IDS.newsletter, data);
+    setNlStatus(result.ok ? 'success' : 'error');
+    if (result.ok) e.currentTarget.reset();
+  };
+
   return (
     <footer className="bg-kurai-dark text-white">
       <div className="mx-auto max-w-7xl px-6 py-16">
@@ -41,20 +54,30 @@ export default function Footer() {
               <p className="font-body text-xs font-semibold uppercase tracking-wider text-kurai-light">
                 Newsletter
               </p>
-              <form className="mt-3 flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 font-body text-sm text-white placeholder-white/50 focus:border-kurai-light focus:outline-none"
-                />
-                <button
-                  type="submit"
-                  className="flex items-center justify-center rounded-lg bg-kurai-royal px-4 py-2.5 transition-colors hover:bg-kurai-royal-light"
-                  aria-label="Subscribe to newsletter"
-                >
-                  <Send className="h-4 w-4" />
-                </button>
-              </form>
+              {nlStatus === 'success' ? (
+                <div className="mt-3 flex items-center gap-2 text-green-400">
+                  <CheckCircle2 className="h-4 w-4" />
+                  <span className="font-body text-sm">Subscribed!</span>
+                </div>
+              ) : (
+                <form onSubmit={handleNewsletter} className="mt-3 flex gap-2">
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="Your email"
+                    className="flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 font-body text-sm text-white placeholder-white/50 focus:border-kurai-light focus:outline-none"
+                  />
+                  <button
+                    type="submit"
+                    disabled={nlStatus === 'sending'}
+                    className="flex items-center justify-center rounded-lg bg-kurai-royal px-4 py-2.5 transition-colors hover:bg-kurai-royal-light disabled:opacity-50"
+                    aria-label="Subscribe to newsletter"
+                  >
+                    <Send className="h-4 w-4" />
+                  </button>
+                </form>
+              )}
             </div>
           </div>
 

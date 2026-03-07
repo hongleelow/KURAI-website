@@ -1,3 +1,4 @@
+import { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import {
   CalendarDays,
@@ -8,7 +9,9 @@ import {
   ArrowRight,
   MapPin,
   Clock,
+  CheckCircle2,
 } from 'lucide-react';
+import { FORMSPREE_IDS, submitForm } from '@/config/formspree';
 
 interface EventItem {
   title: string;
@@ -140,6 +143,17 @@ const categories: EventCategory[] = [
 ];
 
 export default function Events() {
+  const [nlStatus, setNlStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  const handleNewsletter = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setNlStatus('sending');
+    const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>;
+    const result = await submitForm(FORMSPREE_IDS.newsletter, data);
+    setNlStatus(result.ok ? 'success' : 'error');
+    if (result.ok) e.currentTarget.reset();
+  };
+
   return (
     <div>
       {/* Hero */}
@@ -291,16 +305,29 @@ export default function Events() {
           <p className="mt-4 font-body text-lg text-white/80">
             Get notified about upcoming events, new programs, and exclusive early-bird offers.
           </p>
-          <div className="mx-auto mt-8 flex max-w-md gap-3">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-3 font-body text-sm text-white placeholder-white/50 backdrop-blur-sm focus:border-white/40 focus:outline-none"
-            />
-            <button className="rounded-lg bg-white px-6 py-3 font-body text-sm font-semibold text-kurai-royal transition-colors hover:bg-kurai-ice">
-              Subscribe
-            </button>
-          </div>
+          {nlStatus === 'success' ? (
+            <div className="mx-auto mt-8 flex items-center justify-center gap-2 text-green-300">
+              <CheckCircle2 className="h-5 w-5" />
+              <span className="font-body text-sm font-semibold">You&apos;re subscribed!</span>
+            </div>
+          ) : (
+            <form onSubmit={handleNewsletter} className="mx-auto mt-8 flex max-w-md gap-3">
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Enter your email"
+                className="flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-3 font-body text-sm text-white placeholder-white/50 backdrop-blur-sm focus:border-white/40 focus:outline-none"
+              />
+              <button
+                type="submit"
+                disabled={nlStatus === 'sending'}
+                className="rounded-lg bg-white px-6 py-3 font-body text-sm font-semibold text-kurai-royal transition-colors hover:bg-kurai-ice disabled:opacity-50"
+              >
+                {nlStatus === 'sending' ? '...' : 'Subscribe'}
+              </button>
+            </form>
+          )}
         </div>
       </section>
     </div>

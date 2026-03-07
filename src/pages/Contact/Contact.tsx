@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import {
   MapPin,
@@ -10,7 +10,10 @@ import {
   ArrowRight,
   Send,
   ExternalLink,
+  CheckCircle2,
+  AlertCircle,
 } from 'lucide-react';
+import { FORMSPREE_IDS, submitForm } from '@/config/formspree';
 
 const faqs = [
   {
@@ -63,9 +66,26 @@ const businessHours = [
 
 export default function Contact() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus('sending');
+
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+    const result = await submitForm(FORMSPREE_IDS.contact, data);
+
+    if (result.ok) {
+      setFormStatus('success');
+      form.reset();
+    } else {
+      setFormStatus('error');
+    }
   };
 
   return (
@@ -144,7 +164,34 @@ export default function Contact() {
               <p className="mt-2 font-body text-sm text-kurai-dark-60">
                 Fill out the form below and we&apos;ll get back to you within 24 hours.
               </p>
-              <form className="mt-8 space-y-5">
+
+              {/* Success message */}
+              {formStatus === 'success' && (
+                <div className="mt-6 flex items-start gap-3 rounded-lg bg-green-50 p-4">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
+                  <div>
+                    <p className="font-heading text-sm font-semibold text-green-800">Message sent!</p>
+                    <p className="mt-1 font-body text-sm text-green-700">
+                      Thank you for reaching out. We&apos;ll get back to you within 24 hours.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Error message */}
+              {formStatus === 'error' && (
+                <div className="mt-6 flex items-start gap-3 rounded-lg bg-red-50 p-4">
+                  <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
+                  <div>
+                    <p className="font-heading text-sm font-semibold text-red-800">Something went wrong</p>
+                    <p className="mt-1 font-body text-sm text-red-700">
+                      Please try again or email us directly at hello@kurai.edu.my
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="mt-8 space-y-5">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label className="font-body text-sm font-medium text-kurai-dark">
@@ -152,6 +199,8 @@ export default function Contact() {
                     </label>
                     <input
                       type="text"
+                      name="parent_name"
+                      required
                       className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
                       placeholder="Your full name"
                     />
@@ -162,6 +211,7 @@ export default function Contact() {
                     </label>
                     <input
                       type="text"
+                      name="child_age"
                       className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
                       placeholder="e.g. 7"
                     />
@@ -172,6 +222,8 @@ export default function Contact() {
                     <label className="font-body text-sm font-medium text-kurai-dark">Email</label>
                     <input
                       type="email"
+                      name="email"
+                      required
                       className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
                       placeholder="your@email.com"
                     />
@@ -180,6 +232,7 @@ export default function Contact() {
                     <label className="font-body text-sm font-medium text-kurai-dark">Phone</label>
                     <input
                       type="tel"
+                      name="phone"
                       className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
                       placeholder="+60 1X-XXX XXXX"
                     />
@@ -189,7 +242,10 @@ export default function Contact() {
                   <label className="font-body text-sm font-medium text-kurai-dark">
                     I&apos;m interested in
                   </label>
-                  <select className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none">
+                  <select
+                    name="subject"
+                    className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
+                  >
                     <option>General Inquiry</option>
                     <option>Enrollment</option>
                     <option>Book a Free Trial</option>
@@ -201,17 +257,20 @@ export default function Contact() {
                 <div>
                   <label className="font-body text-sm font-medium text-kurai-dark">Message</label>
                   <textarea
+                    name="message"
                     rows={4}
+                    required
                     className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
                     placeholder="Tell us how we can help..."
                   />
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-kurai-royal px-8 py-3.5 font-body font-semibold text-white transition-colors hover:bg-kurai-dark sm:w-auto"
+                  disabled={formStatus === 'sending'}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-kurai-royal px-8 py-3.5 font-body font-semibold text-white transition-colors hover:bg-kurai-dark disabled:opacity-50 sm:w-auto"
                 >
                   <Send className="h-4 w-4" />
-                  Send Message
+                  {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
@@ -327,7 +386,7 @@ export default function Contact() {
       </section>
 
       {/* ─── FAQ ─── */}
-      <section className="bg-kurai-ice/50 px-6 py-20 md:py-28">
+      <section id="faq" className="bg-kurai-ice/50 px-6 py-20 md:py-28">
         <div className="mx-auto max-w-3xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-royal">

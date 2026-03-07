@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Sparkles,
@@ -9,7 +9,9 @@ import {
   Clock,
   Tag,
   Search,
+  CheckCircle2,
 } from 'lucide-react';
+import { FORMSPREE_IDS, submitForm } from '@/config/formspree';
 
 type Category = 'all' | 'ai-fun-facts' | 'parent-guides' | 'workshop-recaps' | 'student-spotlights';
 
@@ -127,6 +129,16 @@ function getCategoryLabel(id: string): string {
 
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState<Category>('all');
+  const [nlStatus, setNlStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  const handleNewsletter = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setNlStatus('sending');
+    const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>;
+    const result = await submitForm(FORMSPREE_IDS.newsletter, data);
+    setNlStatus(result.ok ? 'success' : 'error');
+    if (result.ok) e.currentTarget.reset();
+  };
 
   const filtered =
     activeCategory === 'all'
@@ -300,22 +312,34 @@ export default function Blog() {
             Subscribe to our newsletter for AI fun facts, parent tips, upcoming events,
             and exclusive early-bird offers.
           </p>
-          <form className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex-1 rounded-lg border border-white/20 bg-white/10 px-5 py-3 font-body text-sm text-white placeholder-white/50 backdrop-blur-sm focus:border-kurai-light focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="rounded-lg bg-kurai-royal px-6 py-3 font-body text-sm font-semibold text-white transition-colors hover:bg-kurai-royal-light"
-            >
-              Subscribe
-            </button>
-          </form>
-          <p className="mt-3 font-body text-xs text-kurai-dark-60">
-            No spam, ever. Unsubscribe anytime.
-          </p>
+          {nlStatus === 'success' ? (
+            <div className="mx-auto mt-8 flex items-center justify-center gap-2 text-green-400">
+              <CheckCircle2 className="h-5 w-5" />
+              <span className="font-body text-sm font-semibold">You&apos;re subscribed! Welcome aboard.</span>
+            </div>
+          ) : (
+            <>
+              <form onSubmit={handleNewsletter} className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row">
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Your email address"
+                  className="flex-1 rounded-lg border border-white/20 bg-white/10 px-5 py-3 font-body text-sm text-white placeholder-white/50 backdrop-blur-sm focus:border-kurai-light focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  disabled={nlStatus === 'sending'}
+                  className="rounded-lg bg-kurai-royal px-6 py-3 font-body text-sm font-semibold text-white transition-colors hover:bg-kurai-royal-light disabled:opacity-50"
+                >
+                  {nlStatus === 'sending' ? 'Subscribing...' : 'Subscribe'}
+                </button>
+              </form>
+              <p className="mt-3 font-body text-xs text-kurai-dark-60">
+                No spam, ever. Unsubscribe anytime.
+              </p>
+            </>
+          )}
         </div>
       </section>
 

@@ -1,3 +1,4 @@
+import { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import {
   CalendarDays,
@@ -9,7 +10,9 @@ import {
   Shield,
   Sparkles,
   Quote,
+  AlertCircle,
 } from 'lucide-react';
+import { FORMSPREE_IDS, submitForm } from '@/config/formspree';
 
 const trialSlots = [
   {
@@ -67,6 +70,24 @@ const parentTestimonials = [
 ];
 
 export default function FreeTrial() {
+  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus('sending');
+
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+    const result = await submitForm(FORMSPREE_IDS.freeTrial, data);
+
+    if (result.ok) {
+      setFormStatus('success');
+      form.reset();
+    } else {
+      setFormStatus('error');
+    }
+  };
+
   return (
     <div>
       {/* ─── HERO ─── */}
@@ -215,7 +236,33 @@ export default function FreeTrial() {
             </p>
           </div>
 
-          <form className="mt-10 space-y-5 rounded-2xl border border-kurai-ice bg-white p-8 md:p-10">
+          {/* Success message */}
+          {formStatus === 'success' && (
+            <div className="mt-8 flex items-start gap-3 rounded-lg bg-green-50 p-5">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
+              <div>
+                <p className="font-heading text-sm font-semibold text-green-800">Booking received!</p>
+                <p className="mt-1 font-body text-sm text-green-700">
+                  We&apos;ll confirm your free trial via email and WhatsApp within 24 hours. See you soon!
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Error message */}
+          {formStatus === 'error' && (
+            <div className="mt-8 flex items-start gap-3 rounded-lg bg-red-50 p-5">
+              <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
+              <div>
+                <p className="font-heading text-sm font-semibold text-red-800">Something went wrong</p>
+                <p className="mt-1 font-body text-sm text-red-700">
+                  Please try again or WhatsApp us directly to book your trial.
+                </p>
+              </div>
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="mt-10 space-y-5 rounded-2xl border border-kurai-ice bg-white p-8 md:p-10">
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label className="font-body text-sm font-medium text-kurai-dark">
@@ -223,6 +270,8 @@ export default function FreeTrial() {
                 </label>
                 <input
                   type="text"
+                  name="parent_name"
+                  required
                   className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
                   placeholder="Your full name"
                 />
@@ -233,6 +282,8 @@ export default function FreeTrial() {
                 </label>
                 <input
                   type="tel"
+                  name="phone"
+                  required
                   className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
                   placeholder="+60 1X-XXX XXXX"
                 />
@@ -242,6 +293,8 @@ export default function FreeTrial() {
               <label className="font-body text-sm font-medium text-kurai-dark">Email</label>
               <input
                 type="email"
+                name="email"
+                required
                 className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
                 placeholder="your@email.com"
               />
@@ -253,6 +306,8 @@ export default function FreeTrial() {
                 </label>
                 <input
                   type="text"
+                  name="child_name"
+                  required
                   className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
                   placeholder="Child's name"
                 />
@@ -261,8 +316,12 @@ export default function FreeTrial() {
                 <label className="font-body text-sm font-medium text-kurai-dark">
                   Child&apos;s Age
                 </label>
-                <select className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none">
-                  <option>Select age</option>
+                <select
+                  name="child_age"
+                  required
+                  className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
+                >
+                  <option value="">Select age</option>
                   <option>5 years old</option>
                   <option>6 years old</option>
                   <option>7 years old</option>
@@ -277,7 +336,10 @@ export default function FreeTrial() {
               <label className="font-body text-sm font-medium text-kurai-dark">
                 Preferred Program
               </label>
-              <select className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none">
+              <select
+                name="preferred_program"
+                className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
+              >
                 <option>AI Explorers</option>
                 <option>Robotics Program</option>
                 <option>Not sure — help me choose</option>
@@ -287,7 +349,10 @@ export default function FreeTrial() {
               <label className="font-body text-sm font-medium text-kurai-dark">
                 Preferred Trial Date
               </label>
-              <select className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none">
+              <select
+                name="preferred_date"
+                className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
+              >
                 <option>Saturday — 10:00 AM (Ages 5–7)</option>
                 <option>Saturday — 11:30 AM (Ages 8–11)</option>
                 <option>Saturday — 2:00 PM (Robotics)</option>
@@ -299,6 +364,7 @@ export default function FreeTrial() {
                 Anything we should know?
               </label>
               <textarea
+                name="notes"
                 rows={3}
                 className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
                 placeholder="Special requirements, questions, etc. (optional)"
@@ -306,9 +372,10 @@ export default function FreeTrial() {
             </div>
             <button
               type="submit"
-              className="w-full rounded-lg bg-kurai-royal px-8 py-3.5 font-body font-semibold text-white transition-colors hover:bg-kurai-dark"
+              disabled={formStatus === 'sending'}
+              className="w-full rounded-lg bg-kurai-royal px-8 py-3.5 font-body font-semibold text-white transition-colors hover:bg-kurai-dark disabled:opacity-50"
             >
-              Book My Free Trial
+              {formStatus === 'sending' ? 'Submitting...' : 'Book My Free Trial'}
             </button>
             <p className="text-center font-body text-xs text-kurai-dark-60">
               We&apos;ll confirm your booking via email and WhatsApp within 24 hours.
