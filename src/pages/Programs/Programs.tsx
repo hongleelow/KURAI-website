@@ -23,21 +23,21 @@ const programSections = [
     badge: 'Ages 5–11',
     title: 'AI Explorers',
     overview:
-      'A structured introduction to artificial intelligence for young learners. Students explore how AI works through interactive lessons, visual coding environments, and guided experiments — building real understanding, not just screen time.',
+      'A structured introduction to AI for young learners. Through interactive lessons, visual coding, simple experiments, and guided projects, children develop an age-appropriate understanding of how artificial intelligence actually works.',
     learns: [
       { icon: Sparkles, text: 'How AI recognises patterns, images, and language' },
       { icon: Code, text: 'Visual and block-based programming fundamentals' },
       { icon: Bot, text: 'Training simple AI models with real datasets' },
-      { icon: Lightbulb, text: 'Ethical thinking about technology and AI in society' },
+      { icon: Lightbulb, text: 'Thinking critically about technology and AI in daily life' },
     ],
     outcomes: [
-      'Ability to explain what AI is and how it learns',
-      'A portfolio of completed AI projects',
-      'Confidence working with technology independently',
-      'Foundational computational thinking skills',
+      'Can explain what AI is and how it learns — in their own words',
+      'A portfolio of completed AI projects they can demonstrate',
+      'Confidence engaging with technology independently',
+      'Stronger computational thinking and problem-solving habits',
     ],
-    cta: 'Enroll in AI Explorers',
-    ctaPath: '/contact',
+    cta: 'Book a Trial for AI Explorers',
+    ctaPath: '/free-trial',
     dark: false,
   },
   {
@@ -46,21 +46,21 @@ const programSections = [
     badge: 'Ages 5–11',
     title: 'Robotics Program',
     overview:
-      'Hands-on engineering meets computational thinking. Students design, build, and program real robots — learning how hardware and software work together to solve problems in the physical world.',
+      'Hands-on engineering and computational thinking, combined. Children build, program, test, and improve real robots — learning how hardware and software work together through structured, guided projects.',
     learns: [
-      { icon: Cog, text: 'Mechanical design and sensor integration' },
-      { icon: Workflow, text: 'Programming robots with block-based and text-based code' },
-      { icon: BarChart3, text: 'Testing, debugging, and iterating on designs' },
-      { icon: Wrench, text: 'Teamwork through collaborative engineering challenges' },
+      { icon: Cog, text: 'Mechanical design, sensors, and how components connect' },
+      { icon: Workflow, text: 'Programming robots with block-based and visual code' },
+      { icon: BarChart3, text: 'Testing, debugging, and improving their own designs' },
+      { icon: Wrench, text: 'Collaborative problem-solving through team engineering challenges' },
     ],
     outcomes: [
-      'Ability to build and program functional robots',
-      'Engineering design process and prototyping skills',
-      'Logical reasoning and systematic problem solving',
-      'Experience presenting and demonstrating projects',
+      'Can build and program functional robots from scratch',
+      'Practical understanding of the engineering design process',
+      'Stronger logical reasoning and systematic problem-solving',
+      'Confidence presenting and explaining their projects',
     ],
-    cta: 'Enroll in Robotics',
-    ctaPath: '/contact',
+    cta: 'Book a Trial for Robotics',
+    ctaPath: '/free-trial',
     dark: true,
   },
   {
@@ -69,7 +69,7 @@ const programSections = [
     badge: 'Coming Soon',
     title: 'Adult AI Workshops',
     overview:
-      'Practical, jargon-free AI workshops for professionals, educators, and curious adults. Gain hands-on confidence with modern AI tools and learn to make informed decisions about how to use them.',
+      'Practical, jargon-free AI workshops for parents, professionals, educators, and curious adults. Focused on real-world understanding and useful application — so you can make informed decisions about AI in your work and life.',
     learns: [
       { icon: Presentation, text: 'Core AI concepts explained without technical jargon' },
       { icon: Sparkles, text: 'Hands-on practice with generative AI tools' },
@@ -101,7 +101,7 @@ export default function Programs() {
           </p>
           <h1 className="mt-4 font-heading text-4xl font-bold md:text-6xl">Our Programs</h1>
           <p className="mx-auto mt-5 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft">
-            Each programme follows a structured, age-appropriate curriculum. Children build real understanding through guided, project-based learning.
+            Structured learning pathways that help children move from curiosity to confidence. Every programme is designed around real understanding — not just activities.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {programSections.map((p) => (
@@ -267,9 +267,9 @@ export default function Programs() {
       {/* Bottom CTA */}
       <section className="bg-kurai-royal px-6 py-20 text-white">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-heading text-3xl font-bold">Not sure which programme is right?</h2>
+          <h2 className="font-heading text-3xl font-bold">Not sure which programme is right for your child?</h2>
           <p className="mt-4 font-body text-lg text-white/80">
-            Try a class first — our free trial lets your child experience KURAI with no commitment.
+            We&apos;ll help you find the best starting point based on your child&apos;s age, interests, and readiness. Book a free trial or get in touch — no commitment required.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
@@ -279,10 +279,10 @@ export default function Programs() {
               Book a Free Trial
             </Link>
             <Link
-              to="/schedule"
+              to="/contact"
               className="rounded-lg border border-white/30 px-8 py-3.5 font-body text-sm font-semibold text-white transition-colors hover:border-white/50 hover:bg-white/10"
             >
-              View Class Schedule
+              Contact Us
             </Link>
           </div>
         </div>
