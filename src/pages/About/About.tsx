@@ -20,25 +20,25 @@ const coreValues = [
     icon: Lightbulb,
     title: 'Curiosity First',
     description:
-      'We nurture the natural curiosity in every child and channel it into meaningful, hands-on learning — asking questions is how real understanding begins.',
+      'Every lesson starts with a question. We channel children\'s natural curiosity into hands-on learning that builds real understanding.',
   },
   {
     icon: BookOpen,
     title: 'Structured Excellence',
     description:
-      'Fun without structure is just play. We combine engaging experiences with a rigorous, progressive curriculum that builds real competence.',
+      'Engaging doesn\'t mean unstructured. Our curriculum is progressive, purposeful, and designed to build genuine competence over time.',
   },
   {
     icon: Shield,
     title: 'Safe Exploration',
     description:
-      'Technology should empower, not overwhelm. We create a guided environment where children explore AI safely and responsibly.',
+      'Children explore technology in a guided, age-appropriate environment — with patience, supervision, and clear boundaries.',
   },
   {
     icon: Users,
     title: 'Community & Belonging',
     description:
-      'Every child belongs here. We foster an inclusive, supportive community where diverse thinkers collaborate and grow together.',
+      'Every child belongs here. We foster an inclusive space where young learners support each other and grow together.',
   },
 ];
 
@@ -61,14 +61,15 @@ export default function About() {
             About KURAI
           </p>
           <h1 className="mt-6 font-heading text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">
-            Giving Children a Real{' '}
+            Why{' '}
             <span className="bg-gradient-to-r from-kurai-light to-kurai-royal-light bg-clip-text text-transparent">
-              Understanding of AI
+              KURAI Exists
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft">
-            From a simple belief that every child deserves to understand the technology
-            shaping their world, KURAI was born in the heart of Johor Bahru.
+            Children today are surrounded by technology — but very few are taught how it works.
+            KURAI offers a more thoughtful, structured, and age-appropriate way to explore AI
+            and Robotics in Johor Bahru.
           </p>
         </div>
       </section>
@@ -84,20 +85,18 @@ export default function About() {
               Why KURAI Exists
             </h2>
             <p className="mt-6 font-body leading-relaxed text-kurai-dark-60">
-              In a world increasingly shaped by artificial intelligence, most children are
-              consumers of technology — swiping, watching, and playing. Very few are given
-              the chance to understand how it actually works.
+              Children use technology every day — but very few understand what happens
+              behind the screen. They swipe, watch, and play, yet rarely get the chance
+              to learn how it all works.
             </p>
             <p className="mt-4 font-body leading-relaxed text-kurai-dark-60">
-              KURAI was founded to change that. Based in Johor Bahru, Malaysia, we created
-              a dedicated learning space where children aged 5 to 11 don&apos;t just interact
-              with technology — they learn to think like the people who build it.
+              KURAI was created to bridge that gap. Based in Johor Bahru, we provide
+              structured AI and Robotics education for children aged 5 to 11 — through
+              guided, hands-on lessons designed for how young minds actually learn.
             </p>
             <p className="mt-4 font-body leading-relaxed text-kurai-dark-60">
-              Our name, KURAI, reflects our mission: illuminating the path between curiosity
-              and capability. Through structured, hands-on programmes in AI and Robotics,
-              we give young learners the skills, confidence, and real understanding to
-              engage thoughtfully with the technology around them.
+              Our goal is simple: nurture curiosity, build confidence, and give children
+              a stronger foundation for engaging with technology thoughtfully.
             </p>
           </div>
 
@@ -135,8 +134,8 @@ export default function About() {
               <h3 className="mt-6 font-heading text-2xl font-bold">Our Mission</h3>
               <p className="mt-4 font-body leading-relaxed text-kurai-light-soft">
                 To provide structured, engaging, and age-appropriate AI and Robotics education
-                that gives children in Johor the confidence, creativity, and critical
-                thinking to understand and engage with technology thoughtfully.
+                that helps children become confident, creative, and critical thinkers — ready
+                to understand and engage with technology on their own terms.
               </p>
             </div>
 
@@ -147,9 +146,9 @@ export default function About() {
               </div>
               <h3 className="mt-6 font-heading text-2xl font-bold">Our Vision</h3>
               <p className="mt-4 font-body leading-relaxed text-kurai-light-soft">
-                A Malaysia where every child has the opportunity to understand AI — not just
-                as users, but as informed, capable individuals who approach technology
-                with creativity, ethics, and confidence.
+                A future where children don&apos;t just use technology — they understand it.
+                Where every young learner has the opportunity to engage with AI thoughtfully,
+                creatively, and responsibly.
               </p>
             </div>
           </div>
@@ -167,8 +166,8 @@ export default function About() {
               Our Core Values
             </h2>
             <p className="mx-auto mt-4 max-w-2xl font-body text-kurai-dark-60">
-              Everything we do at KURAI is guided by four fundamental principles that shape
-              our curriculum, our culture, and our commitment to every student.
+              These principles guide how we teach, how we design our programmes,
+              and how we show up for every child who walks through our doors.
             </p>
           </div>
 
@@ -212,8 +211,8 @@ export default function About() {
                 Learn by Doing
               </h3>
               <p className="mt-3 font-body text-sm leading-relaxed text-kurai-dark-60">
-                Every lesson involves hands-on activities. Students don&apos;t just hear about AI
-                — they build, test, and iterate on real projects that bring concepts to life.
+                Children don&apos;t just hear about AI — they build, test, and create.
+                Every lesson is designed around real projects that make abstract concepts tangible.
               </p>
             </div>
             <div className="rounded-2xl bg-white p-8 shadow-sm">
@@ -222,18 +221,18 @@ export default function About() {
                 Age-Appropriate Progression
               </h3>
               <p className="mt-3 font-body text-sm leading-relaxed text-kurai-dark-60">
-                Our curriculum is designed in tiers — each stage builds on the last, ensuring
-                children are challenged at the right level without feeling overwhelmed.
+                Our curriculum is structured in stages — each one builds on the last, so
+                children are always challenged at the right level without feeling overwhelmed.
               </p>
             </div>
             <div className="rounded-2xl bg-white p-8 shadow-sm">
               <p className="font-heading text-4xl font-bold text-kurai-royal">03</p>
               <h3 className="mt-4 font-heading text-lg font-semibold text-kurai-dark">
-                Small Groups, Big Impact
+                Small Groups, Meaningful Attention
               </h3>
               <p className="mt-3 font-body text-sm leading-relaxed text-kurai-dark-60">
-                With a maximum of 8 students per class, every child receives personalised
-                guidance, feedback, and encouragement from our trained instructors.
+                With a maximum of 8 students per class, every child receives the guidance,
+                feedback, and encouragement they need to truly understand.
               </p>
             </div>
           </div>
@@ -252,11 +251,10 @@ export default function About() {
               </span>
             </div>
             <blockquote className="mt-6 font-body text-lg leading-relaxed text-kurai-dark-60 md:text-xl">
-              &ldquo;I started KURAI because I saw a gap — children in Johor had access to
-              devices but not to understanding. I wanted to build a place where young minds
-              could go beyond swiping and scrolling, to actually grasp the intelligence behind
-              the screen. KURAI is that place — where every child can discover that technology
-              isn&apos;t magic; it&apos;s something they can learn, build, and shape.&rdquo;
+              &ldquo;I started KURAI because I noticed something: children in Johor had plenty
+              of access to devices, but not enough opportunity to understand the technology
+              behind them. I wanted to build a place where they could explore, question, and
+              create with technology — not just consume it. That&apos;s what KURAI is.&rdquo;
             </blockquote>
             <div className="mt-8 flex items-center gap-4">
               <img
@@ -280,11 +278,11 @@ export default function About() {
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-bold md:text-4xl">
-            See How KURAI Teaches Differently
+            Come See Where Curiosity Meets AI
           </h2>
           <p className="mx-auto mt-4 max-w-xl font-body text-lg text-white/80">
-            Visit our centre in Johor Bahru, meet our instructors, and see our
-            structured, small-group approach in person.
+            Visit our centre in Johor Bahru, meet the team, and see for yourself
+            why parents trust KURAI with their children&apos;s learning.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
