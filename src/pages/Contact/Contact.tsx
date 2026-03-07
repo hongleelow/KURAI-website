@@ -140,7 +140,7 @@ export default function Contact() {
             </div>
           </a>
           <a
-            href="mailto:hello@kurai.edu.my"
+            href="mailto:hong@thekurai.com"
             className="flex items-center gap-3 rounded-xl border border-kurai-ice bg-white p-5 transition-shadow hover:shadow-lg"
           >
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-kurai-royal/10 text-kurai-royal">
@@ -148,7 +148,7 @@ export default function Contact() {
             </div>
             <div>
               <p className="font-heading text-sm font-semibold text-kurai-dark">Email Us</p>
-              <p className="font-body text-xs text-kurai-dark-60">hello@kurai.edu.my</p>
+              <p className="font-body text-xs text-kurai-dark-60">hong@thekurai.com</p>
             </div>
           </a>
         </div>
@@ -185,7 +185,7 @@ export default function Contact() {
                   <div>
                     <p className="font-heading text-sm font-semibold text-red-800">Something went wrong</p>
                     <p className="mt-1 font-body text-sm text-red-700">
-                      Please try again or email us directly at hello@kurai.edu.my
+                      Please try again or email us directly at hong@thekurai.com
                     </p>
                   </div>
                 </div>
@@ -299,7 +299,7 @@ export default function Contact() {
                   <Mail className="mt-0.5 h-5 w-5 shrink-0 text-kurai-royal" />
                   <div>
                     <p className="font-body text-sm font-medium text-kurai-dark">Email</p>
-                    <p className="mt-1 font-body text-sm text-kurai-dark-60">hello@kurai.edu.my</p>
+                    <p className="mt-1 font-body text-sm text-kurai-dark-60">hong@thekurai.com</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -447,7 +447,7 @@ export default function Contact() {
               </a>{' '}
               or{' '}
               <a
-                href="mailto:hello@kurai.edu.my"
+                href="mailto:hong@thekurai.com"
                 className="font-semibold text-kurai-royal hover:text-kurai-dark"
               >
                 send us an email

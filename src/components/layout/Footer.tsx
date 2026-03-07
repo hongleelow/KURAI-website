@@ -134,7 +134,7 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 shrink-0 text-kurai-light" />
                 <span className="font-body text-sm text-kurai-light-soft">
-                  hello@kurai.edu.my
+                  hong@thekurai.com
                 </span>
               </li>
               <li className="flex items-center gap-3">
