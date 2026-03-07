@@ -457,7 +457,7 @@ export default function Contact() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="relative overflow-hidden bg-kurai-royal px-6 py-16 text-white">
+      <section className="relative overflow-hidden bg-kurai-royal px-6 py-20 text-white md:py-28">
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-2xl font-bold md:text-3xl">

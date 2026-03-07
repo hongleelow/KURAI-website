@@ -123,8 +123,9 @@ export default function About() {
       </section>
 
       {/* ─── MISSION & VISION ─── */}
-      <section className="bg-kurai-dark px-6 py-20 text-white md:py-28">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative overflow-hidden bg-gradient-to-br from-kurai-dark to-kurai-dark-80 px-6 py-20 text-white md:py-28">
+        <div className="pointer-events-none absolute -right-40 -bottom-40 h-[400px] w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
+        <div className="relative mx-auto max-w-7xl">
           <div className="grid gap-12 md:grid-cols-2">
             {/* Mission */}
             <div className="rounded-2xl border border-white/10 bg-white/5 p-10">
@@ -175,7 +176,7 @@ export default function About() {
             {coreValues.map((value) => (
               <div
                 key={value.title}
-                className="rounded-2xl border border-kurai-ice bg-white p-8 transition-shadow hover:shadow-lg"
+                className="rounded-2xl border border-kurai-ice bg-white p-8 shadow-sm transition-shadow hover:shadow-lg"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-kurai-royal/10 text-kurai-royal">
                   <value.icon className="h-6 w-6" />

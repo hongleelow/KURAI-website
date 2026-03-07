@@ -270,7 +270,7 @@ export default function Blog() {
               return (
                 <article
                   key={post.id}
-                  className="group rounded-2xl border border-kurai-ice bg-white p-6 transition-shadow hover:shadow-md"
+                  className="group rounded-2xl border border-kurai-ice bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
                   <div className="flex items-center gap-3">
                     <span
@@ -310,8 +310,9 @@ export default function Blog() {
       </section>
 
       {/* ─── NEWSLETTER CTA ─── */}
-      <section className="bg-kurai-dark px-6 py-20 text-white md:py-28">
-        <div className="mx-auto max-w-3xl text-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-kurai-dark to-kurai-dark-80 px-6 py-20 text-white md:py-28">
+        <div className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
+        <div className="relative mx-auto max-w-3xl text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-light">
             Stay Updated
           </p>
@@ -354,7 +355,7 @@ export default function Blog() {
       </section>
 
       {/* ─── BOTTOM CTA ─── */}
-      <section className="relative overflow-hidden bg-kurai-royal px-6 py-16 text-white">
+      <section className="relative overflow-hidden bg-kurai-royal px-6 py-20 text-white md:py-28">
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-2xl font-bold md:text-3xl">

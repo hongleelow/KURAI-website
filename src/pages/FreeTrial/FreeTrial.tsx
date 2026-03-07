@@ -385,8 +385,9 @@ export default function FreeTrial() {
       </section>
 
       {/* ─── TESTIMONIALS ─── */}
-      <section className="bg-kurai-dark px-6 py-20 text-white md:py-28">
-        <div className="mx-auto max-w-5xl">
+      <section className="relative overflow-hidden bg-gradient-to-br from-kurai-dark to-kurai-dark-80 px-6 py-20 text-white md:py-28">
+        <div className="pointer-events-none absolute -right-40 -bottom-40 h-[400px] w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
+        <div className="relative mx-auto max-w-5xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-light">
               From Other Parents
@@ -422,7 +423,7 @@ export default function FreeTrial() {
       </section>
 
       {/* ─── BOTTOM CTA ─── */}
-      <section className="relative overflow-hidden bg-kurai-royal px-6 py-16 text-white">
+      <section className="relative overflow-hidden bg-kurai-royal px-6 py-20 text-white md:py-28">
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-2xl font-bold md:text-3xl">

@@ -38,8 +38,9 @@ export default function ProgramsSchools() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-kurai-dark px-6 py-20 text-white">
-        <div className="mx-auto max-w-4xl text-center">
+      <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
+        <div className="pointer-events-none absolute -right-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
+        <div className="relative mx-auto max-w-4xl text-center">
           <h1 className="font-heading text-4xl font-bold md:text-5xl">School Partnerships</h1>
           <p className="mt-4 font-body text-lg text-kurai-light-soft">
             Bring KURAI&apos;s AI curriculum directly to your school.
@@ -55,7 +56,7 @@ export default function ProgramsSchools() {
           </h2>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {partnershipModels.map((model) => (
-              <div key={model.title} className="rounded-xl border border-kurai-ice p-8">
+              <div key={model.title} className="rounded-xl border border-kurai-ice bg-white p-8 shadow-sm">
                 <h3 className="font-heading text-xl font-semibold text-kurai-dark">{model.title}</h3>
                 <p className="mt-3 font-body text-sm text-kurai-dark-60">{model.description}</p>
               </div>
@@ -73,7 +74,7 @@ export default function ProgramsSchools() {
       </section>
 
       {/* CTA */}
-      <section className="bg-kurai-royal px-6 py-16 text-white">
+      <section className="bg-kurai-royal px-6 py-20 text-white md:py-28">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-heading text-2xl font-bold">Partner with KURAI</h2>
           <p className="mt-3 font-body text-kurai-ice">

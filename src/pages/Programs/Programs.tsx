@@ -95,6 +95,7 @@ export default function Programs() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
         <div className="pointer-events-none absolute -right-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/20 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-60 -left-40 h-[400px] w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-light">
             What We Teach
@@ -265,8 +266,9 @@ export default function Programs() {
       ))}
 
       {/* Bottom CTA */}
-      <section className="bg-kurai-royal px-6 py-20 text-white">
-        <div className="mx-auto max-w-3xl text-center">
+      <section className="relative overflow-hidden bg-kurai-royal px-6 py-20 text-white md:py-28">
+        <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
+        <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-bold">Not sure which programme is right for your child?</h2>
           <p className="mt-4 font-body text-lg text-white/80">
             We&apos;ll help you find the best starting point based on your child&apos;s age, interests, and readiness. Book a free trial or get in touch — no commitment required.

@@ -38,8 +38,9 @@ export default function Schedule() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-kurai-dark px-6 py-20 text-white md:py-28">
-        <div className="mx-auto max-w-4xl text-center">
+      <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
+        <div className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
+        <div className="relative mx-auto max-w-4xl text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-light">
             Plan Your Week
           </p>
@@ -184,7 +185,7 @@ export default function Schedule() {
       </section>
 
       {/* CTA */}
-      <section className="bg-kurai-ice px-6 py-16">
+      <section className="bg-kurai-ice px-6 py-20 md:py-28">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-2xl font-bold text-kurai-dark">
             Can&apos;t find a suitable time?

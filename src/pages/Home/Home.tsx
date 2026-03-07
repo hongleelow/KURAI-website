@@ -232,7 +232,7 @@ export default function Home() {
               <Link
                 key={program.title}
                 to={program.path}
-                className="group relative rounded-2xl border border-kurai-ice bg-white p-8 transition-all hover:border-kurai-royal/20 hover:shadow-lg"
+                className="group relative rounded-2xl border border-kurai-ice bg-white p-8 shadow-sm transition-all hover:border-kurai-royal/20 hover:shadow-lg"
               >
                 {program.comingSoon && (
                   <span className="absolute right-6 top-6 rounded-full bg-kurai-royal/10 px-3 py-1 font-body text-[10px] font-semibold uppercase tracking-wider text-kurai-royal">
@@ -294,8 +294,9 @@ export default function Home() {
       </section>
 
       {/* ─── 5. WHY CHOOSE KURAI ─── */}
-      <section className="bg-kurai-dark px-6 py-20 text-white md:py-28">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative overflow-hidden bg-gradient-to-br from-kurai-dark to-kurai-dark-80 px-6 py-20 text-white md:py-28">
+        <div className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
+        <div className="relative mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-light">
               The KURAI Difference
@@ -389,7 +390,7 @@ export default function Home() {
             {testimonials.map((t) => (
               <div
                 key={t.name}
-                className="relative rounded-2xl border border-kurai-ice bg-white p-8"
+                className="relative rounded-2xl border border-kurai-ice bg-white p-8 shadow-sm"
               >
                 <Quote className="absolute right-6 top-6 h-8 w-8 text-kurai-ice" />
                 <div className="flex gap-1 text-kurai-royal">

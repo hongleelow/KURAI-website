@@ -32,8 +32,9 @@ export default function ProgramsAdults() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-kurai-dark px-6 py-20 text-white">
-        <div className="mx-auto max-w-4xl text-center">
+      <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
+        <div className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
+        <div className="relative mx-auto max-w-4xl text-center">
           <span className="inline-block rounded-full bg-kurai-royal px-4 py-1 font-body text-xs font-semibold uppercase tracking-wider">
             Coming Soon
           </span>

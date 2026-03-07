@@ -51,8 +51,9 @@ export default function ProgramsKids() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-kurai-dark px-6 py-20 text-white">
-        <div className="mx-auto max-w-4xl text-center">
+      <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
+        <div className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
+        <div className="relative mx-auto max-w-4xl text-center">
           <span className="font-body text-sm font-medium uppercase tracking-wider text-kurai-light">
             Ages 5–11
           </span>
@@ -73,7 +74,7 @@ export default function ProgramsKids() {
           </h2>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {ageTiers.map((tier) => (
-              <div key={tier.name} className="rounded-xl border border-kurai-ice p-8 text-center">
+              <div key={tier.name} className="rounded-xl border border-kurai-ice bg-white p-8 shadow-sm text-center">
                 <h3 className="font-heading text-xl font-semibold text-kurai-royal">{tier.name}</h3>
                 <p className="mt-1 font-body text-sm font-medium text-kurai-dark-60">{tier.ages}</p>
                 <p className="mt-4 font-body text-sm text-kurai-dark-60">{tier.focus}</p>
@@ -108,7 +109,7 @@ export default function ProgramsKids() {
       </section>
 
       {/* CTA */}
-      <section className="bg-kurai-royal px-6 py-16 text-white">
+      <section className="bg-kurai-royal px-6 py-20 text-white md:py-28">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-heading text-2xl font-bold">See KURAI in Action</h2>
           <div className="mt-6 flex flex-wrap justify-center gap-4">

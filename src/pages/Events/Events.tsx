@@ -57,7 +57,6 @@ const categories: EventCategory[] = [
     icon: Sun,
     title: 'Holiday Camps',
     subtitle: 'Intensive, fun-filled AI and Robotics camps during school breaks.',
-    dark: true,
     events: [
       {
         title: 'AI Discovery Camp',
@@ -174,7 +173,7 @@ export default function Events() {
       {categories.map((category) => (
         <section
           key={category.title}
-          className={`px-6 py-20 md:py-28 ${category.dark ? 'bg-kurai-dark text-white' : ''}`}
+          className={`px-6 py-20 md:py-28 ${category.dark ? 'bg-gradient-to-br from-kurai-dark to-kurai-dark-80 text-white' : ''}`}
         >
           <div className="mx-auto max-w-7xl">
             {/* Category Header */}
@@ -212,7 +211,7 @@ export default function Events() {
                   className={`flex flex-col rounded-2xl p-7 transition-shadow hover:shadow-lg ${
                     category.dark
                       ? 'border border-white/10 bg-white/5'
-                      : 'border border-kurai-ice bg-white'
+                      : 'border border-kurai-ice bg-white shadow-sm'
                   }`}
                 >
                   {/* Date badge */}
@@ -299,8 +298,9 @@ export default function Events() {
       ))}
 
       {/* Bottom CTA */}
-      <section className="bg-kurai-royal px-6 py-20 text-white">
-        <div className="mx-auto max-w-3xl text-center">
+      <section className="relative overflow-hidden bg-kurai-royal px-6 py-20 text-white md:py-28">
+        <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
+        <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-bold">Want to stay updated?</h2>
           <p className="mt-4 font-body text-lg text-white/80">
             Get notified about upcoming events, new programmes, and early access to registration.
