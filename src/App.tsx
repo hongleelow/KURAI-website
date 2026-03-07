@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home/Home';
 import Programs from './pages/Programs/Programs';
@@ -14,8 +15,10 @@ import FreeTrial from './pages/FreeTrial/FreeTrial';
 
 export default function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/programs" element={<Programs />} />
         <Route path="/programs/kids" element={<ProgramsKids />} />
@@ -27,7 +30,8 @@ export default function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/free-trial" element={<FreeTrial />} />
-      </Route>
-    </Routes>
+        </Route>
+      </Routes>
+    </>
   );
 }
