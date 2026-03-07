@@ -24,7 +24,7 @@ const programs = [
     title: 'AI Explorers',
     ages: 'Ages 5–11',
     description:
-      'Guided lessons in how AI works — from pattern recognition to visual coding — designed for curious young learners.',
+      'A guided introduction to how AI works — from pattern recognition to visual coding — designed to build real understanding, not just screen time.',
     path: '/programs#ai-explorers',
   },
   {
@@ -32,7 +32,7 @@ const programs = [
     title: 'Robotics Program',
     ages: 'Ages 5–11',
     description:
-      'Hands-on building, programming, and testing of real robots. Children learn how hardware and software work together.',
+      'Children build, program, and test real robots — learning how hardware and software come together through hands-on projects.',
     path: '/programs#robotics',
   },
   {
@@ -40,7 +40,7 @@ const programs = [
     title: 'Adult AI Workshops',
     ages: 'Coming Soon',
     description:
-      'Practical, jargon-free AI workshops for professionals and lifelong learners. Gain real understanding, not just buzzwords.',
+      'Practical, jargon-free AI workshops for professionals and parents. Understand what AI really is — and how it applies to your work and life.',
     path: '/programs/adults',
     comingSoon: true,
   },
@@ -57,23 +57,23 @@ const skills = [
 const reasons = [
   {
     icon: UserCheck,
-    title: 'Small Class Sizes',
-    description: 'Maximum 8 students per class for focused, personalised attention.',
+    title: 'Small Groups, Real Guidance',
+    description: 'With a maximum of 8 students per class, every child gets the attention they need to truly understand.',
   },
   {
     icon: Layers,
-    title: 'Structured Progression',
-    description: 'A clear learning path from foundational concepts to advanced projects.',
+    title: 'Structured Pathways',
+    description: 'Each programme follows a clear progression — so children build on what they know, step by step.',
   },
   {
     icon: FlaskConical,
-    title: 'Project-Based Learning',
-    description: 'Every module ends with a real project students can demonstrate and be proud of.',
+    title: 'Projects with Purpose',
+    description: 'Every module ends with a real project children can demonstrate, explain, and be proud of.',
   },
   {
     icon: Lock,
-    title: 'Safe & Guided Environment',
-    description: 'A trusted space where children explore technology with expert supervision.',
+    title: 'A Safe, Thoughtful Learning Space',
+    description: 'A trusted environment where children explore technology with patience, structure, and expert guidance.',
   },
 ];
 
@@ -97,17 +97,17 @@ const events = [
 
 const testimonials = [
   {
-    quote: 'My son used to just play games on the tablet. Now he builds them. KURAI changed how he sees technology.',
+    quote: 'My son used to just play games on the tablet. After a few weeks at KURAI, he started asking how things work. That shift meant everything to us.',
     name: 'Sarah L.',
     detail: 'Parent of a 9-year-old',
   },
   {
-    quote: 'The structured curriculum gives me confidence that my daughter is learning real skills, not just having screen time.',
+    quote: 'What I appreciate most is the structure. My daughter isn\'t just playing — she\'s learning real concepts, and I can see her confidence growing each week.',
     name: 'Ahmad R.',
     detail: 'Parent of a 7-year-old',
   },
   {
-    quote: 'Small classes, patient instructors, and real projects. This is what thoughtful learning looks like.',
+    quote: 'Small classes, patient instructors, and projects my son is genuinely proud of. This is the kind of learning I was looking for.',
     name: 'Mei Ling T.',
     detail: 'Parent of an 11-year-old',
   },
@@ -134,7 +134,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft md:text-xl">
-            Structured AI &amp; Robotics education for children aged 5–11 in Johor Bahru.
+            Structured, hands-on AI and Robotics classes for children aged 5–11 in Johor Bahru. Guided learning that builds real understanding.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
@@ -164,13 +164,13 @@ export default function Home() {
               What is KURAI?
             </h2>
             <p className="mt-5 font-body leading-relaxed text-kurai-dark-60">
-              KURAI is Johor&apos;s dedicated AI and Robotics education center for young learners.
-              We help children understand technology — not just use it — through guided, hands-on learning
-              designed for ages 5 to 11.
+              KURAI is a premium AI and Robotics learning centre in Johor Bahru, designed
+              specifically for children aged 5 to 11. We go beyond passive screen time — every
+              class is structured, guided, and built around real projects that children can
+              understand and be proud of.
             </p>
             <p className="mt-4 font-body leading-relaxed text-kurai-dark-60">
-              Every lesson is structured, every project is purposeful, and every child leaves with real
-              skills they can carry into the future.
+              Small groups. Expert instructors. A learning experience parents can trust.
             </p>
             <Link
               to="/about"
@@ -189,14 +189,18 @@ export default function Home() {
             />
             {/* Stats overlay */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-kurai-dark/80 to-transparent p-6">
-              <div className="flex justify-around text-center text-white">
+              <div className="grid grid-cols-4 gap-2 text-center text-white">
                 <div>
                   <p className="font-heading text-2xl font-bold">5–11</p>
-                  <p className="font-body text-[10px] uppercase tracking-wider text-white/70">Age Range</p>
+                  <p className="font-body text-[10px] uppercase tracking-wider text-white/70">Ages</p>
                 </div>
                 <div>
                   <p className="font-heading text-2xl font-bold">8</p>
-                  <p className="font-body text-[10px] uppercase tracking-wider text-white/70">Max Class Size</p>
+                  <p className="font-body text-[10px] uppercase tracking-wider text-white/70">Max Students</p>
+                </div>
+                <div>
+                  <p className="font-heading text-2xl font-bold leading-tight text-lg md:text-2xl">PBL</p>
+                  <p className="font-body text-[10px] uppercase tracking-wider text-white/70">Project-Based</p>
                 </div>
                 <div>
                   <p className="font-heading text-2xl font-bold">JB</p>
@@ -219,7 +223,7 @@ export default function Home() {
               Our Programs
             </h2>
             <p className="mx-auto mt-4 max-w-2xl font-body text-kurai-dark-60">
-              Structured learning paths designed to take students from curiosity to competence.
+              Each programme is structured around clear learning goals — so children progress with purpose, not just participation.
             </p>
           </div>
 
@@ -267,7 +271,7 @@ export default function Home() {
               Skills We Develop
             </h2>
             <p className="mx-auto mt-4 max-w-2xl font-body text-kurai-dark-60">
-              More than technical knowledge — our programmes build the thinking habits children carry into every subject.
+              Our programmes go beyond coding. Children develop thinking habits that strengthen how they learn, reason, and communicate — in every subject.
             </p>
           </div>
 
@@ -300,7 +304,7 @@ export default function Home() {
               Why Choose KURAI
             </h2>
             <p className="mx-auto mt-4 max-w-2xl font-body text-kurai-light-soft">
-              We don&apos;t just teach AI. We create an environment where children thrive.
+              What makes KURAI different isn&apos;t just what we teach — it&apos;s how we teach it.
             </p>
           </div>
 
@@ -325,11 +329,14 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-kurai-royal">
-              Mark Your Calendar
+              What&apos;s Coming Up
             </p>
             <h2 className="mt-3 font-heading text-3xl font-bold text-kurai-dark md:text-4xl">
               Upcoming Events
             </h2>
+            <p className="mx-auto mt-4 max-w-2xl font-body text-kurai-dark-60">
+              Join us for open days, free trial classes, and parent sessions. Come see what KURAI is all about.
+            </p>
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-3">
@@ -408,10 +415,10 @@ export default function Home() {
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-bold md:text-4xl">
-            Your child deserves to understand the technology around them.
+            Give your child a stronger start with AI and Robotics.
           </h2>
           <p className="mx-auto mt-4 max-w-xl font-body text-lg text-white/80">
-            At KURAI, children learn AI and Robotics through guided, project-based classes in a small-group setting.
+            Book a free trial and experience how KURAI helps children learn with curiosity, confidence, and structure.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
