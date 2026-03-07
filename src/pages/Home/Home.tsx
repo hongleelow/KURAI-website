@@ -180,24 +180,28 @@ export default function Home() {
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          {/* Visual placeholder */}
-          <div className="flex items-center justify-center rounded-2xl bg-gradient-to-br from-kurai-ice to-kurai-light/10 p-12">
-            <div className="grid grid-cols-2 gap-4 text-center">
-              <div className="rounded-xl bg-white p-6 shadow-sm">
-                <p className="font-heading text-3xl font-bold text-kurai-royal">5–11</p>
-                <p className="mt-1 font-body text-xs text-kurai-dark-60">Age Range</p>
-              </div>
-              <div className="rounded-xl bg-white p-6 shadow-sm">
-                <p className="font-heading text-3xl font-bold text-kurai-royal">8</p>
-                <p className="mt-1 font-body text-xs text-kurai-dark-60">Max Class Size</p>
-              </div>
-              <div className="rounded-xl bg-white p-6 shadow-sm">
-                <p className="font-heading text-3xl font-bold text-kurai-royal">3</p>
-                <p className="mt-1 font-body text-xs text-kurai-dark-60">Programs</p>
-              </div>
-              <div className="rounded-xl bg-white p-6 shadow-sm">
-                <p className="font-heading text-3xl font-bold text-kurai-royal">JB</p>
-                <p className="mt-1 font-body text-xs text-kurai-dark-60">Johor Bahru</p>
+          {/* Classroom photo */}
+          <div className="relative overflow-hidden rounded-2xl">
+            <img
+              src="/images/classroom.jpg"
+              alt="Students learning AI and robotics at KURAI education center"
+              className="h-full w-full object-cover"
+            />
+            {/* Stats overlay */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-kurai-dark/80 to-transparent p-6">
+              <div className="flex justify-around text-center text-white">
+                <div>
+                  <p className="font-heading text-2xl font-bold">5–11</p>
+                  <p className="font-body text-[10px] uppercase tracking-wider text-white/70">Age Range</p>
+                </div>
+                <div>
+                  <p className="font-heading text-2xl font-bold">8</p>
+                  <p className="font-body text-[10px] uppercase tracking-wider text-white/70">Max Class Size</p>
+                </div>
+                <div>
+                  <p className="font-heading text-2xl font-bold">JB</p>
+                  <p className="font-body text-[10px] uppercase tracking-wider text-white/70">Johor Bahru</p>
+                </div>
               </div>
             </div>
           </div>

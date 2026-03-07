@@ -259,10 +259,11 @@ export default function About() {
               isn&apos;t magic; it&apos;s something they can learn, build, and shape.&rdquo;
             </blockquote>
             <div className="mt-8 flex items-center gap-4">
-              {/* Avatar placeholder */}
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-kurai-royal to-kurai-light font-heading text-lg font-bold text-white">
-                K
-              </div>
+              <img
+                src="/images/founder.jpg"
+                alt="Founder of KURAI Education"
+                className="h-14 w-14 rounded-full object-cover"
+              />
               <div>
                 <p className="font-heading text-base font-semibold text-kurai-dark">
                   Founder, KURAI Education

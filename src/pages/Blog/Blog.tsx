@@ -33,6 +33,7 @@ const posts = [
     date: 'Mar 5, 2026',
     readTime: '3 min read',
     featured: true,
+    image: '/images/blog-1.jpg',
   },
   {
     id: 2,
@@ -43,6 +44,7 @@ const posts = [
     date: 'Feb 28, 2026',
     readTime: '4 min read',
     featured: true,
+    image: '/images/blog-2.jpg',
   },
   {
     id: 3,
@@ -53,6 +55,7 @@ const posts = [
     date: 'Feb 20, 2026',
     readTime: '5 min read',
     featured: true,
+    image: '/images/blog-3.jpg',
   },
   {
     id: 4,
@@ -189,8 +192,15 @@ export default function Blog() {
                   key={post.id}
                   className="group flex flex-col rounded-2xl border border-kurai-ice bg-white transition-shadow hover:shadow-lg"
                 >
-                  {/* Image placeholder */}
-                  <div className="h-48 rounded-t-2xl bg-gradient-to-br from-kurai-ice to-kurai-light/20" />
+                  {post.image ? (
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="h-48 w-full rounded-t-2xl object-cover"
+                    />
+                  ) : (
+                    <div className="h-48 rounded-t-2xl bg-gradient-to-br from-kurai-ice to-kurai-light/20" />
+                  )}
                   <div className="flex flex-1 flex-col p-6">
                     <div className="flex items-center gap-3">
                       <span

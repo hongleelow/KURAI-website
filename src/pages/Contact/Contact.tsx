@@ -368,17 +368,19 @@ export default function Contact() {
               Conveniently located in Johor Bahru with easy access and nearby parking.
             </p>
           </div>
-          {/* Map placeholder */}
+          {/* Facility photo */}
           <div className="mt-10 overflow-hidden rounded-2xl border border-kurai-ice">
-            <div className="flex h-80 items-center justify-center bg-gradient-to-br from-kurai-ice to-kurai-light/10">
-              <div className="text-center">
-                <MapPin className="mx-auto h-12 w-12 text-kurai-royal/40" />
-                <p className="mt-3 font-body text-sm text-kurai-dark-60">
-                  Interactive map coming soon
-                </p>
-                <p className="mt-1 font-body text-xs text-kurai-dark-60/60">
-                  Johor Bahru, Johor, Malaysia
-                </p>
+            <div className="relative">
+              <img
+                src="/images/facility.jpg"
+                alt="KURAI education center in Johor Bahru"
+                className="h-80 w-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-kurai-dark/70 to-transparent px-6 pb-5 pt-12">
+                <div className="flex items-center gap-2 text-white">
+                  <MapPin className="h-5 w-5" />
+                  <span className="font-body text-sm font-medium">Johor Bahru, Johor, Malaysia</span>
+                </div>
               </div>
             </div>
           </div>
