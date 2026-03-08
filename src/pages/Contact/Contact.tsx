@@ -383,7 +383,7 @@ export default function Contact() {
           <div className="mt-10 overflow-hidden rounded-2xl border border-kurai-ice shadow-lg shadow-kurai-dark/5">
             <iframe
               title="KURAI Centre location at Horizon Hills, Iskandar Puteri"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.4!2d103.6303!3d1.4837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da6fd6f2f6f7b7%3A0x2e0f3a5b0a7c8d9e!2s26A%2C%20Jalan%20Horizon%20Perdana%205%2C%20Horizon%20Hills%2C%2079100%20Iskandar%20Puteri%2C%20Johor!5e0!3m2!1sen!2smy"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.5!2d103.6210559!3d1.4632511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da0b2da9212681%3A0xc9929dc2e09de8a!2sKURAI!5e0!3m2!1sen!2smy"
               width="100%"
               style={{ border: 0 }}
               allowFullScreen
