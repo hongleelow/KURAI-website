@@ -380,21 +380,19 @@ export default function Contact() {
               Located at Horizon Hills, Iskandar Puteri — easy access with nearby parking.
             </p>
           </div>
-          {/* Facility photo */}
+          {/* Google Maps Embed */}
           <div className="mt-10 overflow-hidden rounded-2xl border border-kurai-ice shadow-lg shadow-kurai-dark/5">
-            <div className="relative">
-              <img
-                src="/images/facility.jpg"
-                alt="KURAI education centre in Johor Bahru"
-                className="h-72 w-full object-cover md:h-96"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-kurai-dark/70 to-transparent px-6 pb-5 pt-12">
-                <div className="flex items-center gap-2 text-white">
-                  <MapPin className="h-5 w-5" />
-                  <span className="font-body text-sm font-medium">Horizon Hills, Iskandar Puteri, Johor</span>
-                </div>
-              </div>
-            </div>
+            <iframe
+              title="KURAI Centre location at Horizon Hills, Iskandar Puteri"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.4!2d103.6303!3d1.4837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da6fd6f2f6f7b7%3A0x2e0f3a5b0a7c8d9e!2s26A%2C%20Jalan%20Horizon%20Perdana%205%2C%20Horizon%20Hills%2C%2079100%20Iskandar%20Puteri%2C%20Johor!5e0!3m2!1sen!2smy"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+            />
           </div>
         </div>
       </section>
