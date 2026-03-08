@@ -39,7 +39,7 @@ const categories: EventCategory[] = [
       {
         title: 'AI Discovery Camp',
         description:
-          'A 3-day immersive camp where students build their first AI project — from concept to demo. No prior experience needed.',
+          'A 3-day camp where students build their first AI project — from concept to demo. No experience needed.',
         date: '24 – 26 March 2026',
         isoDate: '2026-03-24',
         time: '9:00 AM – 3:00 PM daily',
@@ -48,7 +48,7 @@ const categories: EventCategory[] = [
       {
         title: 'Robotics Builder Camp',
         description:
-          'Design, build, and programme a robot in 3 days. Students work in teams to complete engineering challenges and present their creations.',
+          'Design, build, and programme a robot in 3 days. Teams complete engineering challenges and present their creations.',
         date: '7 – 9 April 2026',
         isoDate: '2026-04-07',
         time: '9:00 AM – 3:00 PM daily',
@@ -73,7 +73,7 @@ const categories: EventCategory[] = [
       {
         title: 'Free Trial: AI Explorers (Ages 5–7)',
         description:
-          'A 60-minute introductory AI class. Students explore pattern recognition and visual coding in a fun, guided session.',
+          'A 60-minute introductory AI class. Students explore pattern recognition and visual coding in a guided session.',
         date: 'Saturday, 5 April 2026',
         isoDate: '2026-04-05',
         time: '9:00 AM – 10:00 AM',
@@ -108,7 +108,7 @@ const categories: EventCategory[] = [
       {
         title: 'Parent Talk: AI & Your Child\'s Education',
         description:
-          'A thoughtful session for parents on what AI literacy means, why it matters, and how KURAI\'s structured approach gives children real understanding.',
+          'A session for parents on what AI literacy means, why it matters, and how KURAI\'s approach builds real understanding.',
         date: 'Saturday, 19 April 2026',
         isoDate: '2026-04-19',
         time: '10:00 AM – 11:30 AM',

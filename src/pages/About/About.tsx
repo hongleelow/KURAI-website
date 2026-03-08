@@ -45,13 +45,13 @@ const coreValues = [
     icon: Lightbulb,
     title: 'Curiosity First',
     description:
-      'Every lesson starts with a question. We channel children\'s natural curiosity into hands-on learning that builds real understanding.',
+      'Every lesson starts with a question. We channel natural curiosity into hands-on learning that builds real understanding.',
   },
   {
     icon: BookOpen,
     title: 'Structured Excellence',
     description:
-      'Engaging doesn\'t mean unstructured. Our curriculum is progressive, purposeful, and designed to build genuine competence over time.',
+      'Engaging doesn\'t mean unstructured. Our curriculum is progressive, purposeful, and builds genuine competence over time.',
   },
   {
     icon: Shield,
@@ -99,9 +99,7 @@ export default function About() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft">
-            Children today are surrounded by technology — but very few are taught how it works.
-            KURAI offers a more thoughtful, structured, and age-appropriate way to explore AI
-            and Robotics in Johor Bahru.
+            KURAI offers structured, age-appropriate AI and Robotics education in Johor Bahru — built for how children actually learn.
           </p>
         </div>
       </section>
@@ -117,14 +115,11 @@ export default function About() {
               How We Started
             </h2>
             <p className="mt-6 font-body leading-relaxed text-kurai-dark-60">
-              Children use technology every day — but very few understand what happens
-              behind the screen. They swipe, watch, and play, yet rarely get the chance
-              to learn how it all works.
+              Children swipe, watch, and play with technology every day — yet rarely get the chance to understand how it works.
             </p>
             <p className="mt-4 font-body leading-relaxed text-kurai-dark-60">
               KURAI was created to bridge that gap. Based in Johor Bahru, we provide
-              structured AI and Robotics education for children aged 5 to 11 — through
-              guided, hands-on lessons designed for how young minds actually learn.
+              structured, hands-on AI and Robotics education for children aged 5 to 11.
             </p>
             <p className="mt-4 font-body leading-relaxed text-kurai-dark-60">
               Our goal is simple: nurture curiosity, build confidence, and give children
@@ -175,9 +170,7 @@ export default function About() {
               </div>
               <h3 className="mt-6 font-heading text-2xl font-bold">Our Mission</h3>
               <p className="mt-4 font-body leading-relaxed text-kurai-light-soft">
-                To provide structured, engaging, and age-appropriate AI and Robotics education
-                that helps children become confident, creative, and critical thinkers — ready
-                to understand and engage with technology on their own terms.
+                To provide structured, engaging AI and Robotics education that helps children become confident, creative, and critical thinkers about technology.
               </p>
             </div>
 
@@ -189,8 +182,7 @@ export default function About() {
               <h3 className="mt-6 font-heading text-2xl font-bold">Our Vision</h3>
               <p className="mt-4 font-body leading-relaxed text-kurai-light-soft">
                 A future where children don&apos;t just use technology — they understand it.
-                Where every young learner has the opportunity to engage with AI thoughtfully,
-                creatively, and responsibly.
+                And every young learner can engage with AI responsibly.
               </p>
             </div>
           </div>
@@ -208,8 +200,7 @@ export default function About() {
               Our Core Values
             </h2>
             <p className="mx-auto mt-4 max-w-2xl font-body text-kurai-dark-60">
-              These principles guide how we teach, how we design our programmes,
-              and how we show up for every child who walks through our doors.
+              These principles guide how we teach, design our programmes, and show up for every child.
             </p>
           </div>
 
@@ -262,7 +253,7 @@ export default function About() {
               </h3>
               <p className="mt-3 font-body text-sm leading-relaxed text-kurai-dark-60 md:text-base">
                 Children don&apos;t just hear about AI — they build, test, and create.
-                Every lesson is designed around real projects that make abstract concepts tangible.
+                Every lesson centres on real projects that make concepts tangible.
               </p>
             </div>
             <div className="rounded-2xl bg-white p-6 shadow-sm sm:p-8 md:p-10">
@@ -272,7 +263,7 @@ export default function About() {
               </h3>
               <p className="mt-3 font-body text-sm leading-relaxed text-kurai-dark-60 md:text-base">
                 Our curriculum is structured in stages — each one builds on the last, so
-                children are always challenged at the right level without feeling overwhelmed.
+                children are challenged at the right level without feeling overwhelmed.
               </p>
             </div>
             <div className="rounded-2xl bg-white p-6 shadow-sm sm:p-8 md:p-10">
@@ -281,8 +272,7 @@ export default function About() {
                 Small Groups, Meaningful Attention
               </h3>
               <p className="mt-3 font-body text-sm leading-relaxed text-kurai-dark-60 md:text-base">
-                With a maximum of 8 students per class, every child receives the guidance,
-                feedback, and encouragement they need to truly understand.
+                With a maximum of 8 students per class, every child gets the guidance and feedback they need.
               </p>
             </div>
           </div>
@@ -301,10 +291,10 @@ export default function About() {
               </span>
             </div>
             <blockquote className="mt-6 font-body text-lg leading-relaxed text-kurai-dark-60 md:text-xl">
-              &ldquo;I started KURAI because I noticed something: children in Johor had plenty
+              &ldquo;I started KURAI because children in Johor had plenty
               of access to devices, but not enough opportunity to understand the technology
               behind them. I wanted to build a place where they could explore, question, and
-              create with technology — not just consume it. That&apos;s what KURAI is.&rdquo;
+              create — not just consume.&rdquo;
             </blockquote>
             <div className="mt-8 flex items-center gap-4">
               <img
@@ -333,8 +323,7 @@ export default function About() {
             Come see where curiosity meets AI.
           </h2>
           <p className="mx-auto mt-5 max-w-xl font-body text-lg leading-relaxed text-white/80">
-            Visit our centre in Horizon Hills, meet the team, and see for yourself
-            why parents trust KURAI with their children&apos;s learning.
+            Visit our centre in Horizon Hills, meet the team, and see why parents trust KURAI.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link

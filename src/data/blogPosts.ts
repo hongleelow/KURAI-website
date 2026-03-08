@@ -257,7 +257,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: 'paragraph',
-        text: 'For his term project, Arif chose to build a general knowledge quiz. But he did not want a simple question-and-answer format. He wanted the game to get harder if the player was doing well and easier if they were struggling. With guidance from his instructor, Arif implemented a basic scoring algorithm that adjusts the difficulty level in real time.',
+        text: 'For his term project, Arif built a general knowledge quiz — but not a simple one. He wanted the game to get harder if the player was doing well and easier if they were struggling. With his instructor\'s guidance, he implemented a scoring algorithm that adjusts difficulty in real time.',
       },
       {
         type: 'quote',
@@ -304,7 +304,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: 'paragraph',
-        text: 'Now imagine teaching a computer to do the same thing. You cannot just tell it "this is a chocolate chip cookie" because the computer does not know what chocolate chips look like. Instead, you show it hundreds of examples: "This is chocolate chip. This is chocolate chip. This is oatmeal raisin." Over time, the computer spots patterns — dark spots mean chocolate chip, visible oats mean oatmeal raisin.',
+        text: 'Now imagine teaching a computer to do the same thing. You cannot just tell it "this is a chocolate chip cookie" — the computer does not know what chocolate chips look like. Instead, you show it hundreds of examples. Over time, it spots patterns: dark spots mean chocolate chip, visible oats mean oatmeal raisin.',
       },
       {
         type: 'heading',
@@ -363,7 +363,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: 'paragraph',
-        text: 'Passive screen time is watching videos, scrolling through content, or playing games designed to keep you tapping. Active screen time is creating something — writing a programme, designing a robot\'s behaviour, training an AI model. The difference is like the difference between watching someone cook on television and actually cooking a meal yourself.',
+        text: 'Passive screen time is watching videos, scrolling, or playing games designed to keep you tapping. Active screen time is creating — writing a programme, designing a robot\'s behaviour, training an AI model. It\'s the difference between watching someone cook on television and cooking a meal yourself.',
       },
       {
         type: 'heading',
@@ -487,7 +487,7 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: 'paragraph',
-        text: 'When Nadia started at KURAI three months ago, she barely spoke above a whisper. Her mother was worried she would not participate in the group activities. Today, Nadia is one of the most enthusiastic students in her class — and she recently trained an AI model to generate drawings based on her prompts.',
+        text: 'When Nadia started at KURAI three months ago, she barely spoke above a whisper. Today, she is one of the most enthusiastic students in her class — and she recently trained an AI model to generate drawings from her prompts.',
       },
       {
         type: 'heading',
@@ -503,7 +503,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: 'paragraph',
-        text: 'The turning point came during a session on pattern recognition. Students were training a simple image classifier to sort hand-drawn shapes. Nadia drew a series of stars that the model kept misclassifying as flowers. Instead of getting frustrated, she studied the problem, redrew her stars with sharper points, and retrained the model. It worked. She turned to her instructor and said, "I taught the computer to see stars!"',
+        text: 'The turning point came during a pattern recognition session. Students were training an image classifier to sort hand-drawn shapes. Nadia drew stars that the model kept misclassifying as flowers. Instead of getting frustrated, she studied the problem, redrew her stars with sharper points, and retrained the model. It worked. "I taught the computer to see stars!"',
       },
       {
         type: 'quote',
@@ -538,7 +538,7 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: 'paragraph',
-        text: 'Can a machine be creative? It is one of the biggest questions in artificial intelligence today, and it is one that children have surprisingly strong opinions about. We asked our students what they think, and their responses gave us a lot to think about.',
+        text: 'Can a machine be creative? It is one of the biggest questions in AI today — and children have surprisingly strong opinions. We asked our students what they think, and their responses were striking.',
       },
       {
         type: 'heading',

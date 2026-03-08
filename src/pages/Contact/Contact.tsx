@@ -19,37 +19,37 @@ const faqs = [
   {
     question: 'What age group is KURAI designed for?',
     answer:
-      'Our programmes are designed for children aged 5 to 11, with age-appropriate tiers so every child is learning at the right level. We also have adult workshops launching soon.',
+      'Ages 5 to 11, with age-appropriate tiers so every child learns at the right level. Adult workshops launching soon.',
   },
   {
     question: 'Does my child need any prior experience?',
     answer:
-      'No prior experience is needed. Our curriculum starts from the fundamentals using visual programming tools and hands-on activities. Every child begins at their own pace.',
+      'No experience needed. We start from the fundamentals with visual tools and hands-on activities. Every child learns at their own pace.',
   },
   {
     question: 'How big are the classes?',
     answer:
-      'Every class is capped at 8 students. This means your child gets real attention, meaningful feedback, and a comfortable environment to learn in.',
+      'Every class is capped at 8 students, so your child gets real attention and meaningful feedback.',
   },
   {
     question: 'What will my child actually learn?',
     answer:
-      'Children learn the foundations of AI, machine learning, and robotics through structured, project-based lessons. They also develop critical thinking, problem-solving, and the confidence to engage with technology independently.',
+      'AI, machine learning, and robotics foundations through structured, project-based lessons — plus critical thinking, problem-solving, and digital confidence.',
   },
   {
     question: 'How is KURAI different from regular coding classes?',
     answer:
-      'Most coding classes focus on syntax. KURAI focuses on understanding — how AI systems work, why they matter, and how to think about technology critically. Our structured curriculum goes well beyond basic coding.',
+      'Most coding classes focus on syntax. KURAI focuses on understanding — how AI systems work, why they matter, and how to think critically about technology.',
   },
   {
     question: 'Can I try a class before committing?',
     answer:
-      'Yes — we offer free trial classes with no obligation. Your child can experience a real KURAI lesson before you decide. You can book a trial on our Free Trial page or contact us directly.',
+      'Yes — we offer free trial classes with no obligation. Book on our Free Trial page or contact us directly.',
   },
   {
     question: 'What are the fees and payment options?',
     answer:
-      'We offer term-based and monthly payment plans. Contact us for the latest pricing — we\'re happy to walk you through the options and find what works for your family.',
+      'We offer term-based and monthly payment plans. Contact us for the latest pricing — we\'re happy to walk you through the options.',
   },
   {
     question: 'Where is KURAI located?',
@@ -123,8 +123,7 @@ export default function Contact() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft">
-            Whether you have questions about our programmes, want to book a trial, or just
-            want to learn more — we&apos;d love to hear from you.
+            Questions about our programmes, booking a trial, or anything else — we&apos;d love to hear from you.
           </p>
         </div>
       </section>
@@ -493,7 +492,7 @@ export default function Contact() {
             See what structured AI education looks like.
           </h2>
           <p className="mx-auto mt-5 max-w-xl font-body text-lg leading-relaxed text-white/80">
-            Book a free trial class and let your child experience KURAI first-hand. No commitment, no pressure.
+            Book a free trial and let your child experience KURAI first-hand. No commitment required.
           </p>
           <Link
             to="/free-trial"

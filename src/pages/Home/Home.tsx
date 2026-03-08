@@ -25,7 +25,7 @@ const programs = [
     title: 'AI Explorers',
     ages: 'Ages 5–11',
     description:
-      'A guided introduction to how AI works — from pattern recognition to visual coding — designed to build real understanding, not just screen time.',
+      'A guided introduction to how AI works — from pattern recognition to visual coding — building real understanding.',
     path: '/programs#ai-explorers',
   },
   {
@@ -41,7 +41,7 @@ const programs = [
     title: 'Adult AI Workshops',
     ages: 'Coming Soon',
     description:
-      'Practical, jargon-free AI workshops for professionals and parents. Understand what AI really is — and how it applies to your work and life.',
+      'Practical, jargon-free AI workshops for professionals and parents. Understand what AI is and how to apply it.',
     path: '/programs/adults',
     comingSoon: true,
   },
@@ -64,7 +64,7 @@ const reasons = [
   {
     icon: Layers,
     title: 'Structured Pathways',
-    description: 'Each programme follows a clear progression — so children build on what they know, step by step.',
+    description: 'Each programme follows a clear progression — children build on what they know.',
   },
   {
     icon: FlaskConical,
@@ -94,24 +94,24 @@ const events = [
   {
     date: 'Apr 19, 2026',
     title: 'Parent Workshop: AI & Your Child',
-    description: 'A thoughtful session on what AI literacy means and how it applies to your child\'s education.',
+    description: 'A focused session on what AI literacy means for your child\'s education.',
     urgency: '',
   },
 ];
 
 const testimonials = [
   {
-    quote: 'Wow this place is amazing. My kid enjoy it so much. From robotic to AI and he\'s giving more information than I would imagined. I would strongly recommend to just drop by and see for yourself.',
+    quote: 'Wow, this place is amazing. My kid enjoys it so much. From robotics to AI, he\'s learning more than I would have imagined. I\'d strongly recommend just dropping by to see for yourself.',
     name: 'Deddy M.',
     detail: 'Parent of 8-year-old · AI Explorers',
   },
   {
-    quote: 'Fun & interactive place to learn AI/robotic. The teachers are fun, kind, attentive, have a lot of knowledge in the AI subjects. My kids love to join their classes.',
+    quote: 'Fun and interactive place to learn AI and robotics. The teachers are kind, attentive, and knowledgeable. My kids love their classes.',
     name: 'Amy M.',
     detail: 'Parent of 6 & 9-year-old · AI Explorers',
   },
   {
-    quote: 'My child really enjoys attending KURAI classes. The lessons are fun, interactive, and not boring. The teacher Ms. Joanne is very kind and helpful. Very happy with this centre.',
+    quote: 'My child really enjoys KURAI classes. The lessons are fun and interactive. Teacher Ms. Joanne is very kind and helpful. Very happy with this centre.',
     name: 'Kangting',
     detail: 'Parent of 7-year-old · Robotics Programme',
   },
@@ -203,7 +203,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl font-body text-base leading-relaxed text-white/75 sm:text-lg md:text-xl">
-            Structured, hands-on AI and Robotics classes for children aged 5–11 in Johor Bahru. Guided learning that builds real understanding.
+            Structured, hands-on AI and Robotics classes for children aged 5–11 in Johor Bahru. Real understanding, real projects.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-12 sm:gap-5">
             <Link
@@ -234,10 +234,7 @@ export default function Home() {
               What is KURAI?
             </h2>
             <p className="mt-5 font-body leading-relaxed text-kurai-dark-60">
-              KURAI is a premium AI and Robotics learning centre in Johor Bahru, designed
-              specifically for children aged 5 to 11. We go beyond passive screen time &mdash; every
-              class is structured, guided, and built around real projects that children can
-              understand and be proud of.
+              KURAI is a premium AI and Robotics learning centre in Johor Bahru for children aged 5 to 11. Every class is structured, guided, and built around real projects.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <span className="rounded-full bg-kurai-royal/10 px-4 py-1.5 font-body text-xs font-semibold text-kurai-royal">Max 8 students per class</span>
@@ -295,7 +292,7 @@ export default function Home() {
               Our Programmes
             </h2>
             <p className="mx-auto mt-5 max-w-2xl font-body text-kurai-dark-60">
-              Each programme is structured around clear learning goals &mdash; so children progress with purpose, not just participation.
+              Each programme is structured around clear learning goals &mdash; so children progress with purpose.
             </p>
           </div>
 
@@ -343,7 +340,7 @@ export default function Home() {
               Skills We Develop
             </h2>
             <p className="mx-auto mt-5 max-w-2xl font-body text-kurai-dark-60">
-              Our programmes go beyond coding. Children develop thinking habits that strengthen how they learn, reason, and communicate &mdash; in every subject.
+              Beyond coding: children develop thinking habits that strengthen how they learn, reason, and communicate.
             </p>
           </div>
 
@@ -380,7 +377,7 @@ export default function Home() {
               Why Choose KURAI
             </h2>
             <p className="mx-auto mt-5 max-w-2xl font-body text-kurai-light-soft">
-              What makes KURAI different isn&apos;t just what we teach — it&apos;s how we teach it.
+              What makes KURAI different isn&apos;t what we teach — it&apos;s how we teach.
             </p>
           </div>
 
@@ -411,7 +408,7 @@ export default function Home() {
               Upcoming Events
             </h2>
             <p className="mx-auto mt-5 max-w-2xl font-body text-kurai-dark-60">
-              Join us for holiday camps, free trial classes, and parent sessions. Come see what KURAI is all about.
+              Holiday camps, free trial classes, and parent sessions. Come see for yourself.
             </p>
           </div>
 

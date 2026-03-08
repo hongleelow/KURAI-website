@@ -58,19 +58,19 @@ const whatToExpect = [
 const parentTestimonials = [
   {
     quote:
-      'Brought my son for the trial class and he loved it. He came home talking about how he trained an AI to recognise different animals. We signed up for the full term the next week — he couldn\'t wait to go back.',
+      'Brought my son for the trial and he loved it. He came home talking about training an AI to recognise animals. We signed up for the full term the next week — he couldn\'t wait to go back.',
     name: 'Tan',
     detail: 'Parent of 7-year-old · Signed up after AI Explorers trial',
   },
   {
     quote:
-      'We tried the Robotics trial and my son was hooked from the first 10 minutes. He built a robot that could follow a line — I couldn\'t believe he did that in one session. The instructor was great at keeping him engaged and focused.',
+      'We tried the Robotics trial and my son was hooked from the first 10 minutes. He built a line-following robot in one session — I couldn\'t believe it. The instructor kept him engaged and focused the whole time.',
     name: 'Kangting',
     detail: 'Parent of 9-year-old · Signed up after Robotics trial',
   },
   {
     quote:
-      'I was unsure about more screen time, but the trial completely changed my mind. My daughter spent the whole session building something real — not just watching a screen. The teacher explained everything she\'d learned afterwards, which I really appreciated.',
+      'I was unsure about more screen time, but the trial changed my mind. My daughter spent the whole session building something real. The teacher explained everything she\'d learned afterwards, which I really appreciated.',
     name: 'Sarah',
     detail: 'Parent of 6-year-old · Signed up after AI Explorers trial',
   },
@@ -136,8 +136,7 @@ export default function FreeTrial() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft">
-            Let your child experience a real KURAI lesson — guided, hands-on, and designed
-            for how young minds learn. No payment, no obligation.
+            Let your child experience a real KURAI lesson — guided, hands-on, and age-appropriate. No payment, no obligation.
           </p>
           <a
             href="#booking-form"
@@ -160,8 +159,8 @@ export default function FreeTrial() {
               Your Child&apos;s First KURAI Experience
             </h2>
             <p className="mt-4 font-body leading-relaxed text-kurai-dark-60">
-              Our trial class is a real lesson — not a sales pitch. Your child will experience
-              KURAI exactly as it is: structured, hands-on, and thoughtfully guided.
+              Our trial is a real lesson. Your child will experience
+              KURAI exactly as it is: structured, hands-on, and guided.
             </p>
             <ul className="mt-8 space-y-4">
               {whatToExpect.map((item) => (
@@ -478,7 +477,7 @@ export default function FreeTrial() {
             Have questions before booking?
           </h2>
           <p className="mx-auto mt-5 max-w-xl font-body text-lg leading-relaxed text-white/80">
-            We&apos;re happy to help you find the right programme and schedule for your child. Chat with us on WhatsApp for a quick reply.
+            We&apos;ll help you find the right programme and schedule. Chat with us on WhatsApp for a quick reply.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a

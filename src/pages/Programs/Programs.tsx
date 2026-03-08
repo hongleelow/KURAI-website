@@ -24,7 +24,7 @@ const programSections = [
     badge: 'Ages 5–11',
     title: 'AI Explorers',
     overview:
-      'A structured introduction to AI for young learners. Through interactive lessons, visual coding, simple experiments, and guided projects, children develop an age-appropriate understanding of how artificial intelligence actually works.',
+      'A structured introduction to AI for young learners. Through interactive lessons, visual coding, and guided projects, children develop a real understanding of how AI works.',
     learns: [
       { icon: Sparkles, text: 'How AI recognises patterns, images, and language' },
       { icon: Code, text: 'Visual and block-based programming fundamentals' },
@@ -49,7 +49,7 @@ const programSections = [
     badge: 'Ages 5–11',
     title: 'Robotics Programme',
     overview:
-      'Hands-on engineering and computational thinking, combined. Children build, programme, test, and improve real robots — learning how hardware and software work together through structured, guided projects.',
+      'Hands-on engineering and computational thinking. Children build, programme, and test real robots — learning how hardware and software work together.',
     learns: [
       { icon: Cog, text: 'Mechanical design, sensors, and how components connect' },
       { icon: Workflow, text: 'Programming robots with block-based and visual code' },
@@ -74,7 +74,7 @@ const programSections = [
     badge: 'Coming Soon',
     title: 'Adult AI Workshops',
     overview:
-      'Practical, jargon-free AI workshops for parents, professionals, educators, and curious adults. Focused on real-world understanding and useful application — so you can make informed decisions about AI in your work and life.',
+      'Practical, jargon-free AI workshops for parents, professionals, and educators. Focused on real-world understanding — so you can make informed decisions about AI.',
     learns: [
       { icon: Presentation, text: 'Core AI concepts explained without technical jargon' },
       { icon: Sparkles, text: 'Hands-on practice with generative AI tools' },
@@ -149,7 +149,7 @@ export default function Programs() {
           </p>
           <h1 className="mt-4 font-heading text-3xl font-bold sm:text-4xl md:text-6xl">AI & Robotics Programmes</h1>
           <p className="mx-auto mt-5 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft">
-            Structured learning pathways that help children move from curiosity to confidence. Every programme is designed around real understanding — not just activities.
+            Structured pathways that take children from curiosity to confidence. Every programme is designed around real understanding.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {programSections.map((p) => (
@@ -339,7 +339,7 @@ export default function Programs() {
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-bold">Not sure which programme is right for your child?</h2>
           <p className="mt-5 font-body text-lg leading-relaxed text-white/80">
-            We&apos;ll help you find the best starting point based on your child&apos;s age, interests, and readiness. Try a free class first &mdash; no commitment required.
+            We&apos;ll help you find the best starting point for your child. Try a free class &mdash; no commitment required.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4">
             <Link
