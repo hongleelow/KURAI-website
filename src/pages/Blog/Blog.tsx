@@ -83,13 +83,13 @@ export default function Blog() {
       />
       <div>
       {/* ─── HERO ─── */}
-      <section className="relative overflow-hidden bg-kurai-dark px-6 py-28 text-white md:py-32">
-        <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
+      <section className="relative overflow-hidden bg-kurai-dark px-5 py-20 text-white sm:px-6 sm:py-28 md:py-32">
+        <div className="pointer-events-none absolute -right-40 -top-40 h-[300px] w-[300px] md:h-[500px] md:w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
         <div className="relative mx-auto max-w-4xl text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
             The KURAI Journal
           </p>
-          <h1 className="mt-6 font-heading text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">
+          <h1 className="mt-5 font-heading text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-6xl">
             Insights, Stories &amp;{' '}
             <span className="bg-gradient-to-r from-kurai-light to-kurai-royal-light bg-clip-text text-transparent">
               AI Fun Facts
@@ -103,7 +103,7 @@ export default function Blog() {
       </section>
 
       {/* ─── FEATURED POSTS ─── */}
-      <section className="px-6 py-20 md:py-28">
+      <section className="px-5 py-16 sm:px-6 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -176,7 +176,7 @@ export default function Blog() {
       </section>
 
       {/* ─── ALL POSTS WITH FILTER ─── */}
-      <section className="bg-kurai-ice/50 px-6 py-20 md:py-28">
+      <section className="bg-kurai-ice/50 px-5 py-16 sm:px-6 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -191,12 +191,12 @@ export default function Blog() {
           </div>
 
           {/* Category Filter */}
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
+          <div className="mt-8 flex flex-wrap justify-center gap-2 sm:mt-10 sm:gap-3">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-body text-sm font-medium transition-all hover:scale-105 ${
+                className={`inline-flex items-center gap-1.5 sm:gap-2 rounded-full px-4 py-2 font-body text-xs sm:px-5 sm:py-2.5 sm:text-sm font-medium transition-all hover:scale-105 ${
                   activeCategory === cat.id
                     ? 'bg-kurai-royal text-white shadow-md'
                     : 'bg-white text-kurai-dark-60 hover:bg-kurai-royal/10 hover:text-kurai-royal'
@@ -216,7 +216,7 @@ export default function Blog() {
                 <Link
                   key={post.id}
                   to={`/blog/${post.slug}`}
-                  className={`group rounded-2xl border border-kurai-ice border-t-2 bg-white p-6 shadow-sm transition-shadow hover:shadow-md md:p-8 ${categoryBorderMap[post.category]}`}
+                  className={`group rounded-2xl border border-kurai-ice border-t-2 bg-white p-5 shadow-sm transition-shadow hover:shadow-md sm:p-6 md:p-8 ${categoryBorderMap[post.category]}`}
                 >
                   <div className="flex items-center gap-3">
                     <span
@@ -256,7 +256,7 @@ export default function Blog() {
       </section>
 
       {/* ─── NEWSLETTER CTA ─── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-kurai-dark to-kurai-dark-80 px-6 py-20 text-white md:py-28">
+      <section className="relative overflow-hidden bg-gradient-to-br from-kurai-dark to-kurai-dark-80 px-5 py-16 text-white sm:px-6 md:py-28">
         <div className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
@@ -301,7 +301,7 @@ export default function Blog() {
       </section>
 
       {/* ─── BOTTOM CTA ─── */}
-      <section className="relative overflow-hidden bg-kurai-royal px-6 py-20 text-white md:py-28">
+      <section className="relative overflow-hidden bg-kurai-royal px-5 py-16 text-white sm:px-6 md:py-28">
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-2xl font-bold md:text-3xl">

@@ -177,7 +177,7 @@ export default function Home() {
         jsonLd={organizationSchema}
       />
       {/* ─── 1. HERO ─── */}
-      <section className="relative overflow-hidden bg-kurai-dark px-6 py-32 text-white md:py-40">
+      <section className="relative overflow-hidden bg-kurai-dark px-5 py-24 text-white sm:px-6 sm:py-32 md:py-40">
         {/* Hero background image */}
         <div className="absolute inset-0">
           <img
@@ -188,33 +188,33 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-kurai-dark/40 via-kurai-dark/20 to-kurai-dark/60" />
         </div>
         {/* Decorative gradient orb */}
-        <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-60 -left-40 h-[400px] w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
+        <div className="pointer-events-none absolute -right-40 -top-40 h-[300px] w-[300px] rounded-full bg-kurai-royal/20 blur-3xl md:h-[500px] md:w-[500px]" />
+        <div className="pointer-events-none absolute -bottom-60 -left-40 h-[250px] w-[250px] rounded-full bg-kurai-light/10 blur-3xl md:h-[400px] md:w-[400px]" />
 
         <div className="relative mx-auto max-w-4xl text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
             AI Education Centre&ensp;·&ensp;Johor, Malaysia
           </p>
-          <h1 className="mt-8 font-heading text-5xl font-bold leading-[1.08] tracking-tight md:text-7xl">
+          <h1 className="mt-6 font-heading text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl">
             WHERE CURIOSITY
             <br />
             <span className="bg-gradient-to-r from-kurai-light to-kurai-royal-light bg-clip-text text-transparent">
               MEETS AI
             </span>
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl font-body text-lg leading-relaxed text-white/75 md:text-xl">
+          <p className="mx-auto mt-5 max-w-2xl font-body text-base leading-relaxed text-white/75 sm:text-lg md:text-xl">
             Structured, hands-on AI and Robotics classes for children aged 5–11 in Johor Bahru. Guided learning that builds real understanding.
           </p>
-          <div className="mt-12 flex flex-wrap justify-center gap-5">
+          <div className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-12 sm:gap-5">
             <Link
               to="/free-trial"
-              className="rounded-lg bg-kurai-cream px-8 py-4 font-body text-sm font-bold text-kurai-dark shadow-lg shadow-kurai-dark/10 transition-all hover:scale-105 hover:bg-kurai-cream-dark hover:shadow-kurai-dark/15"
+              className="rounded-lg bg-kurai-cream px-6 py-3.5 font-body text-sm font-bold sm:px-8 sm:py-4 text-kurai-dark shadow-lg shadow-kurai-dark/10 transition-all hover:scale-105 hover:bg-kurai-cream-dark hover:shadow-kurai-dark/15"
             >
               Book a Free Trial
             </Link>
             <Link
               to="/programs"
-              className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-6 py-4 font-body text-sm font-semibold text-white/90 transition-all hover:scale-105 hover:border-white/40 hover:text-white"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-5 py-3.5 font-body text-sm sm:px-6 sm:py-4 font-semibold text-white/90 transition-all hover:scale-105 hover:border-white/40 hover:text-white"
             >
               Explore Our Programmes
               <ArrowRight className="h-4 w-4" />
@@ -224,7 +224,7 @@ export default function Home() {
       </section>
 
       {/* ─── 2. WHAT IS KURAI? ─── */}
-      <section className="px-6 py-20 md:py-28">
+      <section className="px-5 py-16 sm:px-6 md:py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 md:gap-16">
           <div>
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -257,7 +257,7 @@ export default function Home() {
             <img
               src="/images/kids-robotics-group-new.jpg"
               alt="Children building robots together at KURAI education centre"
-              className="h-72 w-full object-cover md:h-[28rem]"
+              className="h-56 w-full object-cover sm:h-72 md:h-[28rem]"
             />
             {/* Stats overlay */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-kurai-dark/80 to-transparent p-6">
@@ -285,7 +285,7 @@ export default function Home() {
       </section>
 
       {/* ─── 3. OUR PROGRAMS ─── */}
-      <section className="bg-kurai-ice/50 px-6 py-20 md:py-28">
+      <section className="bg-kurai-ice/50 px-5 py-16 sm:px-6 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -304,7 +304,7 @@ export default function Home() {
               <Link
                 key={program.title}
                 to={program.path}
-                className="group relative rounded-2xl border border-kurai-ice bg-white p-8 shadow-sm transition-all hover:scale-[1.02] hover:border-kurai-royal/20 hover:shadow-lg md:p-10"
+                className="group relative rounded-2xl border border-kurai-ice bg-white p-6 shadow-sm sm:p-8 transition-all hover:scale-[1.02] hover:border-kurai-royal/20 hover:shadow-lg md:p-10"
               >
                 {program.comingSoon && (
                   <span className="absolute right-6 top-6 rounded-full bg-kurai-royal/10 px-3 py-1 font-body text-xs font-semibold uppercase tracking-wider text-kurai-royal">
@@ -333,7 +333,7 @@ export default function Home() {
       </section>
 
       {/* ─── 4. SKILLS WE DEVELOP ─── */}
-      <section className="px-6 py-20 md:py-28">
+      <section className="px-5 py-14 sm:px-6 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -351,7 +351,7 @@ export default function Home() {
             {skills.map((skill) => (
               <div
                 key={skill.label}
-                className="rounded-2xl border border-kurai-ice bg-white p-6 text-center shadow-sm transition-shadow hover:shadow-md md:p-8"
+                className="rounded-2xl border border-kurai-ice bg-white p-5 text-center sm:p-6 shadow-sm transition-shadow hover:shadow-md md:p-8"
               >
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-kurai-royal/10 text-kurai-royal">
                   <skill.icon className="h-6 w-6" />
@@ -369,8 +369,8 @@ export default function Home() {
       </section>
 
       {/* ─── 5. WHY CHOOSE KURAI ─── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-kurai-dark to-kurai-dark-80 px-6 py-20 text-white md:py-28">
-        <div className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-kurai-dark to-kurai-dark-80 px-5 py-16 text-white sm:px-6 md:py-28">
+        <div className="pointer-events-none absolute -left-40 -top-40 h-[250px] w-[250px] rounded-full bg-kurai-royal/15 blur-3xl md:h-[400px] md:w-[400px]" />
         <div className="relative mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
@@ -386,7 +386,7 @@ export default function Home() {
 
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {reasons.map((reason) => (
-              <div key={reason.title} className="rounded-2xl border border-white/10 bg-white/5 p-8 border-t-2 border-t-kurai-light">
+              <div key={reason.title} className="rounded-2xl border border-white/10 bg-white/5 p-6 border-t-2 sm:p-8 border-t-kurai-light">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-kurai-royal/20 text-kurai-light">
                   <reason.icon className="h-6 w-6" />
                 </div>
@@ -401,7 +401,7 @@ export default function Home() {
       </section>
 
       {/* ─── 6. UPCOMING EVENTS ─── */}
-      <section className="px-6 py-20 md:py-28">
+      <section className="px-5 py-16 sm:px-6 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -419,7 +419,7 @@ export default function Home() {
             {events.map((event) => (
               <div
                 key={event.title}
-                className="rounded-2xl border border-kurai-ice bg-white p-8 transition-shadow hover:shadow-md md:p-10"
+                className="rounded-2xl border border-kurai-ice bg-white p-6 transition-shadow sm:p-8 hover:shadow-md md:p-10"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-kurai-royal">
@@ -459,7 +459,7 @@ export default function Home() {
       </section>
 
       {/* ─── 7. TESTIMONIALS ─── */}
-      <section className="bg-kurai-ice/50 px-6 py-20 md:py-28">
+      <section className="bg-kurai-ice/50 px-5 py-14 sm:px-6 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -482,7 +482,7 @@ export default function Home() {
             {testimonials.map((t) => (
               <div
                 key={t.name}
-                className="relative rounded-2xl border border-kurai-ice border-t-2 border-t-kurai-royal/30 bg-white p-8 shadow-sm md:p-10"
+                className="relative rounded-2xl border border-kurai-ice border-t-2 border-t-kurai-royal/30 bg-white p-6 shadow-sm sm:p-8 md:p-10"
               >
                 <Quote className="absolute right-6 top-6 h-10 w-10 text-kurai-royal/8" />
                 <div className="flex gap-1 text-kurai-amber">
@@ -504,7 +504,7 @@ export default function Home() {
       </section>
 
       {/* ─── 8. FINAL CTA ─── */}
-      <section className="relative overflow-hidden bg-kurai-royal px-6 py-20 text-white md:py-28">
+      <section className="relative overflow-hidden bg-kurai-royal px-5 py-16 text-white sm:px-6 md:py-28">
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-bold md:text-4xl">
@@ -513,7 +513,7 @@ export default function Home() {
           <p className="mx-auto mt-5 max-w-xl font-body text-lg leading-relaxed text-white/80">
             Book a free trial and experience how KURAI helps children learn with curiosity, confidence, and structure.
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-10 sm:gap-4">
             <Link
               to="/free-trial"
               className="rounded-lg bg-kurai-cream px-8 py-3.5 font-body text-sm font-bold text-kurai-dark shadow-lg shadow-kurai-dark/10 transition-all hover:scale-105 hover:bg-kurai-cream-dark hover:shadow-xl"

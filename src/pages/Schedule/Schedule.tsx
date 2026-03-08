@@ -83,13 +83,13 @@ export default function Schedule() {
       />
       <div>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
-        <div className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
+      <section className="relative overflow-hidden bg-kurai-dark px-5 py-20 text-white sm:px-6 md:py-32">
+        <div className="pointer-events-none absolute -left-40 -top-40 h-[250px] w-[250px] md:h-[400px] md:w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
         <div className="relative mx-auto max-w-4xl text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
             Plan Your Week
           </p>
-          <h1 className="mt-4 font-heading text-4xl font-bold md:text-5xl">Weekly Class Schedule</h1>
+          <h1 className="mt-4 font-heading text-3xl font-bold sm:text-4xl md:text-5xl">Weekly Class Schedule</h1>
           <p className="mx-auto mt-4 max-w-2xl font-body text-lg text-kurai-light-soft">
             Find the right class time for your child. All classes run in small groups of up to 8 students.
           </p>
@@ -116,7 +116,7 @@ export default function Schedule() {
       </section>
 
       {/* Schedule Tables */}
-      <section className="px-6 py-16 md:py-24">
+      <section className="px-5 py-12 sm:px-6 sm:py-16 md:py-24">
         <div className="mx-auto max-w-7xl space-y-16">
           {programs.map((programName) => {
             const slots = schedule.filter((s) => s.program === programName);
@@ -192,7 +192,7 @@ export default function Schedule() {
                   {slots.map((slot, i) => {
                     const style = availabilityStyles[slot.availability];
                     return (
-                      <div key={i} className="rounded-xl border border-kurai-ice bg-white p-6">
+                      <div key={i} className="rounded-xl border border-kurai-ice bg-white p-5 sm:p-6">
                         <div className="flex items-center justify-between">
                           <span className="font-heading text-sm font-semibold text-kurai-dark">
                             {slot.ageGroup}
@@ -246,7 +246,7 @@ export default function Schedule() {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden bg-kurai-royal px-6 py-20 text-white md:py-28">
+      <section className="relative overflow-hidden bg-kurai-royal px-5 py-16 text-white sm:px-6 md:py-28">
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-2xl font-bold md:text-3xl">

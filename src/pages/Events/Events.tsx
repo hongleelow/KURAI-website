@@ -178,7 +178,7 @@ export default function Events() {
       />
       <div>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
+      <section className="relative overflow-hidden bg-kurai-dark px-5 py-20 text-white sm:px-6 md:py-32">
         <div className="absolute inset-0">
           <img
             src="/images/kids-robot-art.jpg"
@@ -186,12 +186,12 @@ export default function Events() {
             className="h-full w-full object-cover opacity-15"
           />
         </div>
-        <div className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
+        <div className="pointer-events-none absolute -left-40 -top-40 h-[250px] w-[250px] md:h-[400px] md:w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
             What&apos;s Happening
           </p>
-          <h1 className="mt-4 font-heading text-4xl font-bold md:text-6xl">Events & Workshops</h1>
+          <h1 className="mt-4 font-heading text-3xl font-bold sm:text-4xl md:text-6xl">Events & Workshops</h1>
           <p className="mx-auto mt-5 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft">
             Holiday camps, free trials, and special events. Find the right way to experience KURAI.
           </p>
@@ -205,7 +205,7 @@ export default function Events() {
         return (
         <section
           key={category.title}
-          className={`px-6 py-20 md:py-28 ${
+          className={`px-5 py-16 sm:px-6 md:py-28 ${
             category.dark
               ? 'bg-gradient-to-br from-kurai-dark to-kurai-dark-80 text-white'
               : categoryIndex % 2 === 1
@@ -250,7 +250,7 @@ export default function Events() {
               {category.events.map((event, eventIndex) => (
                 <div
                   key={event.title}
-                  className={`flex flex-col rounded-2xl p-7 transition-shadow hover:shadow-lg md:p-8 ${
+                  className={`flex flex-col rounded-2xl p-5 transition-shadow hover:shadow-lg sm:p-7 md:p-8 ${
                     category.dark
                       ? 'border border-white/10 bg-white/5'
                       : categoryIndex === 0 && eventIndex === 0
@@ -346,7 +346,7 @@ export default function Events() {
       })}
 
       {/* Bottom CTA */}
-      <section className="relative overflow-hidden bg-kurai-royal px-6 py-20 text-white md:py-28">
+      <section className="relative overflow-hidden bg-kurai-royal px-5 py-16 text-white sm:px-6 md:py-28">
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-bold">Want to stay updated?</h2>

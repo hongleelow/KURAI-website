@@ -140,14 +140,14 @@ export default function Programs() {
       />
       <div>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
-        <div className="pointer-events-none absolute -right-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/20 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-60 -left-40 h-[400px] w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
+      <section className="relative overflow-hidden bg-kurai-dark px-5 py-20 text-white sm:px-6 md:py-32">
+        <div className="pointer-events-none absolute -right-40 -top-40 h-[250px] w-[250px] md:h-[400px] md:w-[400px] rounded-full bg-kurai-royal/20 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-60 -left-40 h-[250px] w-[250px] md:h-[400px] md:w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
             What We Teach
           </p>
-          <h1 className="mt-4 font-heading text-4xl font-bold md:text-6xl">AI & Robotics Programmes</h1>
+          <h1 className="mt-4 font-heading text-3xl font-bold sm:text-4xl md:text-6xl">AI & Robotics Programmes</h1>
           <p className="mx-auto mt-5 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft">
             Structured learning pathways that help children move from curiosity to confidence. Every programme is designed around real understanding — not just activities.
           </p>
@@ -170,7 +170,7 @@ export default function Programs() {
         <section
           key={program.id}
           id={program.id}
-          className={`px-6 py-20 md:py-28 ${program.dark ? 'bg-kurai-dark text-white' : ''}`}
+          className={`px-5 py-16 sm:px-6 md:py-28 ${program.dark ? 'bg-kurai-dark text-white' : ''}`}
         >
           <div className="mx-auto max-w-7xl">
             {/* Header */}
@@ -212,7 +212,7 @@ export default function Programs() {
                 <img
                   src={program.image}
                   alt={program.imageAlt}
-                  className={`h-72 w-full object-cover md:h-[22rem] ${
+                  className={`h-56 w-full object-cover sm:h-72 md:h-[22rem] ${
                     program.id === 'robotics'
                       ? 'object-top'
                       : program.id === 'adult-workshops'
@@ -276,7 +276,7 @@ export default function Programs() {
               {/* Right: Outcomes + CTA */}
               <div>
                 <div
-                  className={`rounded-2xl border-l-4 p-8 md:p-10 ${
+                  className={`rounded-2xl border-l-4 p-6 sm:p-8 md:p-10 ${
                     program.dark
                       ? 'border border-white/10 border-l-kurai-light bg-white/5'
                       : 'border border-kurai-ice border-l-kurai-royal bg-kurai-ice/30'
@@ -334,14 +334,14 @@ export default function Programs() {
       ))}
 
       {/* Bottom CTA */}
-      <section className="relative overflow-hidden bg-kurai-royal px-6 py-20 text-white md:py-28">
+      <section className="relative overflow-hidden bg-kurai-royal px-5 py-16 text-white sm:px-6 md:py-28">
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-bold">Not sure which programme is right for your child?</h2>
           <p className="mt-5 font-body text-lg leading-relaxed text-white/80">
             We&apos;ll help you find the best starting point based on your child&apos;s age, interests, and readiness. Try a free class first &mdash; no commitment required.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4">
             <Link
               to="/free-trial"
               className="rounded-lg bg-kurai-cream px-8 py-3.5 font-body text-sm font-bold text-kurai-dark shadow-lg shadow-kurai-dark/10 transition-all hover:scale-105 hover:bg-kurai-cream-dark hover:shadow-xl"

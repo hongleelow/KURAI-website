@@ -38,8 +38,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-kurai-dark text-white">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+      <div className="mx-auto max-w-7xl px-5 py-12 sm:px-6 sm:py-16">
+        <div className="grid gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand + Newsletter */}
           <div className="lg:col-span-2">
             <Link to="/">
@@ -81,12 +81,13 @@ export default function Footer() {
             </div>
           </div>
 
+          <div className="grid grid-cols-2 gap-8 sm:contents">
           {/* Programs */}
           <div>
             <h4 className="font-heading text-sm font-semibold uppercase tracking-wider text-kurai-light">
               Programmes
             </h4>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-3 space-y-2.5 sm:mt-4 sm:space-y-3">
               {footerLinks.programs.map((link) => (
                 <li key={link.label}>
                   <Link
@@ -105,7 +106,7 @@ export default function Footer() {
             <h4 className="font-heading text-sm font-semibold uppercase tracking-wider text-kurai-light">
               Company
             </h4>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-3 space-y-2.5 sm:mt-4 sm:space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
                   <Link
@@ -120,7 +121,7 @@ export default function Footer() {
           </div>
 
           {/* Get in Touch + Quick Links */}
-          <div>
+          <div className="col-span-2 sm:col-span-1">
             <h4 className="font-heading text-sm font-semibold uppercase tracking-wider text-kurai-light">
               Get in Touch
             </h4>
@@ -192,10 +193,11 @@ export default function Footer() {
               </ul>
             </div>
           </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 border-t border-kurai-dark-80 pt-8">
+        <div className="mt-8 border-t border-kurai-dark-80 pt-6 sm:mt-12 sm:pt-8">
           <p className="text-center font-body text-sm text-kurai-dark-60">
             &copy; {new Date().getFullYear()} KURAI Education Sdn Bhd. All rights reserved.
           </p>

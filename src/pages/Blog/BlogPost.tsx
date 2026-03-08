@@ -171,7 +171,7 @@ export default function BlogPost() {
       />
       <div>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-kurai-dark px-6 py-20 text-white md:py-28">
+        <section className="relative overflow-hidden bg-kurai-dark px-5 py-16 text-white sm:px-6 sm:py-20 md:py-28">
           {post.image && (
             <div className="absolute inset-0">
               <img
@@ -181,7 +181,7 @@ export default function BlogPost() {
               />
             </div>
           )}
-          <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
+          <div className="pointer-events-none absolute -right-40 -top-40 h-[300px] w-[300px] md:h-[500px] md:w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
           <div className="relative mx-auto max-w-3xl">
             {/* Breadcrumb */}
             <nav
@@ -224,7 +224,7 @@ export default function BlogPost() {
               </span>
             </div>
 
-            <h1 className="mt-6 font-heading text-3xl font-bold leading-tight md:text-5xl md:leading-tight">
+            <h1 className="mt-5 font-heading text-2xl font-bold leading-tight sm:text-3xl md:text-5xl md:leading-tight">
               {post.title}
             </h1>
             <p className="mt-4 font-body text-lg leading-relaxed text-kurai-light-soft">
@@ -235,7 +235,7 @@ export default function BlogPost() {
 
         {/* Featured image (if exists) */}
         {post.image && (
-          <div className="mx-auto -mt-8 max-w-3xl px-6">
+          <div className="mx-auto -mt-8 max-w-3xl px-5 sm:px-6">
             <img
               src={post.image}
               alt={post.imageAlt || post.title}
@@ -245,14 +245,14 @@ export default function BlogPost() {
         )}
 
         {/* Article body */}
-        <article className="px-6 py-16 md:py-20">
+        <article className="px-5 py-12 sm:px-6 sm:py-16 md:py-20">
           <div className="mx-auto max-w-3xl space-y-6">
             {post.content.map((block, index) => renderBlock(block, index))}
           </div>
         </article>
 
         {/* Tags / back link */}
-        <div className="border-t border-kurai-ice px-6 py-8">
+        <div className="border-t border-kurai-ice px-5 py-6 sm:px-6 sm:py-8">
           <div className="mx-auto flex max-w-3xl items-center justify-between">
             <div className="flex items-center gap-2">
               <Tag className="h-4 w-4 text-kurai-dark-60" />
@@ -273,7 +273,7 @@ export default function BlogPost() {
         </div>
 
         {/* Prev / Next navigation */}
-        <div className="border-t border-kurai-ice px-6 py-10">
+        <div className="border-t border-kurai-ice px-5 py-8 sm:px-6 sm:py-10">
           <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-2">
             {prevPost ? (
               <Link
@@ -312,7 +312,7 @@ export default function BlogPost() {
 
         {/* Related posts */}
         {relatedPosts.length > 0 && (
-          <section className="bg-kurai-ice/30 px-6 py-16 md:py-20">
+          <section className="bg-kurai-ice/30 px-5 py-12 sm:px-6 sm:py-16 md:py-20">
             <div className="mx-auto max-w-5xl">
               <h2 className="text-center font-heading text-2xl font-bold text-kurai-dark md:text-3xl">
                 More in {getCategoryLabel(post.category)}
@@ -354,7 +354,7 @@ export default function BlogPost() {
         )}
 
         {/* Bottom CTA */}
-        <section className="relative overflow-hidden bg-kurai-royal px-6 py-16 text-white md:py-20">
+        <section className="relative overflow-hidden bg-kurai-royal px-5 py-12 text-white sm:px-6 sm:py-16 md:py-20">
           <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
           <div className="relative mx-auto max-w-3xl text-center">
             <h2 className="font-heading text-2xl font-bold md:text-3xl">

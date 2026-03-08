@@ -110,13 +110,13 @@ export default function Contact() {
       />
       <div>
       {/* ─── HERO ─── */}
-      <section className="relative overflow-hidden bg-kurai-dark px-6 py-28 text-white md:py-32">
-        <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
+      <section className="relative overflow-hidden bg-kurai-dark px-5 py-20 text-white sm:px-6 sm:py-28 md:py-32">
+        <div className="pointer-events-none absolute -right-40 -top-40 h-[300px] w-[300px] md:h-[500px] md:w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
         <div className="relative mx-auto max-w-4xl text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
             Contact Us
           </p>
-          <h1 className="mt-6 font-heading text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">
+          <h1 className="mt-5 font-heading text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-6xl">
             We&apos;re Here to{' '}
             <span className="bg-gradient-to-r from-kurai-light to-kurai-royal-light bg-clip-text text-transparent">
               Help
@@ -130,7 +130,7 @@ export default function Contact() {
       </section>
 
       {/* ─── QUICK ACTIONS ─── */}
-      <section className="px-6 py-16 md:py-20">
+      <section className="px-5 py-12 sm:px-6 sm:py-16 md:py-20">
         <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-3">
           <Link
             to="/free-trial"
@@ -174,11 +174,11 @@ export default function Contact() {
       </section>
 
       {/* ─── CONTACT FORM + INFO ─── */}
-      <section className="bg-kurai-ice/50 px-6 py-20 md:py-28">
+      <section className="bg-kurai-ice/50 px-5 py-16 sm:px-6 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-5">
           {/* Form — takes 3 cols */}
           <div className="lg:col-span-3">
-            <div className="rounded-2xl border border-kurai-ice bg-white p-8 md:p-10">
+            <div className="rounded-2xl border border-kurai-ice bg-white p-6 sm:p-8 md:p-10">
               <h2 className="font-heading text-2xl font-bold text-kurai-dark">Send a Message</h2>
               <p className="mt-2 font-body text-sm text-kurai-dark-60 md:text-base">
                 Tell us a little about what you&apos;re looking for — we&apos;ll get back to you within 24 hours.
@@ -306,7 +306,7 @@ export default function Contact() {
               />
             </div>
             {/* Location */}
-            <div className="rounded-2xl border border-kurai-ice bg-white p-7 md:p-8">
+            <div className="rounded-2xl border border-kurai-ice bg-white p-5 sm:p-7 md:p-8">
               <h3 className="font-heading text-lg font-semibold text-kurai-dark">Visit Us</h3>
               <ul className="mt-5 space-y-4">
                 <li className="flex items-start gap-4">
@@ -340,7 +340,7 @@ export default function Contact() {
             </div>
 
             {/* Business Hours */}
-            <div className="rounded-2xl border border-kurai-ice bg-white p-7 md:p-8">
+            <div className="rounded-2xl border border-kurai-ice bg-white p-5 sm:p-7 md:p-8">
               <h3 className="flex items-center gap-2 font-heading text-lg font-semibold text-kurai-dark">
                 <Clock className="h-5 w-5 text-kurai-royal" />
                 Business Hours
@@ -366,7 +366,7 @@ export default function Contact() {
       </section>
 
       {/* ─── LOCATION MAP ─── */}
-      <section className="px-6 py-20">
+      <section className="px-5 py-14 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -385,19 +385,18 @@ export default function Contact() {
               title="KURAI Centre location at Horizon Hills, Iskandar Puteri"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.4!2d103.6303!3d1.4837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da6fd6f2f6f7b7%3A0x2e0f3a5b0a7c8d9e!2s26A%2C%20Jalan%20Horizon%20Perdana%205%2C%20Horizon%20Hills%2C%2079100%20Iskandar%20Puteri%2C%20Johor!5e0!3m2!1sen!2smy"
               width="100%"
-              height="400"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="w-full"
+              className="w-full h-[280px] sm:h-[350px] md:h-[400px]"
             />
           </div>
         </div>
       </section>
 
       {/* ─── FAQ ─── */}
-      <section id="faq" className="bg-kurai-ice/50 px-6 py-20 md:py-28">
+      <section id="faq" className="bg-kurai-ice/50 px-5 py-16 sm:px-6 md:py-28">
         <div className="mx-auto max-w-3xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -487,7 +486,7 @@ export default function Contact() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="relative overflow-hidden bg-kurai-royal px-6 py-20 text-white md:py-28">
+      <section className="relative overflow-hidden bg-kurai-royal px-5 py-16 text-white sm:px-6 md:py-28">
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-2xl font-bold md:text-3xl">

@@ -85,14 +85,14 @@ export default function About() {
       />
       <div>
       {/* ─── HERO ─── */}
-      <section className="relative overflow-hidden bg-kurai-dark px-6 py-28 text-white md:py-36">
-        <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-60 -left-40 h-[400px] w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
+      <section className="relative overflow-hidden bg-kurai-dark px-5 py-20 text-white sm:px-6 sm:py-28 md:py-36">
+        <div className="pointer-events-none absolute -right-40 -top-40 h-[300px] w-[300px] md:h-[500px] md:w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-60 -left-40 h-[250px] w-[250px] md:h-[400px] md:w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
             About KURAI
           </p>
-          <h1 className="mt-6 font-heading text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">
+          <h1 className="mt-5 font-heading text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-6xl">
             Why{' '}
             <span className="bg-gradient-to-r from-kurai-light to-kurai-royal-light bg-clip-text text-transparent">
               KURAI Exists
@@ -107,8 +107,8 @@ export default function About() {
       </section>
 
       {/* ─── OUR STORY ─── */}
-      <section className="px-6 py-20 md:py-28">
-        <div className="mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
+      <section className="px-5 py-16 sm:px-6 md:py-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 sm:gap-16 md:grid-cols-2">
           <div>
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
               Our Story
@@ -138,7 +138,7 @@ export default function About() {
               <img
                 src="/images/instructor-ai-lesson.jpg"
                 alt="KURAI instructor teaching an AI lesson to students"
-                className="h-72 w-full object-cover"
+                className="h-56 w-full object-cover sm:h-72"
               />
             </div>
           <div className="rounded-2xl bg-kurai-ice p-8 md:p-10">
@@ -164,12 +164,12 @@ export default function About() {
       </section>
 
       {/* ─── MISSION & VISION ─── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-kurai-dark to-kurai-dark-80 px-6 py-20 text-white md:py-28">
-        <div className="pointer-events-none absolute -right-40 -bottom-40 h-[400px] w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-kurai-dark to-kurai-dark-80 px-5 py-16 text-white sm:px-6 md:py-28">
+        <div className="pointer-events-none absolute -right-40 -bottom-40 h-[250px] w-[250px] md:h-[400px] md:w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl">
           <div className="grid gap-12 md:grid-cols-2">
             {/* Mission */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-10">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-7 sm:p-10">
               <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-kurai-royal/20 text-kurai-light">
                 <Target className="h-7 w-7" />
               </div>
@@ -182,7 +182,7 @@ export default function About() {
             </div>
 
             {/* Vision */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-10">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-7 sm:p-10">
               <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-kurai-royal/20 text-kurai-light">
                 <Eye className="h-7 w-7" />
               </div>
@@ -198,7 +198,7 @@ export default function About() {
       </section>
 
       {/* ─── CORE VALUES ─── */}
-      <section className="px-6 py-20 md:py-28">
+      <section className="px-5 py-16 sm:px-6 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -217,7 +217,7 @@ export default function About() {
             {coreValues.map((value) => (
               <div
                 key={value.title}
-                className="rounded-2xl border border-kurai-ice border-t-2 border-t-kurai-royal bg-white p-8 shadow-sm transition-shadow hover:shadow-lg"
+                className="rounded-2xl border border-kurai-ice border-t-2 border-t-kurai-royal bg-white p-6 shadow-sm sm:p-8 transition-shadow hover:shadow-lg"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-kurai-royal/10 text-kurai-royal">
                   <value.icon className="h-6 w-6" />
@@ -235,7 +235,7 @@ export default function About() {
       </section>
 
       {/* ─── OUR APPROACH ─── */}
-      <section className="bg-kurai-ice/50 px-6 py-20 md:py-28">
+      <section className="bg-kurai-ice/50 px-5 py-16 sm:px-6 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -250,12 +250,12 @@ export default function About() {
             <img
               src="/images/students-workshop.jpg"
               alt="Students working on worksheets during a KURAI class"
-              className="h-72 w-full object-cover"
+              className="h-56 w-full object-cover sm:h-72"
             />
           </div>
 
           <div className="mt-8 grid gap-8 md:grid-cols-3">
-            <div className="rounded-2xl bg-white p-8 shadow-sm md:p-10">
+            <div className="rounded-2xl bg-white p-6 shadow-sm sm:p-8 md:p-10">
               <p className="font-heading text-4xl font-bold text-kurai-royal">01</p>
               <h3 className="mt-4 font-heading text-lg font-semibold text-kurai-dark">
                 Learn by Doing
@@ -265,7 +265,7 @@ export default function About() {
                 Every lesson is designed around real projects that make abstract concepts tangible.
               </p>
             </div>
-            <div className="rounded-2xl bg-white p-8 shadow-sm md:p-10">
+            <div className="rounded-2xl bg-white p-6 shadow-sm sm:p-8 md:p-10">
               <p className="font-heading text-4xl font-bold text-kurai-royal">02</p>
               <h3 className="mt-4 font-heading text-lg font-semibold text-kurai-dark">
                 Age-Appropriate Progression
@@ -275,7 +275,7 @@ export default function About() {
                 children are always challenged at the right level without feeling overwhelmed.
               </p>
             </div>
-            <div className="rounded-2xl bg-white p-8 shadow-sm md:p-10">
+            <div className="rounded-2xl bg-white p-6 shadow-sm sm:p-8 md:p-10">
               <p className="font-heading text-4xl font-bold text-kurai-royal">03</p>
               <h3 className="mt-4 font-heading text-lg font-semibold text-kurai-dark">
                 Small Groups, Meaningful Attention
@@ -290,9 +290,9 @@ export default function About() {
       </section>
 
       {/* ─── FOUNDER MESSAGE ─── */}
-      <section className="px-6 py-20 md:py-28">
+      <section className="px-5 py-16 sm:px-6 md:py-28">
         <div className="mx-auto max-w-4xl">
-          <div className="relative rounded-2xl border border-kurai-ice bg-white p-10 md:p-14">
+          <div className="relative rounded-2xl border border-kurai-ice bg-white p-7 sm:p-10 md:p-14">
             <Quote className="absolute right-8 top-8 h-12 w-12 text-kurai-ice" />
             <div className="flex items-center gap-2 text-kurai-royal">
               <Heart className="h-5 w-5" />
@@ -326,7 +326,7 @@ export default function About() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="relative overflow-hidden bg-kurai-royal px-6 py-20 text-white md:py-28">
+      <section className="relative overflow-hidden bg-kurai-royal px-5 py-16 text-white sm:px-6 md:py-28">
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-bold md:text-4xl">

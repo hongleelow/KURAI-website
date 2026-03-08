@@ -121,15 +121,15 @@ export default function FreeTrial() {
       />
       <div>
       {/* ─── HERO ─── */}
-      <section className="relative overflow-hidden bg-kurai-dark px-6 py-28 text-white md:py-36">
-        <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-60 -left-40 h-[400px] w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
+      <section className="relative overflow-hidden bg-kurai-dark px-5 py-20 text-white sm:px-6 sm:py-28 md:py-36">
+        <div className="pointer-events-none absolute -right-40 -top-40 h-[300px] w-[300px] md:h-[500px] md:w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-60 -left-40 h-[250px] w-[250px] md:h-[400px] md:w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl text-center">
           <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full bg-kurai-royal/20 px-4 py-2 font-body text-xs font-semibold uppercase tracking-wider text-kurai-light">
             <Sparkles className="h-4 w-4" />
             Completely Free · No Commitment
           </div>
-          <h1 className="font-heading text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">
+          <h1 className="font-heading text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-6xl">
             Book a{' '}
             <span className="bg-gradient-to-r from-kurai-light to-kurai-royal-light bg-clip-text text-transparent">
               Free Trial Class
@@ -150,8 +150,8 @@ export default function FreeTrial() {
       </section>
 
       {/* ─── WHAT TO EXPECT ─── */}
-      <section className="px-6 py-20 md:py-28">
-        <div className="mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
+      <section className="px-5 py-16 sm:px-6 md:py-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 sm:gap-16 md:grid-cols-2">
           <div>
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
               What to Expect
@@ -179,26 +179,26 @@ export default function FreeTrial() {
               <img
                 src="/images/coding-cards.jpg"
                 alt="Colorful coding cards used in KURAI classes"
-                className="h-64 w-full object-cover"
+                className="h-48 w-full object-cover sm:h-64"
               />
             </div>
           <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-2xl bg-kurai-ice p-8 text-center">
+            <div className="rounded-2xl bg-kurai-ice p-5 text-center sm:p-8">
               <Clock className="mx-auto h-8 w-8 text-kurai-royal" />
               <p className="mt-3 font-heading text-2xl font-bold text-kurai-dark">60 min</p>
               <p className="mt-1 font-body text-sm text-kurai-dark-60">Session Duration</p>
             </div>
-            <div className="rounded-2xl bg-kurai-ice p-8 text-center">
+            <div className="rounded-2xl bg-kurai-ice p-5 text-center sm:p-8">
               <Users className="mx-auto h-8 w-8 text-kurai-royal" />
               <p className="mt-3 font-heading text-2xl font-bold text-kurai-dark">Max 8</p>
               <p className="mt-1 font-body text-sm text-kurai-dark-60">Students per Class</p>
             </div>
-            <div className="rounded-2xl bg-kurai-ice p-8 text-center">
+            <div className="rounded-2xl bg-kurai-ice p-5 text-center sm:p-8">
               <Shield className="mx-auto h-8 w-8 text-kurai-royal" />
               <p className="mt-3 font-heading text-2xl font-bold text-kurai-dark">100%</p>
               <p className="mt-1 font-body text-sm text-kurai-dark-60">Free, No Obligation</p>
             </div>
-            <div className="rounded-2xl bg-kurai-ice p-8 text-center">
+            <div className="rounded-2xl bg-kurai-ice p-5 text-center sm:p-8">
               <Star className="mx-auto h-8 w-8 text-kurai-royal" />
               <p className="mt-3 font-heading text-2xl font-bold text-kurai-dark">5–11</p>
               <p className="mt-1 font-body text-sm text-kurai-dark-60">Age Range</p>
@@ -209,7 +209,7 @@ export default function FreeTrial() {
       </section>
 
       {/* ─── AVAILABLE SLOTS ─── */}
-      <section className="bg-kurai-ice/50 px-6 py-20 md:py-28">
+      <section className="bg-kurai-ice/50 px-5 py-16 sm:px-6 md:py-28">
         <div className="mx-auto max-w-5xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -227,7 +227,7 @@ export default function FreeTrial() {
             {trialSlots.map((slot, i) => (
               <div
                 key={i}
-                className="flex items-center justify-between rounded-2xl border border-kurai-ice bg-white p-6 transition-shadow hover:shadow-md"
+                className="flex items-center justify-between rounded-2xl border border-kurai-ice bg-white p-5 transition-shadow sm:p-6 hover:shadow-md"
               >
                 <div>
                   <div className="flex items-center gap-2 text-kurai-royal">
@@ -261,7 +261,7 @@ export default function FreeTrial() {
       </section>
 
       {/* ─── BOOKING FORM ─── */}
-      <section id="booking-form" className="px-6 py-20 md:py-28">
+      <section id="booking-form" className="px-5 py-16 sm:px-6 md:py-28">
         <div className="mx-auto max-w-2xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -301,7 +301,7 @@ export default function FreeTrial() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="mt-10 space-y-5 rounded-2xl border border-kurai-ice bg-white p-8 md:p-10">
+          <form onSubmit={handleSubmit} className="mt-10 space-y-5 rounded-2xl border border-kurai-ice bg-white p-6 sm:p-8 md:p-10">
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label className="font-body text-sm font-medium text-kurai-dark">
@@ -425,8 +425,8 @@ export default function FreeTrial() {
       </section>
 
       {/* ─── TESTIMONIALS ─── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-kurai-dark to-kurai-dark-80 px-6 py-20 text-white md:py-28">
-        <div className="pointer-events-none absolute -right-40 -bottom-40 h-[400px] w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-kurai-dark to-kurai-dark-80 px-5 py-16 text-white sm:px-6 md:py-28">
+        <div className="pointer-events-none absolute -right-40 -bottom-40 h-[250px] w-[250px] md:h-[400px] md:w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
         <div className="relative mx-auto max-w-5xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
@@ -449,7 +449,7 @@ export default function FreeTrial() {
             {parentTestimonials.map((t) => (
               <div
                 key={t.name}
-                className="relative rounded-2xl border border-white/10 border-t-2 border-t-kurai-light/20 bg-white/5 p-8 md:p-10"
+                className="relative rounded-2xl border border-white/10 border-t-2 border-t-kurai-light/20 bg-white/5 p-6 sm:p-8 md:p-10"
               >
                 <Quote className="absolute right-6 top-6 h-10 w-10 text-white/5" />
                 <div className="flex gap-1 text-kurai-amber">
@@ -471,7 +471,7 @@ export default function FreeTrial() {
       </section>
 
       {/* ─── BOTTOM CTA ─── */}
-      <section className="relative overflow-hidden bg-kurai-royal px-6 py-20 text-white md:py-28">
+      <section className="relative overflow-hidden bg-kurai-royal px-5 py-16 text-white sm:px-6 md:py-28">
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-2xl font-bold md:text-3xl">
