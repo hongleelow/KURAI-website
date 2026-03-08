@@ -22,6 +22,9 @@
  * └──────────────────────────────────────────┘
  */
 
+import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
+
 const workshopPreviews = [
   { title: 'AI Fundamentals', description: 'Understand the core concepts behind artificial intelligence and machine learning.' },
   { title: 'AI for Business', description: 'Learn how to apply AI tools to improve productivity and decision-making.' },
@@ -30,7 +33,13 @@ const workshopPreviews = [
 
 export default function ProgramsAdults() {
   return (
-    <div>
+    <>
+      <SEO
+        title="Adult AI Workshops | KURAI Johor Bahru"
+        description="Practical, jargon-free AI workshops for professionals and parents in Johor Bahru. Understand AI and how it applies to your work and life. Coming soon."
+        path="/programs/adults"
+      />
+      <div>
       {/* Hero */}
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
         <div className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
@@ -44,6 +53,16 @@ export default function ProgramsAdults() {
           </p>
         </div>
       </section>
+
+      {/* Back Link */}
+      <div className="mx-auto max-w-7xl px-6 pt-8">
+        <Link
+          to="/programs"
+          className="inline-flex items-center gap-1 font-body text-sm font-medium text-kurai-royal transition-colors hover:text-kurai-dark"
+        >
+          &larr; Back to All Programmes
+        </Link>
+      </div>
 
       {/* Workshop Previews */}
       <section className="px-6 py-20">
@@ -80,8 +99,15 @@ export default function ProgramsAdults() {
               Join the Waitlist
             </button>
           </div>
+          <Link
+            to="/contact"
+            className="mt-6 inline-block font-body text-sm font-semibold text-kurai-royal underline underline-offset-4 transition-colors hover:text-kurai-dark"
+          >
+            Contact us for updates &rarr;
+          </Link>
         </div>
       </section>
     </div>
+    </>
   );
 }

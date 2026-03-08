@@ -1,8 +1,8 @@
 import { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 import {
   CalendarDays,
-  DoorOpen,
   Sun,
   FlaskConical,
   Star,
@@ -17,6 +17,7 @@ interface EventItem {
   title: string;
   description: string;
   date: string;
+  isoDate: string;
   time: string;
   location: string;
 }
@@ -31,29 +32,6 @@ interface EventCategory {
 
 const categories: EventCategory[] = [
   {
-    icon: DoorOpen,
-    title: 'Open Days',
-    subtitle: 'Tour our centre, meet instructors, and see our programmes in action.',
-    events: [
-      {
-        title: 'KURAI Open Day — March',
-        description:
-          'A guided tour of our centre, live demo classes, and Q&A with our instructors. Perfect for parents exploring AI education options.',
-        date: 'Saturday, 22 March 2026',
-        time: '10:00 AM – 1:00 PM',
-        location: 'KURAI Centre, Johor Bahru',
-      },
-      {
-        title: 'KURAI Open Day — May',
-        description:
-          'Discover our new term offerings. Watch students in action and learn about our structured curriculum first-hand.',
-        date: 'Saturday, 17 May 2026',
-        time: '10:00 AM – 1:00 PM',
-        location: 'KURAI Centre, Johor Bahru',
-      },
-    ],
-  },
-  {
     icon: Sun,
     title: 'Holiday Camps',
     subtitle: 'Intensive, fun-filled AI and Robotics camps during school breaks.',
@@ -63,6 +41,7 @@ const categories: EventCategory[] = [
         description:
           'A 3-day immersive camp where students build their first AI project — from concept to demo. No prior experience needed.',
         date: '24 – 26 March 2026',
+        isoDate: '2026-03-24',
         time: '9:00 AM – 3:00 PM daily',
         location: 'KURAI Centre, Johor Bahru',
       },
@@ -71,6 +50,7 @@ const categories: EventCategory[] = [
         description:
           'Design, build, and programme a robot in 3 days. Students work in teams to complete engineering challenges and present their creations.',
         date: '7 – 9 April 2026',
+        isoDate: '2026-04-07',
         time: '9:00 AM – 3:00 PM daily',
         location: 'KURAI Centre, Johor Bahru',
       },
@@ -79,6 +59,7 @@ const categories: EventCategory[] = [
         description:
           'A combined AI + Robotics camp where students tackle a real-world problem using technology. Ideal for returning students.',
         date: '2 – 4 June 2026',
+        isoDate: '2026-06-02',
         time: '9:00 AM – 3:00 PM daily',
         location: 'KURAI Centre, Johor Bahru',
       },
@@ -94,6 +75,7 @@ const categories: EventCategory[] = [
         description:
           'A 60-minute introductory AI class. Students explore pattern recognition and visual coding in a fun, guided session.',
         date: 'Saturday, 5 April 2026',
+        isoDate: '2026-04-05',
         time: '9:00 AM – 10:00 AM',
         location: 'KURAI Centre, Johor Bahru',
       },
@@ -102,6 +84,7 @@ const categories: EventCategory[] = [
         description:
           'Hands-on introduction to AI concepts for older children. Students train a simple AI model and see results in real time.',
         date: 'Saturday, 5 April 2026',
+        isoDate: '2026-04-05',
         time: '11:00 AM – 12:00 PM',
         location: 'KURAI Centre, Johor Bahru',
       },
@@ -110,6 +93,7 @@ const categories: EventCategory[] = [
         description:
           'Build and programme a mini robot in 60 minutes. A hands-on taste of our Robotics programme for all ages.',
         date: 'Saturday, 12 April 2026',
+        isoDate: '2026-04-12',
         time: '10:00 AM – 11:00 AM',
         location: 'KURAI Centre, Johor Bahru',
       },
@@ -126,6 +110,7 @@ const categories: EventCategory[] = [
         description:
           'A thoughtful session for parents on what AI literacy means, why it matters, and how KURAI\'s structured approach gives children real understanding.',
         date: 'Saturday, 19 April 2026',
+        isoDate: '2026-04-19',
         time: '10:00 AM – 11:30 AM',
         location: 'KURAI Centre, Johor Bahru',
       },
@@ -134,12 +119,42 @@ const categories: EventCategory[] = [
         description:
           'Watch KURAI students present their term projects — AI experiments, robots, and more. Open to parents, friends, and the community.',
         date: 'Saturday, 14 June 2026',
+        isoDate: '2026-06-14',
         time: '2:00 PM – 4:00 PM',
         location: 'KURAI Centre, Johor Bahru',
       },
     ],
   },
 ];
+
+const eventSchema = categories.flatMap((category) =>
+  category.events.map((event) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: event.title,
+    description: event.description,
+    startDate: event.isoDate,
+    location: {
+      '@type': 'Place',
+      name: 'KURAI Centre',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '26A, Jalan Horizon Perdana 5, Horizon Hills',
+        addressLocality: 'Iskandar Puteri',
+        addressRegion: 'Johor',
+        postalCode: '79100',
+        addressCountry: 'MY',
+      },
+    },
+    organizer: {
+      '@type': 'Organization',
+      name: 'KURAI',
+      url: 'https://kurai.edu.my',
+    },
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    eventStatus: 'https://schema.org/EventScheduled',
+  }))
+);
 
 export default function Events() {
   const [nlStatus, setNlStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -154,13 +169,20 @@ export default function Events() {
   };
 
   return (
-    <div>
+    <>
+      <SEO
+        title="Events, Holiday Camps & Workshops | KURAI Johor Bahru"
+        description="Join KURAI's AI holiday camps, free trial workshops, and parent talks in Iskandar Puteri, Johor. Find your next event and register."
+        path="/events"
+        jsonLd={eventSchema}
+      />
+      <div>
       {/* Hero */}
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
         <div className="absolute inset-0">
           <img
             src="/images/kids-robot-art.jpg"
-            alt=""
+            alt="Children creating robot art at KURAI holiday camp in Johor Bahru"
             className="h-full w-full object-cover opacity-15"
           />
         </div>
@@ -169,9 +191,9 @@ export default function Events() {
           <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
             What&apos;s Happening
           </p>
-          <h1 className="mt-4 font-heading text-4xl font-bold md:text-6xl">Events</h1>
+          <h1 className="mt-4 font-heading text-4xl font-bold md:text-6xl">Events & Workshops</h1>
           <p className="mx-auto mt-5 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft">
-            Open days, holiday camps, free trials, and special events. Find the right way to experience KURAI.
+            Holiday camps, free trials, and special events. Find the right way to experience KURAI.
           </p>
         </div>
       </section>
@@ -357,5 +379,6 @@ export default function Events() {
         </div>
       </section>
     </div>
+    </>
   );
 }

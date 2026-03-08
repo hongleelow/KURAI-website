@@ -1,5 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 import {
   MapPin,
   Mail,
@@ -63,6 +64,19 @@ const businessHours = [
   { day: 'Tuesday', hours: 'Closed' },
 ];
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function Contact() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -88,7 +102,14 @@ export default function Contact() {
   };
 
   return (
-    <div>
+    <>
+      <SEO
+        title="Contact KURAI | Visit Us in Horizon Hills, Iskandar Puteri"
+        description="Get in touch with KURAI. Visit us at Horizon Hills, Iskandar Puteri, Johor or WhatsApp us. Open Wednesday–Sunday, 10 AM – 9 PM."
+        path="/contact"
+        jsonLd={faqSchema}
+      />
+      <div>
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-28 text-white md:py-32">
         <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
@@ -250,7 +271,7 @@ export default function Contact() {
                     <option>Booking a Free Trial</option>
                     <option>School Partnership</option>
                     <option>Adult Workshops</option>
-                    <option>Events &amp; Open Days</option>
+                    <option>Events &amp; Workshops</option>
                   </select>
                 </div>
                 <div>
@@ -423,6 +444,27 @@ export default function Contact() {
             ))}
           </div>
 
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              to="/programs"
+              className="font-body text-sm font-semibold text-kurai-royal hover:text-kurai-dark"
+            >
+              Explore our programmes →
+            </Link>
+            <Link
+              to="/schedule"
+              className="font-body text-sm font-semibold text-kurai-royal hover:text-kurai-dark"
+            >
+              View class schedule →
+            </Link>
+            <Link
+              to="/events"
+              className="font-body text-sm font-semibold text-kurai-royal hover:text-kurai-dark"
+            >
+              Upcoming events →
+            </Link>
+          </div>
+
           <div className="mt-10 text-center">
             <p className="font-body text-sm text-kurai-dark-60">
               Still have questions?{' '}
@@ -467,5 +509,6 @@ export default function Contact() {
         </div>
       </section>
     </div>
+    </>
   );
 }

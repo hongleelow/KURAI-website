@@ -1,5 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 import {
   CalendarDays,
   Clock,
@@ -75,6 +76,22 @@ const parentTestimonials = [
   },
 ];
 
+const freeTrialSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Offer',
+  name: 'Free Trial AI & Robotics Class',
+  description: 'A complimentary 60-minute guided AI or Robotics class for children aged 5–11 at KURAI, Iskandar Puteri.',
+  price: '0',
+  priceCurrency: 'MYR',
+  availability: 'https://schema.org/InStock',
+  url: 'https://kurai.edu.my/free-trial',
+  seller: {
+    '@type': 'EducationalOrganization',
+    name: 'KURAI',
+    url: 'https://kurai.edu.my',
+  },
+};
+
 export default function FreeTrial() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
@@ -95,7 +112,14 @@ export default function FreeTrial() {
   };
 
   return (
-    <div>
+    <>
+      <SEO
+        title="Book a Free Trial Class | KURAI AI & Robotics Johor"
+        description="Try a free AI or Robotics class for your child at KURAI, Iskandar Puteri. 60-minute guided session, no commitment. Book your spot today."
+        path="/free-trial"
+        jsonLd={freeTrialSchema}
+      />
+      <div>
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-28 text-white md:py-36">
         <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
@@ -474,8 +498,25 @@ export default function FreeTrial() {
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
+          <div className="mt-6 flex flex-wrap justify-center gap-6">
+            <Link
+              to="/schedule"
+              className="inline-flex items-center gap-1.5 font-body text-sm text-white/60 transition-colors hover:text-white"
+            >
+              View our class schedule
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-1.5 font-body text-sm text-white/60 transition-colors hover:text-white"
+            >
+              Have questions? Contact us
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
         </div>
       </section>
     </div>
+    </>
   );
 }

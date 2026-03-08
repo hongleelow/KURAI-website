@@ -1,5 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 import {
   Sparkles,
   BookOpen,
@@ -12,133 +13,48 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { FORMSPREE_IDS, submitForm } from '@/config/formspree';
+import {
+  posts,
+  getCategoryLabel,
+  categoryColorMap,
+  categoryBorderMap,
+} from '@/data/blogPosts';
+import type { BlogCategory } from '@/data/blogPosts';
 
-type Category = 'all' | 'ai-fun-facts' | 'parent-guides' | 'workshop-recaps' | 'student-spotlights';
+type FilterCategory = 'all' | BlogCategory;
 
 const categories = [
-  { id: 'all' as Category, label: 'All Posts', icon: BookOpen },
-  { id: 'ai-fun-facts' as Category, label: 'AI Fun Facts', icon: Sparkles },
-  { id: 'parent-guides' as Category, label: 'Parent Guides', icon: BookOpen },
-  { id: 'workshop-recaps' as Category, label: 'Workshop Recaps', icon: Camera },
-  { id: 'student-spotlights' as Category, label: 'Student Spotlights', icon: Star },
+  { id: 'all' as FilterCategory, label: 'All Posts', icon: BookOpen },
+  { id: 'ai-fun-facts' as FilterCategory, label: 'AI Fun Facts', icon: Sparkles },
+  { id: 'parent-guides' as FilterCategory, label: 'Parent Guides', icon: BookOpen },
+  { id: 'workshop-recaps' as FilterCategory, label: 'Workshop Recaps', icon: Camera },
+  { id: 'student-spotlights' as FilterCategory, label: 'Student Spotlights', icon: Star },
 ];
 
-const posts = [
-  {
-    id: 1,
-    category: 'ai-fun-facts',
-    title: 'How Does a Robot "See"? A Fun Guide to Computer Vision',
-    excerpt:
-      'Ever wondered how robots recognise faces or objects? Discover the basics of computer vision explained in a way children can understand and get excited about.',
-    date: 'Mar 5, 2026',
-    readTime: '3 min read',
-    featured: true,
-    image: '/images/blog-1.jpg',
+const blogSchema = posts.map((post) => ({
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.title,
+  description: post.excerpt,
+  datePublished: post.isoDate,
+  url: `https://kurai.edu.my/blog/${post.slug}`,
+  mainEntityOfPage: `https://kurai.edu.my/blog/${post.slug}`,
+  image: post.image ? `https://kurai.edu.my${post.image}` : undefined,
+  author: {
+    '@type': 'Organization',
+    name: 'KURAI',
+    url: 'https://kurai.edu.my',
   },
-  {
-    id: 2,
-    category: 'parent-guides',
-    title: '5 Signs Your Child Is Ready for AI Education',
-    excerpt:
-      'Not sure if your child is old enough for structured tech learning? Here are five indicators that they\'re ready to start exploring AI and Robotics.',
-    date: 'Feb 28, 2026',
-    readTime: '4 min read',
-    featured: true,
-    image: '/images/blog-2.jpg',
+  publisher: {
+    '@type': 'Organization',
+    name: 'KURAI',
+    url: 'https://kurai.edu.my',
+    logo: { '@type': 'ImageObject', url: 'https://kurai.edu.my/images/logo.png' },
   },
-  {
-    id: 3,
-    category: 'workshop-recaps',
-    title: 'Recap: Our First Open Day Was a Huge Success',
-    excerpt:
-      'Over 40 families joined us for our inaugural Open Day. See highlights from the demo classes, parent Q&A sessions, and student showcases.',
-    date: 'Feb 20, 2026',
-    readTime: '5 min read',
-    featured: true,
-    image: '/images/blog-3.jpg',
-  },
-  {
-    id: 4,
-    category: 'student-spotlights',
-    title: 'Meet Arif: From Minecraft Fan to AI Explorer',
-    excerpt:
-      'Nine-year-old Arif joined KURAI with a passion for gaming. Three months later, he\'s building his own AI-powered quiz game. Read his story.',
-    date: 'Feb 15, 2026',
-    readTime: '3 min read',
-    featured: false,
-  },
-  {
-    id: 5,
-    category: 'ai-fun-facts',
-    title: 'What Is Machine Learning? Explained with Cookies',
-    excerpt:
-      'We use a fun cookie-sorting analogy to explain how machine learning works — perfect for curious children (and their parents).',
-    date: 'Feb 10, 2026',
-    readTime: '3 min read',
-    featured: false,
-  },
-  {
-    id: 6,
-    category: 'parent-guides',
-    title: 'Screen Time vs. Learning Time: How KURAI Is Different',
-    excerpt:
-      'Worried about more screen time? Learn how structured AI education differs from passive device use and why it builds real skills.',
-    date: 'Feb 5, 2026',
-    readTime: '4 min read',
-    featured: false,
-  },
-  {
-    id: 7,
-    category: 'workshop-recaps',
-    title: 'Holiday Camp Highlights: Robot Builders Edition',
-    excerpt:
-      'Our December holiday camp saw 24 students build and programme their own robots. Here\'s what happened and what they learned.',
-    date: 'Jan 28, 2026',
-    readTime: '5 min read',
-    featured: false,
-  },
-  {
-    id: 8,
-    category: 'student-spotlights',
-    title: 'Spotlight: Nadia, Age 7 — "I Taught the Computer to Draw!"',
-    excerpt:
-      'Nadia\'s journey from shy beginner to confident creator is exactly why we do what we do. Her mum shares the transformation.',
-    date: 'Jan 20, 2026',
-    readTime: '3 min read',
-    featured: false,
-  },
-  {
-    id: 9,
-    category: 'ai-fun-facts',
-    title: 'Can AI Be Creative? What Children Think About Art and Machines',
-    excerpt:
-      'We asked our students whether AI can make art. Their answers were surprising, thoughtful, and genuinely inspiring.',
-    date: 'Jan 15, 2026',
-    readTime: '4 min read',
-    featured: false,
-  },
-];
-
-const categoryColorMap: Record<string, { bg: string; text: string }> = {
-  'ai-fun-facts': { bg: 'bg-purple-50', text: 'text-purple-700' },
-  'parent-guides': { bg: 'bg-emerald-50', text: 'text-emerald-700' },
-  'workshop-recaps': { bg: 'bg-amber-50', text: 'text-amber-700' },
-  'student-spotlights': { bg: 'bg-rose-50', text: 'text-rose-700' },
-};
-
-const categoryBorderMap: Record<string, string> = {
-  'ai-fun-facts': 'border-t-purple-400/40',
-  'parent-guides': 'border-t-emerald-400/40',
-  'workshop-recaps': 'border-t-amber-400/40',
-  'student-spotlights': 'border-t-rose-400/40',
-};
-
-function getCategoryLabel(id: string): string {
-  return categories.find((c) => c.id === id)?.label ?? id;
-}
+}));
 
 export default function Blog() {
-  const [activeCategory, setActiveCategory] = useState<Category>('all');
+  const [activeCategory, setActiveCategory] = useState<FilterCategory>('all');
   const [nlStatus, setNlStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const handleNewsletter = async (e: FormEvent<HTMLFormElement>) => {
@@ -158,7 +74,14 @@ export default function Blog() {
   const featuredPosts = posts.filter((p) => p.featured);
 
   return (
-    <div>
+    <>
+      <SEO
+        title="Blog & AI Education Resources | KURAI"
+        description="Articles, parent guides, and fun facts about AI and Robotics education for children. Insights from KURAI's education team in Johor Bahru."
+        path="/blog"
+        jsonLd={blogSchema}
+      />
+      <div>
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-28 text-white md:py-32">
         <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
@@ -196,8 +119,9 @@ export default function Blog() {
               const color = categoryColorMap[post.category];
               const isHero = index === 0;
               return (
-                <article
+                <Link
                   key={post.id}
+                  to={`/blog/${post.slug}`}
                   className={`group flex rounded-2xl border border-kurai-ice bg-white transition-shadow hover:shadow-lg ${
                     isHero ? 'flex-col md:col-span-2 md:row-span-2 md:flex-row' : 'flex-col'
                   }`}
@@ -205,7 +129,7 @@ export default function Blog() {
                   {post.image ? (
                     <img
                       src={post.image}
-                      alt={post.title}
+                      alt={post.imageAlt || post.title}
                       className={`w-full object-cover ${
                         isHero
                           ? 'h-56 rounded-t-2xl md:h-auto md:w-1/2 md:rounded-l-2xl md:rounded-tr-none'
@@ -244,7 +168,7 @@ export default function Blog() {
                       </span>
                     </div>
                   </div>
-                </article>
+                </Link>
               );
             })}
           </div>
@@ -289,8 +213,9 @@ export default function Blog() {
             {filtered.map((post) => {
               const color = categoryColorMap[post.category];
               return (
-                <article
+                <Link
                   key={post.id}
+                  to={`/blog/${post.slug}`}
                   className={`group rounded-2xl border border-kurai-ice border-t-2 bg-white p-6 shadow-sm transition-shadow hover:shadow-md md:p-8 ${categoryBorderMap[post.category]}`}
                 >
                   <div className="flex items-center gap-3">
@@ -314,7 +239,7 @@ export default function Blog() {
                       {post.readTime}
                     </span>
                   </div>
-                </article>
+                </Link>
               );
             })}
           </div>
@@ -395,5 +320,6 @@ export default function Blog() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 import {
   Heart,
   Target,
@@ -14,6 +15,30 @@ import {
   Rocket,
   Quote,
 } from 'lucide-react';
+
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  mainEntity: {
+    '@type': 'EducationalOrganization',
+    name: 'KURAI',
+    url: 'https://kurai.edu.my',
+    description: 'Premium AI and Robotics education centre for children aged 5–11 in Johor Bahru, Malaysia. Founded in Horizon Hills, Iskandar Puteri.',
+    foundingDate: '2025',
+    founder: {
+      '@type': 'Person',
+      name: 'Hong Wei',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '26A, Jalan Horizon Perdana 5, Horizon Hills',
+      addressLocality: 'Iskandar Puteri',
+      addressRegion: 'Johor',
+      postalCode: '79100',
+      addressCountry: 'MY',
+    },
+  },
+};
 
 const coreValues = [
   {
@@ -51,7 +76,14 @@ const milestones = [
 
 export default function About() {
   return (
-    <div>
+    <>
+      <SEO
+        title="About KURAI | Our Story & Mission | AI Education Johor"
+        description="Learn about KURAI's mission to bring structured AI and Robotics education to children in Johor Bahru. Founded in Horizon Hills, Iskandar Puteri."
+        path="/about"
+        jsonLd={aboutSchema}
+      />
+      <div>
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-28 text-white md:py-36">
         <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
@@ -319,8 +351,25 @@ export default function About() {
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
+          <div className="mt-6 flex flex-wrap justify-center gap-6">
+            <Link
+              to="/schedule"
+              className="inline-flex items-center gap-1.5 font-body text-sm text-white/60 transition-colors hover:text-white"
+            >
+              View our class schedule
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+            <Link
+              to="/events"
+              className="inline-flex items-center gap-1.5 font-body text-sm text-white/60 transition-colors hover:text-white"
+            >
+              See upcoming events
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
         </div>
       </section>
     </div>
+    </>
   );
 }
