@@ -298,11 +298,11 @@ export default function Contact() {
 
           {/* Contact Info — takes 2 cols */}
           <div className="space-y-6 lg:col-span-2">
-            {/* Student image */}
+            {/* Facility image */}
             <div className="overflow-hidden rounded-2xl shadow-lg shadow-kurai-dark/5">
               <img
-                src="/images/student-attentive.jpg"
-                alt="Attentive student at KURAI education centre"
+                src="/images/facility.jpg"
+                alt="KURAI education centre in Horizon Hills, Iskandar Puteri"
                 className="h-56 w-full object-cover md:h-64"
               />
             </div>
