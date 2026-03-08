@@ -60,8 +60,7 @@ const faqs = [
 
 const businessHours = [
   { day: 'Wednesday – Sunday', hours: '10:00 AM – 9:00 PM' },
-  { day: 'Monday', hours: 'Closed' },
-  { day: 'Tuesday', hours: 'Closed' },
+  { day: 'Monday – Tuesday', hours: 'Closed' },
 ];
 
 const faqSchema = {
