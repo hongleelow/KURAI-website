@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 import {
   Brain,
   Cpu,
@@ -95,9 +96,49 @@ const programSections = [
   },
 ];
 
+const courseSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'AI Explorers',
+    description: 'A structured introduction to AI for children aged 5–11. Interactive lessons, visual coding, and guided projects that build real understanding of artificial intelligence.',
+    provider: {
+      '@type': 'EducationalOrganization',
+      name: 'KURAI',
+      url: 'https://kurai.edu.my',
+    },
+    educationalLevel: 'Beginner',
+    audience: { '@type': 'EducationAudience', educationalRole: 'student', suggestedAge: '5-11' },
+    courseMode: 'in-person',
+    locationCreated: { '@type': 'Place', name: 'KURAI Centre', address: { '@type': 'PostalAddress', addressLocality: 'Iskandar Puteri', addressRegion: 'Johor', addressCountry: 'MY' } },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'Robotics Programme',
+    description: 'Children build, programme, and test real robots — learning how hardware and software come together through hands-on projects.',
+    provider: {
+      '@type': 'EducationalOrganization',
+      name: 'KURAI',
+      url: 'https://kurai.edu.my',
+    },
+    educationalLevel: 'Beginner',
+    audience: { '@type': 'EducationAudience', educationalRole: 'student', suggestedAge: '5-11' },
+    courseMode: 'in-person',
+    locationCreated: { '@type': 'Place', name: 'KURAI Centre', address: { '@type': 'PostalAddress', addressLocality: 'Iskandar Puteri', addressRegion: 'Johor', addressCountry: 'MY' } },
+  },
+];
+
 export default function Programs() {
   return (
-    <div>
+    <>
+      <SEO
+        title="AI & Robotics Programmes for Kids | KURAI Johor Bahru"
+        description="Explore KURAI's AI Explorers and Robotics programmes for children aged 5–11. Structured curriculum, project-based learning in Iskandar Puteri, Johor."
+        path="/programs"
+        jsonLd={courseSchema}
+      />
+      <div>
       {/* Hero */}
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
         <div className="pointer-events-none absolute -right-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/20 blur-3xl" />
@@ -106,7 +147,7 @@ export default function Programs() {
           <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
             What We Teach
           </p>
-          <h1 className="mt-4 font-heading text-4xl font-bold md:text-6xl">Our Programmes</h1>
+          <h1 className="mt-4 font-heading text-4xl font-bold md:text-6xl">AI & Robotics Programmes</h1>
           <p className="mx-auto mt-5 max-w-2xl font-body text-lg leading-relaxed text-kurai-light-soft">
             Structured learning pathways that help children move from curiosity to confidence. Every programme is designed around real understanding — not just activities.
           </p>
@@ -318,5 +359,6 @@ export default function Programs() {
         </div>
       </section>
     </div>
+    </>
   );
 }

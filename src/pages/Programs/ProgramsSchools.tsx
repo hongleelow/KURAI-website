@@ -27,6 +27,7 @@
  */
 
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 
 const partnershipModels = [
   { title: 'In-School Programs', description: 'AI and robotics modules integrated into regular school hours.' },
@@ -36,7 +37,13 @@ const partnershipModels = [
 
 export default function ProgramsSchools() {
   return (
-    <div>
+    <>
+      <SEO
+        title="School Partnerships | AI & Robotics Programmes | KURAI"
+        description="Partner with KURAI for in-school AI and Robotics programmes, after-school clubs, and curriculum integration in Johor Bahru and Iskandar Puteri."
+        path="/programs/schools"
+      />
+      <div>
       {/* Hero */}
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
         <div className="pointer-events-none absolute -right-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
@@ -47,6 +54,16 @@ export default function ProgramsSchools() {
           </p>
         </div>
       </section>
+
+      {/* Back Link */}
+      <div className="mx-auto max-w-7xl px-6 pt-8">
+        <Link
+          to="/programs"
+          className="inline-flex items-center gap-1 font-body text-sm font-medium text-kurai-royal transition-colors hover:text-kurai-dark"
+        >
+          &larr; Back to All Programmes
+        </Link>
+      </div>
 
       {/* Partnership Models */}
       <section className="px-6 py-20">
@@ -70,6 +87,12 @@ export default function ProgramsSchools() {
         <div className="mx-auto max-w-7xl text-center">
           <h2 className="font-heading text-3xl font-bold text-kurai-dark">Partner Schools</h2>
           <p className="mt-4 font-body text-kurai-dark-60">Testimonials placeholder.</p>
+          <Link
+            to="/contact"
+            className="mt-6 inline-block font-body text-sm font-semibold text-kurai-royal underline underline-offset-4 transition-colors hover:text-kurai-dark"
+          >
+            Contact us to discuss a partnership &rarr;
+          </Link>
         </div>
       </section>
 
@@ -89,5 +112,6 @@ export default function ProgramsSchools() {
         </div>
       </section>
     </div>
+    </>
   );
 }

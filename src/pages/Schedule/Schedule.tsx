@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 import { Clock, ArrowRight } from 'lucide-react';
 
 type Availability = 'Open' | 'Limited' | 'Full';
@@ -34,9 +35,53 @@ const availabilityStyles: Record<Availability, { bg: string; text: string; dot: 
 
 const programs = [...new Set(schedule.map((s) => s.program))];
 
+const scheduleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'KURAI Class Schedule',
+  description: 'Weekly AI and Robotics class schedule at KURAI, Iskandar Puteri, Johor.',
+  itemListElement: [
+    {
+      '@type': 'Course',
+      name: 'AI Explorers',
+      provider: { '@type': 'EducationalOrganization', name: 'KURAI', url: 'https://kurai.edu.my' },
+      courseMode: 'in-person',
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseSchedule: {
+          '@type': 'Schedule',
+          repeatFrequency: 'P1W',
+          byDay: ['Saturday', 'Sunday'],
+        },
+      },
+    },
+    {
+      '@type': 'Course',
+      name: 'Robotics Programme',
+      provider: { '@type': 'EducationalOrganization', name: 'KURAI', url: 'https://kurai.edu.my' },
+      courseMode: 'in-person',
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseSchedule: {
+          '@type': 'Schedule',
+          repeatFrequency: 'P1W',
+          byDay: ['Saturday', 'Sunday'],
+        },
+      },
+    },
+  ],
+};
+
 export default function Schedule() {
   return (
-    <div>
+    <>
+      <SEO
+        title="Class Schedule & Availability | KURAI Johor Bahru"
+        description="View KURAI's weekly AI and Robotics class schedule. Saturday and Sunday sessions for ages 5–11 in Horizon Hills, Iskandar Puteri. Max 8 students per class."
+        path="/schedule"
+        jsonLd={scheduleSchema}
+      />
+      <div>
       {/* Hero */}
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
         <div className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
@@ -44,7 +89,7 @@ export default function Schedule() {
           <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-light">
             Plan Your Week
           </p>
-          <h1 className="mt-4 font-heading text-4xl font-bold md:text-5xl">Class Schedule</h1>
+          <h1 className="mt-4 font-heading text-4xl font-bold md:text-5xl">Weekly Class Schedule</h1>
           <p className="mx-auto mt-4 max-w-2xl font-body text-lg text-kurai-light-soft">
             Find the right class time for your child. All classes run in small groups of up to 8 students.
           </p>
@@ -184,6 +229,22 @@ export default function Schedule() {
         </div>
       </section>
 
+      {/* Programme Link */}
+      <section className="border-t border-kurai-ice px-6 py-12">
+        <div className="mx-auto max-w-7xl text-center">
+          <p className="font-body text-kurai-dark-60">
+            Want to know what we teach?{' '}
+            <Link
+              to="/programs"
+              className="inline-flex items-center gap-1 font-semibold text-kurai-royal transition-colors hover:text-kurai-dark"
+            >
+              Learn more about our programmes
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="relative overflow-hidden bg-kurai-royal px-6 py-20 text-white md:py-28">
         <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
@@ -213,5 +274,6 @@ export default function Schedule() {
         </div>
       </section>
     </div>
+    </>
   );
 }

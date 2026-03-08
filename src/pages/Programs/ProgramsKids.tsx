@@ -40,6 +40,7 @@
  */
 
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 
 const ageTiers = [
   { name: 'Explorers', ages: 'Ages 5–7', focus: 'Introduction to logic, basic robotics, visual coding' },
@@ -49,7 +50,13 @@ const ageTiers = [
 
 export default function ProgramsKids() {
   return (
-    <div>
+    <>
+      <SEO
+        title="AI & Robotics Classes for Children | Ages 5–11 | KURAI"
+        description="Age-appropriate AI and Robotics classes for children in Johor Bahru. Explorers (5–7), Builders (8–9), and Innovators (10–11) learning paths."
+        path="/programs/kids"
+      />
+      <div>
       {/* Hero */}
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-24 text-white md:py-32">
         <div className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-kurai-royal/15 blur-3xl" />
@@ -65,6 +72,16 @@ export default function ProgramsKids() {
           </p>
         </div>
       </section>
+
+      {/* Back Link */}
+      <div className="mx-auto max-w-7xl px-6 pt-8">
+        <Link
+          to="/programs"
+          className="inline-flex items-center gap-1 font-body text-sm font-medium text-kurai-royal hover:text-kurai-dark"
+        >
+          &larr; Back to All Programmes
+        </Link>
+      </div>
 
       {/* Age Tiers */}
       <section className="px-6 py-20">
@@ -129,5 +146,6 @@ export default function ProgramsKids() {
         </div>
       </section>
     </div>
+    </>
   );
 }

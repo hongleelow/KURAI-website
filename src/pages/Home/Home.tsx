@@ -17,6 +17,7 @@ import {
   Star,
   Quote,
 } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 const programs = [
   {
@@ -79,9 +80,9 @@ const reasons = [
 
 const events = [
   {
-    date: 'Mar 22, 2026',
-    title: 'Open Day: Experience KURAI',
-    description: 'Tour our centre, meet instructors, and watch a live demo class.',
+    date: 'Mar 24–26, 2026',
+    title: 'AI Discovery Camp',
+    description: 'A 3-day immersive camp where students build their first AI project — from concept to demo.',
     urgency: 'This Month',
   },
   {
@@ -116,16 +117,72 @@ const testimonials = [
   },
 ];
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['EducationalOrganization', 'LocalBusiness'],
+  name: 'KURAI',
+  legalName: 'KURAI Education Sdn Bhd',
+  url: 'https://kurai.edu.my',
+  logo: 'https://kurai.edu.my/images/logo.png',
+  image: 'https://kurai.edu.my/images/facility.jpg',
+  description:
+    'Premium AI and Robotics education centre for children aged 5–11 in Johor Bahru, Malaysia.',
+  telephone: '+60122169871',
+  email: 'hong@thekurai.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '26A, Jalan Horizon Perdana 5, Horizon Hills',
+    addressLocality: 'Iskandar Puteri',
+    addressRegion: 'Johor',
+    postalCode: '79100',
+    addressCountry: 'MY',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 1.4837,
+    longitude: 103.6325,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '10:00',
+      closes: '21:00',
+    },
+  ],
+  areaServed: [
+    { '@type': 'City', name: 'Johor Bahru' },
+    { '@type': 'City', name: 'Iskandar Puteri' },
+  ],
+  sameAs: [
+    'https://www.instagram.com/thekuraico',
+    'https://www.facebook.com/thekuraico',
+  ],
+  priceRange: '$$',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '15',
+    bestRating: '5',
+  },
+};
+
 export default function Home() {
   return (
     <div>
+      <SEO
+        title="KURAI | AI & Robotics Education for Kids in Johor Bahru"
+        description="Structured AI and Robotics classes for children aged 5–11 in Iskandar Puteri, Johor Bahru. Small groups, real projects, expert guidance. Book a free trial today."
+        path="/"
+        jsonLd={organizationSchema}
+      />
       {/* ─── 1. HERO ─── */}
       <section className="relative overflow-hidden bg-kurai-dark px-6 py-32 text-white md:py-40">
         {/* Hero background image */}
         <div className="absolute inset-0">
           <img
             src="/images/kids-kurai-wall.jpg"
-            alt=""
+            alt="Students posing by the KURAI wall at AI education centre in Johor Bahru"
             className="h-full w-full object-cover opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-kurai-dark/40 via-kurai-dark/20 to-kurai-dark/60" />
@@ -354,7 +411,7 @@ export default function Home() {
               Upcoming Events
             </h2>
             <p className="mx-auto mt-5 max-w-2xl font-body text-kurai-dark-60">
-              Join us for open days, free trial classes, and parent sessions. Come see what KURAI is all about.
+              Join us for holiday camps, free trial classes, and parent sessions. Come see what KURAI is all about.
             </p>
           </div>
 
