@@ -43,7 +43,7 @@ export default function Footer() {
           {/* Brand + Newsletter */}
           <div className="lg:col-span-2">
             <Link to="/">
-              <img src="/images/logo-white.png" alt="KURAI" className="h-8" />
+              <img src="/images/logo-white.webp" alt="KURAI" className="h-8" />
             </Link>
             <p className="mt-4 font-body text-sm leading-relaxed text-kurai-light-soft">
               Structured AI and Robotics education for children aged 5–11
@@ -198,9 +198,19 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-8 border-t border-kurai-dark-80 pt-6 sm:mt-12 sm:pt-8">
-          <p className="text-center font-body text-sm text-kurai-dark-60">
-            &copy; {new Date().getFullYear()} KURAI Education Sdn Bhd. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
+            <p className="font-body text-sm text-kurai-dark-60">
+              &copy; {new Date().getFullYear()} KURAI Education Sdn Bhd. All rights reserved.
+            </p>
+            <div className="flex gap-4">
+              <Link to="/privacy-policy" className="font-body text-sm text-kurai-dark-60 transition-colors hover:text-white">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="font-body text-sm text-kurai-dark-60 transition-colors hover:text-white">
+                Terms &amp; Conditions
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -130,11 +130,15 @@ export default function About() {
           {/* Instructor + Timeline */}
           <div className="space-y-6">
             <div className="overflow-hidden rounded-2xl shadow-lg shadow-kurai-dark/5">
-              <img
-                src="/images/instructor-ai-lesson.jpg"
-                alt="KURAI instructor teaching an AI lesson to students"
-                className="h-56 w-full object-cover sm:h-72"
-              />
+              <picture>
+                <source srcSet="/images/instructor-ai-lesson.webp" type="image/webp" />
+                <img
+                  src="/images/instructor-ai-lesson.jpg"
+                  alt="KURAI instructor teaching an AI lesson to students"
+                  className="h-56 w-full object-cover sm:h-72"
+                  loading="lazy"
+                />
+              </picture>
             </div>
           <div className="rounded-2xl bg-kurai-ice p-8 md:p-10">
             <h3 className="font-heading text-lg font-semibold text-kurai-dark">Our Journey</h3>
@@ -238,11 +242,15 @@ export default function About() {
           </div>
 
           <div className="mt-10 overflow-hidden rounded-2xl shadow-lg shadow-kurai-dark/5">
-            <img
-              src="/images/students-workshop.jpg"
-              alt="Students working on worksheets during a KURAI class"
-              className="h-56 w-full object-cover sm:h-72"
-            />
+            <picture>
+              <source srcSet="/images/students-workshop.webp" type="image/webp" />
+              <img
+                src="/images/students-workshop.jpg"
+                alt="Students working on worksheets during a KURAI class"
+                className="h-56 w-full object-cover sm:h-72"
+                loading="lazy"
+              />
+            </picture>
           </div>
 
           <div className="mt-8 grid gap-8 md:grid-cols-3">
@@ -297,11 +305,15 @@ export default function About() {
               create — not just consume.&rdquo;
             </blockquote>
             <div className="mt-8 flex items-center gap-4">
-              <img
-                src="/images/founder.jpg"
-                alt="Founder of KURAI Education"
-                className="h-14 w-14 rounded-full object-cover"
-              />
+              <picture>
+                <source srcSet="/images/founder.webp" type="image/webp" />
+                <img
+                  src="/images/founder.jpg"
+                  alt="Founder of KURAI Education"
+                  className="h-14 w-14 rounded-full object-cover"
+                  loading="lazy"
+                />
+              </picture>
               <div>
                 <p className="font-heading text-base font-semibold text-kurai-dark">
                   Hong Wei

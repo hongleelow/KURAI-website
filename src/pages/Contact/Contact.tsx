@@ -282,6 +282,22 @@ export default function Contact() {
                     placeholder="Tell us what you'd like to know..."
                   />
                 </div>
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    name="privacy_consent"
+                    id="privacy_consent_contact"
+                    required
+                    className="mt-1 h-4 w-4 shrink-0 rounded border-kurai-dark-60/20 text-kurai-royal focus:ring-kurai-royal"
+                  />
+                  <label htmlFor="privacy_consent_contact" className="font-body text-sm leading-relaxed text-kurai-dark-60">
+                    I agree to the{' '}
+                    <Link to="/privacy-policy" className="font-semibold text-kurai-royal hover:text-kurai-dark" target="_blank">
+                      Privacy Policy
+                    </Link>{' '}
+                    and consent to KURAI processing my data as described.
+                  </label>
+                </div>
                 <button
                   type="submit"
                   disabled={formStatus === 'sending'}
@@ -298,11 +314,15 @@ export default function Contact() {
           <div className="space-y-6 lg:col-span-2">
             {/* Facility image */}
             <div className="overflow-hidden rounded-2xl shadow-lg shadow-kurai-dark/5">
-              <img
-                src="/images/facility.jpg"
-                alt="KURAI education centre in Horizon Hills, Iskandar Puteri"
-                className="h-56 w-full object-cover md:h-64"
-              />
+              <picture>
+                <source srcSet="/images/facility.webp" type="image/webp" />
+                <img
+                  src="/images/facility.jpg"
+                  alt="KURAI education centre in Horizon Hills, Iskandar Puteri"
+                  className="h-56 w-full object-cover md:h-64"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             {/* Location */}
             <div className="rounded-2xl border border-kurai-ice bg-white p-5 sm:p-7 md:p-8">

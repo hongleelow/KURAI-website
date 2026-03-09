@@ -30,7 +30,7 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link to="/">
-          <img src="/images/logo.png" alt="KURAI" className="h-8" />
+          <img src="/images/logo.webp" alt="KURAI" className="h-8" />
         </Link>
 
         {/* Desktop Navigation */}

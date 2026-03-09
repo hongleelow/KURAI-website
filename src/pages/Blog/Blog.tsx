@@ -127,15 +127,19 @@ export default function Blog() {
                   }`}
                 >
                   {post.image ? (
-                    <img
-                      src={post.image}
-                      alt={post.imageAlt || post.title}
-                      className={`w-full object-cover ${
-                        isHero
-                          ? 'h-56 rounded-t-2xl md:h-auto md:w-1/2 md:rounded-l-2xl md:rounded-tr-none'
-                          : 'h-48 rounded-t-2xl'
-                      }`}
-                    />
+                    <picture>
+                      <source srcSet={post.image.replace(/\.(jpg|png)$/, '.webp')} type="image/webp" />
+                      <img
+                        src={post.image}
+                        alt={post.imageAlt || post.title}
+                        className={`w-full object-cover ${
+                          isHero
+                            ? 'h-56 rounded-t-2xl md:h-auto md:w-1/2 md:rounded-l-2xl md:rounded-tr-none'
+                            : 'h-48 rounded-t-2xl'
+                        }`}
+                        loading="lazy"
+                      />
+                    </picture>
                   ) : (
                     <div className={`bg-gradient-to-br from-kurai-ice to-kurai-light/20 ${
                       isHero ? 'h-56 rounded-t-2xl md:h-auto md:w-1/2 md:rounded-l-2xl md:rounded-tr-none' : 'h-48 rounded-t-2xl'

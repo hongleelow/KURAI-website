@@ -180,11 +180,15 @@ export default function Events() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-kurai-dark px-5 py-20 text-white sm:px-6 md:py-32">
         <div className="absolute inset-0">
-          <img
-            src="/images/kids-robot-art.jpg"
-            alt="Children creating robot art at KURAI holiday camp in Johor Bahru"
-            className="h-full w-full object-cover opacity-15"
-          />
+          <picture>
+            <source srcSet="/images/kids-robot-art.webp" type="image/webp" />
+            <img
+              src="/images/kids-robot-art.jpg"
+              alt="Children creating robot art at KURAI holiday camp in Johor Bahru"
+              className="h-full w-full object-cover opacity-15"
+              loading="lazy"
+            />
+          </picture>
         </div>
         <div className="pointer-events-none absolute -left-40 -top-40 h-[250px] w-[250px] md:h-[400px] md:w-[400px] rounded-full bg-kurai-light/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl text-center">

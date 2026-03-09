@@ -16,6 +16,9 @@ import {
   ArrowRight,
   Star,
   Quote,
+  GraduationCap,
+  School,
+  Briefcase,
 } from 'lucide-react';
 import SEO from '@/components/SEO';
 
@@ -180,11 +183,16 @@ export default function Home() {
       <section className="relative overflow-hidden bg-kurai-dark px-5 py-24 text-white sm:px-6 sm:py-32 md:py-40">
         {/* Hero background image */}
         <div className="absolute inset-0">
-          <img
-            src="/images/kids-kurai-wall.jpg"
-            alt="Students posing by the KURAI wall at AI education centre in Johor Bahru"
-            className="h-full w-full object-cover opacity-25"
-          />
+          <picture>
+            <source srcSet="/images/kids-kurai-wall.webp" type="image/webp" />
+            <img
+              src="/images/kids-kurai-wall.jpg"
+              alt="Students posing by the KURAI wall at AI education centre in Johor Bahru"
+              className="h-full w-full object-cover opacity-25"
+              width={1920}
+              height={1080}
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-b from-kurai-dark/40 via-kurai-dark/20 to-kurai-dark/60" />
         </div>
         {/* Decorative gradient orb */}
@@ -223,6 +231,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── AUDIENCE ROUTING ─── */}
+      <section className="bg-kurai-ice/50 px-5 py-12 sm:px-6 sm:py-16">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-center font-body text-sm font-medium text-kurai-dark-60">
+            I&apos;m looking for...
+          </p>
+          <div className="mt-5 grid gap-4 sm:grid-cols-3">
+            <Link
+              to="/programs#ai-explorers"
+              className="group flex items-center gap-4 rounded-2xl border border-kurai-ice bg-white p-5 transition-all hover:scale-[1.02] hover:border-kurai-royal/20 hover:shadow-lg sm:p-6"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-kurai-royal/10 text-kurai-royal">
+                <GraduationCap className="h-6 w-6" />
+              </div>
+              <div>
+                <p className="font-heading text-base font-semibold text-kurai-dark group-hover:text-kurai-royal">
+                  Kids&apos; Classes
+                </p>
+                <p className="mt-0.5 font-body text-sm text-kurai-dark-60">
+                  AI &amp; Robotics for ages 5–11
+                </p>
+              </div>
+            </Link>
+            <Link
+              to="/programs/schools"
+              className="group flex items-center gap-4 rounded-2xl border border-kurai-ice bg-white p-5 transition-all hover:scale-[1.02] hover:border-kurai-royal/20 hover:shadow-lg sm:p-6"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-kurai-royal/10 text-kurai-royal">
+                <School className="h-6 w-6" />
+              </div>
+              <div>
+                <p className="font-heading text-base font-semibold text-kurai-dark group-hover:text-kurai-royal">
+                  School Partnerships
+                </p>
+                <p className="mt-0.5 font-body text-sm text-kurai-dark-60">
+                  Bring KURAI to your school
+                </p>
+              </div>
+            </Link>
+            <Link
+              to="/programs/adults"
+              className="group flex items-center gap-4 rounded-2xl border border-kurai-ice bg-white p-5 transition-all hover:scale-[1.02] hover:border-kurai-royal/20 hover:shadow-lg sm:p-6"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-kurai-royal/10 text-kurai-royal">
+                <Briefcase className="h-6 w-6" />
+              </div>
+              <div>
+                <p className="font-heading text-base font-semibold text-kurai-dark group-hover:text-kurai-royal">
+                  Adult Workshops
+                </p>
+                <p className="mt-0.5 font-body text-sm text-kurai-dark-60">
+                  Coming soon for parents &amp; pros
+                </p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ─── 2. WHAT IS KURAI? ─── */}
       <section className="px-5 py-16 sm:px-6 md:py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 md:gap-16">
@@ -251,11 +318,15 @@ export default function Home() {
           </div>
           {/* Classroom photo */}
           <div className="relative overflow-hidden rounded-2xl shadow-lg shadow-kurai-dark/5">
-            <img
-              src="/images/kids-robotics-group-new.jpg"
-              alt="Children building robots together at KURAI education centre"
-              className="h-56 w-full object-cover sm:h-72 md:h-[28rem]"
-            />
+            <picture>
+              <source srcSet="/images/kids-robotics-group-new.webp" type="image/webp" />
+              <img
+                src="/images/kids-robotics-group-new.jpg"
+                alt="Children building robots together at KURAI education centre"
+                className="h-56 w-full object-cover sm:h-72 md:h-[28rem]"
+                loading="lazy"
+              />
+            </picture>
             {/* Stats overlay */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-kurai-dark/80 to-transparent p-6">
               <div className="grid grid-cols-4 gap-2 text-center text-white">

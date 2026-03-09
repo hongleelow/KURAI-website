@@ -174,11 +174,15 @@ export default function BlogPost() {
         <section className="relative overflow-hidden bg-kurai-dark px-5 py-16 text-white sm:px-6 sm:py-20 md:py-28">
           {post.image && (
             <div className="absolute inset-0">
-              <img
-                src={post.image}
-                alt=""
-                className="h-full w-full object-cover opacity-15"
-              />
+              <picture>
+                <source srcSet={post.image.replace(/\.(jpg|png)$/, '.webp')} type="image/webp" />
+                <img
+                  src={post.image}
+                  alt=""
+                  className="h-full w-full object-cover opacity-15"
+                  loading="lazy"
+                />
+              </picture>
             </div>
           )}
           <div className="pointer-events-none absolute -right-40 -top-40 h-[300px] w-[300px] md:h-[500px] md:w-[500px] rounded-full bg-kurai-royal/20 blur-3xl" />
@@ -236,11 +240,15 @@ export default function BlogPost() {
         {/* Featured image (if exists) */}
         {post.image && (
           <div className="mx-auto -mt-8 max-w-3xl px-5 sm:px-6">
-            <img
-              src={post.image}
-              alt={post.imageAlt || post.title}
-              className="w-full rounded-2xl shadow-lg"
-            />
+            <picture>
+              <source srcSet={post.image.replace(/\.(jpg|png)$/, '.webp')} type="image/webp" />
+              <img
+                src={post.image}
+                alt={post.imageAlt || post.title}
+                className="w-full rounded-2xl shadow-lg"
+                loading="lazy"
+              />
+            </picture>
           </div>
         )}
 

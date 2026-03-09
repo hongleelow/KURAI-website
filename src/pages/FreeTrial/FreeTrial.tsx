@@ -175,11 +175,15 @@ export default function FreeTrial() {
           {/* Image + Stats */}
           <div className="space-y-4">
             <div className="overflow-hidden rounded-2xl shadow-lg shadow-kurai-dark/5">
-              <img
-                src="/images/coding-cards.jpg"
-                alt="Colorful coding cards used in KURAI classes"
-                className="h-48 w-full object-cover sm:h-64"
-              />
+              <picture>
+                <source srcSet="/images/coding-cards.webp" type="image/webp" />
+                <img
+                  src="/images/coding-cards.jpg"
+                  alt="Colorful coding cards used in KURAI classes"
+                  className="h-48 w-full object-cover sm:h-64"
+                  loading="lazy"
+                />
+              </picture>
             </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-2xl bg-kurai-ice p-5 text-center sm:p-8">
@@ -408,6 +412,22 @@ export default function FreeTrial() {
                 className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
                 placeholder="Special requirements, questions, etc. (optional)"
               />
+            </div>
+            <div className="flex items-start gap-3">
+              <input
+                type="checkbox"
+                name="privacy_consent"
+                id="privacy_consent_trial"
+                required
+                className="mt-1 h-4 w-4 shrink-0 rounded border-kurai-dark-60/20 text-kurai-royal focus:ring-kurai-royal"
+              />
+              <label htmlFor="privacy_consent_trial" className="font-body text-sm leading-relaxed text-kurai-dark-60">
+                I agree to the{' '}
+                <Link to="/privacy-policy" className="font-semibold text-kurai-royal hover:text-kurai-dark" target="_blank">
+                  Privacy Policy
+                </Link>{' '}
+                and consent to KURAI collecting and processing my data and my child&apos;s data as described.
+              </label>
             </div>
             <button
               type="submit"

@@ -209,17 +209,21 @@ export default function Programs() {
               <div className={`mt-10 overflow-hidden rounded-2xl md:mt-12 ${
                 program.dark ? '' : 'shadow-lg shadow-kurai-dark/5'
               }`}>
-                <img
-                  src={program.image}
-                  alt={program.imageAlt}
-                  className={`h-56 w-full object-cover sm:h-72 md:h-[22rem] ${
-                    program.id === 'robotics'
-                      ? 'object-top'
-                      : program.id === 'adult-workshops'
-                        ? 'object-[center_30%]'
-                        : 'object-center'
-                  }`}
-                />
+                <picture>
+                  <source srcSet={program.image.replace(/\.(jpg|png)$/, '.webp')} type="image/webp" />
+                  <img
+                    src={program.image}
+                    alt={program.imageAlt}
+                    className={`h-56 w-full object-cover sm:h-72 md:h-[22rem] ${
+                      program.id === 'robotics'
+                        ? 'object-top'
+                        : program.id === 'adult-workshops'
+                          ? 'object-[center_30%]'
+                          : 'object-center'
+                    }`}
+                    loading="lazy"
+                  />
+                </picture>
               </div>
             )}
 

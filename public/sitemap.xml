@@ -69,6 +69,19 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://kurai.edu.my/privacy-policy</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://kurai.edu.my/terms</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
   <!-- Blog Posts -->
   <url>
     <loc>https://kurai.edu.my/blog/how-does-a-robot-see-computer-vision</loc>
