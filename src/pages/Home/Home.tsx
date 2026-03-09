@@ -19,8 +19,10 @@ import {
   GraduationCap,
   School,
   Briefcase,
+  Trophy,
 } from 'lucide-react';
 import SEO from '@/components/SEO';
+import { motion } from 'motion/react';
 
 const programs = [
   {
@@ -58,6 +60,30 @@ const skills = [
   { icon: Handshake, label: 'Collaboration', desc: 'Work together, communicate, and learn from peers' },
 ];
 
+const studentProjects = [
+  {
+    student: 'Arif',
+    age: 'Age 9 · AI Explorers',
+    title: 'AI-Powered Animal Quiz Game',
+    description: 'Built a quiz game that uses image recognition to identify animals. Started as a Minecraft fan — now creates his own AI projects.',
+    programme: 'AI Explorers',
+  },
+  {
+    student: 'Nadia',
+    age: 'Age 7 · AI Explorers',
+    title: 'Pattern Recognition Art Tool',
+    description: 'Trained a simple model to recognise hand-drawn shapes and turn them into digital art. Went from shy to confidently presenting her project.',
+    programme: 'AI Explorers',
+  },
+  {
+    student: 'Daniel',
+    age: 'Age 10 · Robotics',
+    title: 'Line-Following Delivery Robot',
+    description: 'Designed and programmed a robot that follows a path and delivers small objects. Combined sensors, motors, and logic into a working prototype.',
+    programme: 'Robotics Programme',
+  },
+];
+
 const reasons = [
   {
     icon: UserCheck,
@@ -84,18 +110,21 @@ const reasons = [
 const events = [
   {
     date: 'Mar 24–26, 2026',
+    isoDate: '2026-03-26',
     title: 'AI Discovery Camp',
     description: 'A 3-day immersive camp where students build their first AI project — from concept to demo.',
     urgency: 'This Month',
   },
   {
     date: 'Apr 5, 2026',
+    isoDate: '2026-04-05',
     title: 'Free Trial: AI Explorers',
     description: 'A complimentary 60-minute introductory AI class for ages 5–11.',
     urgency: 'Coming Up',
   },
   {
     date: 'Apr 19, 2026',
+    isoDate: '2026-04-19',
     title: 'Parent Workshop: AI & Your Child',
     description: 'A focused session on what AI literacy means for your child\'s education.',
     urgency: '',
@@ -170,7 +199,24 @@ const organizationSchema = {
   },
 };
 
+function FadeInSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 export default function Home() {
+  const today = new Date().toISOString().split('T')[0];
+  const upcomingEvents = events.filter((event) => event.isoDate >= today);
+
   return (
     <div>
       <SEO
@@ -292,6 +338,7 @@ export default function Home() {
 
       {/* ─── 2. WHAT IS KURAI? ─── */}
       <section className="px-5 py-16 sm:px-6 md:py-28">
+        <FadeInSection>
         <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 md:gap-16">
           <div>
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -350,10 +397,12 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </FadeInSection>
       </section>
 
       {/* ─── 3. OUR PROGRAMS ─── */}
       <section className="bg-kurai-ice/50 px-5 py-16 sm:px-6 md:py-28">
+        <FadeInSection>
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -367,12 +416,21 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-8 md:grid-cols-3">
+          <motion.div
+            className="mt-14 grid gap-8 md:grid-cols-3"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            variants={{
+              visible: { transition: { staggerChildren: 0.1 } },
+              hidden: {},
+            }}
+          >
             {programs.map((program) => (
+              <motion.div key={program.title} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}>
               <Link
-                key={program.title}
                 to={program.path}
-                className="group relative rounded-2xl border border-kurai-ice bg-white p-6 shadow-sm sm:p-8 transition-all hover:scale-[1.02] hover:border-kurai-royal/20 hover:shadow-lg md:p-10"
+                className="group relative block rounded-2xl border border-kurai-ice bg-white p-6 shadow-sm sm:p-8 transition-all hover:scale-[1.02] hover:border-kurai-royal/20 hover:shadow-lg md:p-10"
               >
                 {program.comingSoon && (
                   <span className="absolute right-6 top-6 rounded-full bg-kurai-royal/10 px-3 py-1 font-body text-xs font-semibold uppercase tracking-wider text-kurai-royal">
@@ -395,13 +453,16 @@ export default function Home() {
                   Learn more <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
+        </FadeInSection>
       </section>
 
       {/* ─── 4. SKILLS WE DEVELOP ─── */}
       <section className="px-5 py-14 sm:px-6 md:py-28">
+        <FadeInSection>
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -434,6 +495,64 @@ export default function Home() {
             ))}
           </div>
         </div>
+        </FadeInSection>
+      </section>
+
+      {/* ─── STUDENT PROJECTS ─── */}
+      <section className="bg-kurai-ice/50 px-5 py-16 sm:px-6 md:py-28">
+        <FadeInSection>
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center">
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
+              Real Outcomes
+            </p>
+            <h2 className="mt-3 font-heading text-3xl font-bold text-kurai-dark md:text-4xl">
+              What Our Students Build
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl font-body text-kurai-dark-60">
+              Every programme ends with a real project. Here are some things our students have created.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {studentProjects.map((project) => (
+              <div
+                key={project.title}
+                className="rounded-2xl border border-kurai-ice bg-white p-6 shadow-sm transition-shadow hover:shadow-md sm:p-8"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-kurai-royal/10 text-kurai-royal">
+                    <Trophy className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="font-heading text-sm font-semibold text-kurai-dark">{project.student}</p>
+                    <p className="font-body text-xs text-kurai-dark-60">{project.age}</p>
+                  </div>
+                </div>
+                <h3 className="mt-4 font-heading text-base font-semibold text-kurai-dark">
+                  {project.title}
+                </h3>
+                <p className="mt-2 font-body text-sm leading-relaxed text-kurai-dark-60">
+                  {project.description}
+                </p>
+                <span className="mt-4 inline-block rounded-full bg-kurai-royal/10 px-3 py-1 font-body text-xs font-semibold text-kurai-royal">
+                  {project.programme}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 font-body text-sm font-semibold text-kurai-royal transition-colors hover:text-kurai-dark"
+            >
+              Read more student stories
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+        </FadeInSection>
       </section>
 
       {/* ─── 5. WHY CHOOSE KURAI ─── */}
@@ -469,65 +588,68 @@ export default function Home() {
       </section>
 
       {/* ─── 6. UPCOMING EVENTS ─── */}
-      <section className="px-5 py-16 sm:px-6 md:py-28">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
-              What&apos;s Coming Up
-            </p>
-            <h2 className="mt-3 font-heading text-3xl font-bold text-kurai-dark md:text-4xl">
-              Upcoming Events
-            </h2>
-            <p className="mx-auto mt-5 max-w-2xl font-body text-kurai-dark-60">
-              Holiday camps, free trial classes, and parent sessions. Come see for yourself.
-            </p>
-          </div>
+      {upcomingEvents.length > 0 && (
+        <section className="px-5 py-16 sm:px-6 md:py-28">
+          <div className="mx-auto max-w-7xl">
+            <div className="text-center">
+              <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
+                What&apos;s Coming Up
+              </p>
+              <h2 className="mt-3 font-heading text-3xl font-bold text-kurai-dark md:text-4xl">
+                Upcoming Events
+              </h2>
+              <p className="mx-auto mt-5 max-w-2xl font-body text-kurai-dark-60">
+                Holiday camps, free trial classes, and parent sessions. Come see for yourself.
+              </p>
+            </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {events.map((event) => (
-              <div
-                key={event.title}
-                className="rounded-2xl border border-kurai-ice bg-white p-6 transition-shadow sm:p-8 hover:shadow-md md:p-10"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-kurai-royal">
-                    <CalendarDays className="h-4 w-4" />
-                    <span className="font-body text-xs font-semibold uppercase tracking-wider">
-                      {event.date}
-                    </span>
+            <div className="mt-14 grid gap-6 md:grid-cols-3">
+              {upcomingEvents.map((event) => (
+                <div
+                  key={event.title}
+                  className="rounded-2xl border border-kurai-ice bg-white p-6 transition-shadow sm:p-8 hover:shadow-md md:p-10"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-kurai-royal">
+                      <CalendarDays className="h-4 w-4" />
+                      <span className="font-body text-xs font-semibold uppercase tracking-wider">
+                        {event.date}
+                      </span>
+                    </div>
+                    {event.urgency && (
+                      <span className={`rounded-full px-2.5 py-1 font-body text-xs font-semibold uppercase tracking-wider ${
+                        event.urgency === 'This Month' ? 'bg-kurai-amber/10 text-kurai-amber-dark' : 'bg-kurai-royal/10 text-kurai-royal'
+                      }`}>
+                        {event.urgency}
+                      </span>
+                    )}
                   </div>
-                  {event.urgency && (
-                    <span className={`rounded-full px-2.5 py-1 font-body text-xs font-semibold uppercase tracking-wider ${
-                      event.urgency === 'This Month' ? 'bg-kurai-amber/10 text-kurai-amber-dark' : 'bg-kurai-royal/10 text-kurai-royal'
-                    }`}>
-                      {event.urgency}
-                    </span>
-                  )}
+                  <h3 className="mt-4 font-heading text-lg font-semibold text-kurai-dark">
+                    {event.title}
+                  </h3>
+                  <p className="mt-2 font-body text-sm leading-relaxed text-kurai-dark-60 md:text-base">
+                    {event.description}
+                  </p>
                 </div>
-                <h3 className="mt-4 font-heading text-lg font-semibold text-kurai-dark">
-                  {event.title}
-                </h3>
-                <p className="mt-2 font-body text-sm leading-relaxed text-kurai-dark-60 md:text-base">
-                  {event.description}
-                </p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="mt-10 text-center">
-            <Link
-              to="/events"
-              className="inline-flex items-center gap-2 font-body text-sm font-semibold text-kurai-royal transition-colors hover:text-kurai-dark"
-            >
-              View all events
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+            <div className="mt-10 text-center">
+              <Link
+                to="/events"
+                className="inline-flex items-center gap-2 font-body text-sm font-semibold text-kurai-royal transition-colors hover:text-kurai-dark"
+              >
+                View all events
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ─── 7. TESTIMONIALS ─── */}
       <section className="bg-kurai-ice/50 px-5 py-14 sm:px-6 md:py-28">
+        <FadeInSection>
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
@@ -542,7 +664,7 @@ export default function Home() {
                   <Star key={i} className="h-4 w-4 fill-current" />
                 ))}
               </div>
-              <span className="font-body text-sm font-semibold text-kurai-dark-60">Rated 5.0 on Google · 15+ Reviews</span>
+              <a href="https://g.page/r/CeijCcLckt4BEB0/review" target="_blank" rel="noopener noreferrer" className="font-body text-sm font-semibold text-kurai-dark-60 hover:text-kurai-royal transition-colors">Rated 5.0 on Google · 15+ Reviews</a>
             </div>
           </div>
 
@@ -569,6 +691,7 @@ export default function Home() {
             ))}
           </div>
         </div>
+        </FadeInSection>
       </section>
 
       {/* ─── 8. FINAL CTA ─── */}

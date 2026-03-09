@@ -1,6 +1,7 @@
 import Navbar from './Navbar';
 import Footer from './Footer';
 import WhatsAppButton from '../WhatsAppButton';
+import MobileCTA from '../MobileCTA';
 import PageTransition from '../PageTransition';
 
 export default function Layout() {
@@ -12,6 +13,7 @@ export default function Layout() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <MobileCTA />
     </div>
   );
 }

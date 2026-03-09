@@ -14,6 +14,7 @@ import {
   AlertCircle,
 } from 'lucide-react';
 import { FORMSPREE_IDS, submitForm } from '@/config/formspree';
+import { validate, validateForm } from '@/utils/validation';
 
 const faqs = [
   {
@@ -76,25 +77,62 @@ const faqSchema = {
   })),
 };
 
+const CONTACT_REQUIRED = ['parent_name', 'email', 'message'];
+
+function FieldError({ error }: { error?: string }) {
+  if (!error) return null;
+  return <p className="mt-1 font-body text-xs text-red-500">{error}</p>;
+}
+
 export default function Contact() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setTouched((t) => ({ ...t, [name]: true }));
+    const error = validate(name, value);
+    setErrors((prev) => {
+      if (error) return { ...prev, [name]: error };
+      const next = { ...prev };
+      delete next[name];
+      return next;
+    });
+  };
+
+  const inputClass = (name: string) =>
+    `mt-1.5 w-full rounded-lg border px-4 py-3 font-body text-sm focus:outline-none ${
+      touched[name] && errors[name]
+        ? 'border-red-400 focus:border-red-500'
+        : 'border-kurai-dark-60/20 focus:border-kurai-royal'
+    }`;
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormStatus('sending');
-
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+
+    const formErrors = validateForm(data, CONTACT_REQUIRED);
+    if (Object.keys(formErrors).length > 0) {
+      setErrors(formErrors);
+      setTouched(Object.fromEntries(CONTACT_REQUIRED.map((f) => [f, true])));
+      return;
+    }
+
+    setFormStatus('sending');
     const result = await submitForm(FORMSPREE_IDS.contact, data);
 
     if (result.ok) {
       setFormStatus('success');
       form.reset();
+      setErrors({});
+      setTouched({});
     } else {
       setFormStatus('error');
     }
@@ -219,9 +257,11 @@ export default function Contact() {
                       type="text"
                       name="parent_name"
                       required
-                      className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
+                      onBlur={handleBlur}
+                      className={inputClass('parent_name')}
                       placeholder="Your full name"
                     />
+                    <FieldError error={touched.parent_name ? errors.parent_name : undefined} />
                   </div>
                   <div>
                     <label className="font-body text-sm font-medium text-kurai-dark">
@@ -242,18 +282,22 @@ export default function Contact() {
                       type="email"
                       name="email"
                       required
-                      className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
+                      onBlur={handleBlur}
+                      className={inputClass('email')}
                       placeholder="your@email.com"
                     />
+                    <FieldError error={touched.email ? errors.email : undefined} />
                   </div>
                   <div>
                     <label className="font-body text-sm font-medium text-kurai-dark">Phone</label>
                     <input
                       type="tel"
                       name="phone"
-                      className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
+                      onBlur={handleBlur}
+                      className={inputClass('phone')}
                       placeholder="+60 1X-XXX XXXX"
                     />
+                    <FieldError error={touched.phone ? errors.phone : undefined} />
                   </div>
                 </div>
                 <div>
@@ -278,9 +322,11 @@ export default function Contact() {
                     name="message"
                     rows={4}
                     required
-                    className="mt-1.5 w-full rounded-lg border border-kurai-dark-60/20 px-4 py-3 font-body text-sm focus:border-kurai-royal focus:outline-none"
+                    onBlur={handleBlur}
+                    className={inputClass('message')}
                     placeholder="Tell us what you'd like to know..."
                   />
+                  <FieldError error={touched.message ? errors.message : undefined} />
                 </div>
                 <div className="flex items-start gap-3">
                   <input

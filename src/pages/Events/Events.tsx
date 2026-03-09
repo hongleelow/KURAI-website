@@ -168,6 +168,13 @@ export default function Events() {
     if (result.ok) e.currentTarget.reset();
   };
 
+  const today = new Date().toISOString().split('T')[0];
+
+  const filteredCategories = categories.map((category) => ({
+    ...category,
+    events: category.events.filter((event) => event.isoDate >= today),
+  })).filter((category) => category.events.length > 0);
+
   return (
     <>
       <SEO
@@ -203,7 +210,7 @@ export default function Events() {
       </section>
 
       {/* Event Categories */}
-      {categories.map((category, categoryIndex) => {
+      {filteredCategories.map((category, categoryIndex) => {
         const isCompact = category.events.length <= 2;
 
         return (
