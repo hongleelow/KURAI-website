@@ -19,7 +19,6 @@ import {
   GraduationCap,
   School,
   Briefcase,
-  Trophy,
 } from 'lucide-react';
 import SEO from '@/components/SEO';
 import { motion } from 'motion/react';
@@ -58,30 +57,6 @@ const skills = [
   { icon: GitBranch, label: 'Logical Reasoning', desc: 'Think systematically and draw sound conclusions' },
   { icon: ShieldCheck, label: 'Digital Confidence', desc: 'Engage with technology independently and responsibly' },
   { icon: Handshake, label: 'Collaboration', desc: 'Work together, communicate, and learn from peers' },
-];
-
-const studentProjects = [
-  {
-    student: 'Arif',
-    age: 'Age 9 · AI Explorers',
-    title: 'AI-Powered Animal Quiz Game',
-    description: 'Built a quiz game that uses image recognition to identify animals. Started as a Minecraft fan — now creates his own AI projects.',
-    programme: 'AI Explorers',
-  },
-  {
-    student: 'Nadia',
-    age: 'Age 7 · AI Explorers',
-    title: 'Pattern Recognition Art Tool',
-    description: 'Trained a simple model to recognise hand-drawn shapes and turn them into digital art. Went from shy to confidently presenting her project.',
-    programme: 'AI Explorers',
-  },
-  {
-    student: 'Daniel',
-    age: 'Age 10 · Robotics',
-    title: 'Line-Following Delivery Robot',
-    description: 'Designed and programmed a robot that follows a path and delivers small objects. Combined sensors, motors, and logic into a working prototype.',
-    programme: 'Robotics Programme',
-  },
 ];
 
 const reasons = [
@@ -493,63 +468,6 @@ export default function Home() {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-        </FadeInSection>
-      </section>
-
-      {/* ─── STUDENT PROJECTS ─── */}
-      <section className="bg-kurai-ice/50 px-5 py-16 sm:px-6 md:py-28">
-        <FadeInSection>
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <p className="font-body text-xs font-semibold uppercase tracking-[0.25em] text-kurai-royal">
-              Real Outcomes
-            </p>
-            <h2 className="mt-3 font-heading text-3xl font-bold text-kurai-dark md:text-4xl">
-              What Our Students Build
-            </h2>
-            <p className="mx-auto mt-5 max-w-2xl font-body text-kurai-dark-60">
-              Every programme ends with a real project. Here are some things our students have created.
-            </p>
-          </div>
-
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {studentProjects.map((project) => (
-              <div
-                key={project.title}
-                className="rounded-2xl border border-kurai-ice bg-white p-6 shadow-sm transition-shadow hover:shadow-md sm:p-8"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-kurai-royal/10 text-kurai-royal">
-                    <Trophy className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="font-heading text-sm font-semibold text-kurai-dark">{project.student}</p>
-                    <p className="font-body text-xs text-kurai-dark-60">{project.age}</p>
-                  </div>
-                </div>
-                <h3 className="mt-4 font-heading text-base font-semibold text-kurai-dark">
-                  {project.title}
-                </h3>
-                <p className="mt-2 font-body text-sm leading-relaxed text-kurai-dark-60">
-                  {project.description}
-                </p>
-                <span className="mt-4 inline-block rounded-full bg-kurai-royal/10 px-3 py-1 font-body text-xs font-semibold text-kurai-royal">
-                  {project.programme}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 text-center">
-            <Link
-              to="/blog"
-              className="inline-flex items-center gap-2 font-body text-sm font-semibold text-kurai-royal transition-colors hover:text-kurai-dark"
-            >
-              Read more student stories
-              <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
         </div>
         </FadeInSection>
